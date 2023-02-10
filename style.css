@@ -44,6 +44,14 @@
     justify-content: first baseline;
 
   }
+  @media (max-width: 991px) {
+    .categories li{
+        height: 170px;
+        width: 170px;
+    }
+  }
+  
+
   .category_block{
     text-align: center;
     padding-left:10px;
