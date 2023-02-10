@@ -6,3 +6,50 @@
     padding-left:10px;
     padding-right: 5px;
   }
+.form-control.placeholder-width {
+    width: 430px;
+}
+  
+  @media (max-width: 991px) {
+    .form-control.placeholder-width {
+      width: 550px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-control.placeholder-width {
+      width: 370px;
+    }
+  }
+  .carousel {
+    height: 400px;
+  }
+  .category a {
+    /* background-image: url(''); */
+    text-align: center;
+  }
+  .categories li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 250px;
+    width: 250px;
+    background-color: black;
+    border-radius: 50%;
+    border: 3px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-left: 20px;
+    justify-content: first baseline;
+
+  }
+  .category_block{
+    text-align: center;
+    padding-left:10px;
+    padding-right: 50px;
+  }
+  .category_block ul{
+    text-align: center;
+    
+  }
