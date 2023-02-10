@@ -1,0 +1,8 @@
+*{
+    border: 1px solid rgb(202, 55, 55);
+}
+
+.nav-item {
+    padding-left:10px;
+    padding-right: 5px;
+  }
