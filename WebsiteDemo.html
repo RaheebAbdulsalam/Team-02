@@ -1,10 +1,56 @@
 <style>
-    *{
+*{
+  
   padding: 0;
   margin: 0;
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width:400px;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  position: relative;
+  top: 30px;
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
 body{
   font-family: montserrat;
@@ -41,33 +87,25 @@ a.active,a:hover{
   background:#2c5d63;
   transition: .5s;
 }
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check{
-  display: none;
-}
-@media (max-width: 952px){
+.container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top:20px;
+    width: 400px;
+    left: 537px;
+  }
+
+  @media (max-width: 952px){
   label.logo{
     font-size: 30px;
     padding-left: 50px;
-  }
+    }
   nav ul li a{
     font-size: 16px;
+    }
   }
-}
-@media (max-width: 858px){
-  .checkbtn{
-    display: block;
-    position:relative;
-    top:20px;
-  }
+  @media (max-width: 858px){
   ul{
     position: fixed;
     width: 100%;
@@ -89,16 +127,8 @@ a.active,a:hover{
   a:hover,a.active{
     background: none;
     color: #0082e6;
+    }
   }
-  #check:checked ~ ul{
-    left: 0;
-  }
-}
-section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
-}
 </style>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -110,10 +140,6 @@ section{
   </head>
   <body>
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
       <label class="logo">GameStation</label>
       <ul>
         <li><a class="active" href="#">Home</a></li>
@@ -123,37 +149,44 @@ section{
         <li><a href="#">Feedback</a></li>
       </ul>
     </nav>
-    <div class="slider">
-      <div class="slides">
-        <input type="radio" name="radiobtn" id="radio1">
-        <input type="radio" name="radiobtn" id="radio2">
-        <input type="radio" name="radiobtn" id="radio3">
-        <input type="radio" name="radiobtn" id="radio4">
-        <div class="slidefirst">
-          <img src="" alt="">
+    <div class="container">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="game1.jpg">
         </div>
-        <div class="slidefirst">
-          <img src="" alt="">
+        <div class="mySlides fade">
+          <img src="game2.jpg">
         </div>
-        <div class="slidefirst">
-          <img src="" alt="">
+        <div class="mySlides fade">
+          <img src="game3.jpg">
         </div>
-        <div class="slidefirst">
-          <img src="" alt="">
-        </div>
-        <div class="navigationauto">
-          <div class="autobtn1"></div>
-          <div class="autobtn2"></div>
-          <div class="autobtn3"></div>
-          <div class="autobtn4"></div>
-        </div>
-        <div class="navigationmanual">
-          <label for="radio1" class="manualbtn"></label>
-          <label for="radio2" class="manualbtn"></label>
-          <label for="radio3" class="manualbtn"></label>
-          <label for="radio4" class="manualbtn"></label>
-        </div>
-      </div>
+      </div>    
     </div>
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
   </body>
 </html>
