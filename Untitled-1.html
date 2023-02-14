@@ -1,116 +1,260 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+    *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
-</style>
-</head>
-<body>
-
-<h2>Automatic Slideshow</h2>
-<p>Change image every 2 seconds:</p>
-
-<div class="slideshow-container">
-
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="game1.jpg">
-    </div>
-
-    <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="game2.jpg">
-
-    </div>
-
-    <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="game3.jpg">
-    </div>
-
-</div>
-
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+body{
+  font-family: montserrat;
 }
-</script>
-
-</body>
-</html> 
+nav{
+  background: black;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background:#2c5d63;
+  transition: .5s;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top:20px;
+    width: 400px;
+    left: 537px;
+  }
+    @media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+    }
+  nav ul li a{
+    font-size: 16px;
+    }
+  }
+  @media (max-width: 858px){
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+    }
+  }
+    .mySlides {
+      display: none;
+    }
+    img {
+      vertical-align: middle;
+    }
+    .mySlides {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    .mySlidesa {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    .mySlidesb {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }  
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left:110px;
+        top:75px;
+        width: 400px;
+    }
+    .container1 {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        bottom:330px;
+        width: 400px;
+        left: 530px;
+    }
+    .container2 {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left: 950px;
+        bottom:735px;
+        width: 390px;
+    }
+    .slideshow-container {
+      position: relative;
+      width:400px;
+      margin: auto;
+    }
+    .slideshow-container1 {
+      position: relative;
+      width:600px;
+      margin: auto;
+    }
+    .slideshow-container2 {
+      position: relative;
+      width:600px;
+      margin: auto;
+    }
+    </style>
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>GameStation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      </head>
+      <body>
+        <nav>
+            <label class="logo">GameStation</label>
+            <ul>
+              <li><a class="active" href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </nav>
+        <div class="container">
+          <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="game16.jpg">
+            </div>
+            <div class="mySlides">
+              <img src="game12.jpg">
+            </div>
+            <div class="mySlides">
+              <img src="game3.jpg">
+            </div>
+          </div>    
+        </div>
+        <div class="container1">
+            <div class="slideshow-container1">
+              <div class="mySlidesa">
+                  <img src="game7.jpg">
+              </div>
+              <div class="mySlidesa">
+                <img src="game15.jpg">
+              </div>
+              <div class="mySlidesa">
+                <img src="game9.jpg">
+              </div>
+            </div>    
+        </div>
+        <div class="container2">
+            <div class="slideshow-container2">
+              <div class="mySlidesb">
+                  <img src="game6.jpg">
+              </div>
+              <div class="mySlidesb">
+                <img src="game8.jpg">
+              </div>
+              <div class="mySlidesb">
+                <img src="game1.jpg">
+              </div>
+            </div>    
+        </div>
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            let slideIndexa = 0;
+            showSlidesa();
+            let slideIndexb = 0;
+            showSlidesb();
+        
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }     
+            function showSlidesa() {
+                let ia;
+                let slidesa = document.getElementsByClassName("mySlidesa");
+                for (ia = 0; ia < slidesa.length; ia++) {
+                    slidesa[ia].style.display = "none";  
+                }
+                slideIndexa++;
+                if (slideIndexa > slidesa.length) {slideIndexa = 1} 
+                slidesa[slideIndexa-1].style.display = "block";  
+                setTimeout(showSlidesa, 2000); // Change image every 2 seconds
+            }
+            function showSlidesb() {
+                let ib;
+                let slidesb = document.getElementsByClassName("mySlidesb");
+                for (ib = 0; ib < slidesb.length; ib++) {
+                    slidesb[ib].style.display = "none";  
+                }
+                slideIndexb++;
+                if (slideIndexb > slidesb.length) {slideIndexb = 1} 
+                slidesb[slideIndexb-1].style.display = "block";  
+                setTimeout(showSlidesb, 2000); // Change image every 2 seconds
+            }
+        </script>
+      </body>
+    </html>
