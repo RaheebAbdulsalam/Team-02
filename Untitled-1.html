@@ -1,5 +1,6 @@
 <style>
     *{
+      border: 1px solid red;
       padding: 0;
       margin: 0;
       text-decoration: none;
@@ -44,14 +45,6 @@ a.active,a:hover{
   background:#2c5d63;
   transition: .5s;
 }
-.container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    top:20px;
-    width: 400px;
-    left: 537px;
-  }
     @media (max-width: 952px){
   label.logo{
     font-size: 30px;
@@ -111,40 +104,37 @@ a.active,a:hover{
         display: flex;
         flex-direction: row;
         position: relative;
-        left:110px;
+        left:310px;
         top:75px;
-        width: 400px;
+        width: 200px;
     }
     .container1 {
         display: flex;
         flex-direction: row;
         position: relative;
-        bottom:330px;
-        width: 400px;
+        bottom:130px;
+        width: 200px;
         left: 530px;
     }
     .container2 {
         display: flex;
         flex-direction: row;
         position: relative;
-        left: 950px;
-        bottom:735px;
-        width: 390px;
+        left: 750px;
+        bottom:334px;
+        width: 200px;
     }
     .slideshow-container {
       position: relative;
-      width:400px;
-      margin: auto;
     }
     .slideshow-container1 {
       position: relative;
-      width:600px;
-      margin: auto;
     }
     .slideshow-container2 {
       position: relative;
-      width:600px;
-      margin: auto;
+    }
+    .slideimages{
+        width:200px;
     }
     </style>
     <!DOCTYPE html>
@@ -169,39 +159,39 @@ a.active,a:hover{
         <div class="container">
           <div class="slideshow-container">
             <div class="mySlides">
-                <img src="game16.jpg">
+                <img src="game16.jpg" class="slideimages">
             </div>
             <div class="mySlides">
-              <img src="game12.jpg">
+              <img src="game12.jpg" class="slideimages">
             </div>
             <div class="mySlides">
-              <img src="game3.jpg">
+              <img src="game3.jpg" class="slideimages">
             </div>
           </div>    
         </div>
         <div class="container1">
             <div class="slideshow-container1">
               <div class="mySlidesa">
-                  <img src="game7.jpg">
+                  <img src="game7.jpg" class="slideimages">
               </div>
               <div class="mySlidesa">
-                <img src="game15.jpg">
+                <img src="game15.jpg" class="slideimages">
               </div>
               <div class="mySlidesa">
-                <img src="game9.jpg">
+                <img src="game9.jpg" class="slideimages">
               </div>
             </div>    
         </div>
         <div class="container2">
             <div class="slideshow-container2">
               <div class="mySlidesb">
-                  <img src="game6.jpg">
+                  <img src="game6.jpg" class="slideimages">
               </div>
               <div class="mySlidesb">
-                <img src="game8.jpg">
+                <img src="game8.jpg" class="slideimages">
               </div>
               <div class="mySlidesb">
-                <img src="game1.jpg">
+                <img src="game1.jpg" class="slideimages">
               </div>
             </div>    
         </div>

@@ -1,24 +1,25 @@
 <style>
     *{
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
     body {
         margin: 0 auto; /* set left and right margin to auto */
         max-width: 900px;
-        background-color: blue;
     }
     img{
         width: 100%;
         height:150px;
     }
     nav{
-        background: black;
+        background: #808080;
         height: 80px;
         width: 100%;
         position:relative;
         }
     label.logo{
-        color: white;
+        position:relative;
+        right:30px;
+        color: #5D3FD3;
         font-size: 35px;
         line-height: 80px;
         padding: 0 100px;
@@ -35,14 +36,15 @@
         margin: 0 5px;
     }
     nav ul li a{
-        color: white;
+        color: #5D3FD3;
         font-size: 17px;
         padding: 7px 13px;
         border-radius: 3px;
         text-transform: uppercase;
+        text-decoration: none;
     }
 a.active,a:hover{
-  background:#2c5d63;
+  background:#E0E0E0;
   transition: .5s;
 }
   .checkbtn{
@@ -98,6 +100,72 @@ a.active,a:hover{
     left: 0;
   }
 }
+.mySlides {
+      display: none;
+    }
+    .mySlides {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    .mySlidesa {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    .mySlidesb {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }  
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left:30px;
+        top:20px;
+        width: 200px;
+    }
+    .container1 {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        bottom:134px;
+        width: 200px;
+        left: 245px;
+    }
+    .container2 {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left: 460px;
+        bottom:290px;
+        width: 200px;
+    }
+    .container3 {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        left: 675px;
+        bottom:447px;
+        width: 200px;
+    }
+    .slideshow-container {
+      position: relative;
+    }
+    .slideshow-container1 {
+      position: relative;
+    }
+    .slideshow-container2 {
+      position: relative;
+    }
+    .slideshow-container3{
+      position: relative;
+    }
+    .slideimages{
+        width:200px;
+    }
 </style>
 <!DOCTYPE html>
 <html>
@@ -123,5 +191,121 @@ a.active,a:hover{
                 <li><a href="#">Feedback</a></li>
             </ul>
         </nav>
+        <div class="container">
+            <div class="slideshow-container">
+              <div class="mySlides">
+                  <img src="game16.jpg" class="slideimages">
+              </div>
+              <div class="mySlides">
+                <img src="game12.jpg" class="slideimages">
+              </div>
+              <div class="mySlides">
+                <img src="game3.jpg" class="slideimages">
+              </div>
+            </div>    
+          </div>
+          <div class="container1">
+              <div class="slideshow-container1">
+                <div class="mySlidesa">
+                    <img src="game7.jpg" class="slideimages">
+                </div>
+                <div class="mySlidesa">
+                  <img src="game15.jpg" class="slideimages">
+                </div>
+                <div class="mySlidesa">
+                  <img src="game9.jpg" class="slideimages">
+                </div>
+              </div>    
+          </div>
+          <div class="container2">
+              <div class="slideshow-container2">
+                <div class="mySlidesb">
+                    <img src="game6.jpg" class="slideimages">
+                </div>
+                <div class="mySlidesb">
+                  <img src="game8.jpg" class="slideimages">
+                </div>
+                <div class="mySlidesb">
+                  <img src="game1.jpg" class="slideimages">
+                </div>
+              </div>    
+          </div>
+          <div class="container3">
+            <div class="slideshow-container3">
+              <div class="mySlidesc">
+                  <img src="game6.jpg" class="slideimages">
+              </div>
+              <div class="mySlidesc">
+                <img src="game8.jpg" class="slideimages">
+              </div>
+              <div class="mySlidesc">
+                <img src="game1.jpg" class="slideimages">
+              </div>
+            </div>    
+        </div>
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+          </div>
+          <script>
+              let slideIndex = 0;
+              showSlides();
+              let slideIndexa = 0;
+              showSlidesa();
+              let slideIndexb = 0;
+              showSlidesb();
+              let slideIndexc = 0;
+              showSlidesc();
+          
+              function showSlides() {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                  setTimeout(showSlides, 2000); // Change image every 2 seconds
+              }     
+              function showSlidesa() {
+                  let ia;
+                  let slidesa = document.getElementsByClassName("mySlidesa");
+                  for (ia = 0; ia < slidesa.length; ia++) {
+                      slidesa[ia].style.display = "none";  
+                  }
+                  slideIndexa++;
+                  if (slideIndexa > slidesa.length) {slideIndexa = 1} 
+                  slidesa[slideIndexa-1].style.display = "block";  
+                  setTimeout(showSlidesa, 2000); // Change image every 2 seconds
+              }
+              function showSlidesb() {
+                  let ib;
+                  let slidesb = document.getElementsByClassName("mySlidesb");
+                  for (ib = 0; ib < slidesb.length; ib++) {
+                      slidesb[ib].style.display = "none";  
+                  }
+                  slideIndexb++;
+                  if (slideIndexb > slidesb.length) {slideIndexb = 1} 
+                  slidesb[slideIndexb-1].style.display = "block";  
+                  setTimeout(showSlidesb, 2000); // Change image every 2 seconds
+              }
+              function showSlidesc() {
+                  let ic;
+                  let slidesc = document.getElementsByClassName("mySlidesc");
+                  for (ic = 0; ic < slidesc.length; ic++) {
+                      slidesc[ic].style.display = "none";  
+                  }
+                  slideIndexc++;
+                  if (slideIndexc > slidesc.length) {slideIndexc = 1} 
+                  slidesc[slideIndexc-1].style.display = "block";  
+                  setTimeout(showSlidesc, 2000); // Change image every 2 seconds
+              }
+          </script>
     </body>
 </html>
