@@ -1,4 +1,5 @@
-<style>
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><style>
 *{
   
   padding: 0;
@@ -130,13 +131,17 @@ a.active,a:hover{
     }
   }
 </style>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>GameStation</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Contact Us</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script> 
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <nav>
@@ -144,51 +149,51 @@ a.active,a:hover{
       <ul>
         <li><a class="active" href="WebsiteDemo.html">Home</a></li>
         <li><a href="#">About</a></li>
-          <li><a href="login.html">Login</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Signup</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="#">Feedback</a></li>
       </ul>
     </nav>
-    <div class="container">
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="game1.jpg">
-        </div>
-        <div class="mySlides fade">
-          <img src="game2.jpg">
-        </div>
-        <div class="mySlides fade">
-          <img src="game3.jpg">
-        </div>
-      </div>    
-    </div>
-    <div style="text-align:center">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-    </div>
-    <script>
-    let slideIndex = 0;
-    showSlides();
-    
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-    </script>
-  </body>
+    <div class="">
+	
+ 
+	<div class="contact">
+		<h1>Contact Us</h1>
+		<form method="post" action="submit-form.php">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="country">Country:</label>
+			<select id="country" name="country">
+				<option value="">Select your country</option>
+				<option value="USA">USA</option>
+				<option value="Canada">Canada</option>
+				<option value="Mexico">Mexico</option>
+				<option value="UK">UK</option>
+				<option value="France">France</option>
+				<option value="Germany">Germany</option>
+			</select>
+			<label for="equity">Type of Equity:</label>
+			<select id="equity" name="equity">
+				<option value="stock">Stock</option>
+				<option value="bond">Bond</option>
+				<option value="mutual-fund">Mutual Fund</option>
+			</select>
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" required></textarea><br>
+
+			<div class="g-recaptcha" data-sitekey="your_site_key"></div>
+			<input type="submit" value="Send">
+		</form>
+	</div></div>
+</body>
 </html>
+
+<script>
+		$(document).ready(function() {
+			CKEDITOR.replace('message');
+		});
+	</script>

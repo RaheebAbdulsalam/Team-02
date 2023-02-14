@@ -1,4 +1,7 @@
-<style>
+ 
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><style>
 *{
   
   padding: 0;
@@ -130,13 +133,12 @@ a.active,a:hover{
     }
   }
 </style>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>GameStation</title>
+    <title>GameStation Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <nav>
@@ -144,31 +146,29 @@ a.active,a:hover{
       <ul>
         <li><a class="active" href="WebsiteDemo.html">Home</a></li>
         <li><a href="#">About</a></li>
-          <li><a href="login.html">Login</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Signup</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="#">Feedback</a></li>
       </ul>
     </nav>
-    <div class="container">
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="game1.jpg">
-        </div>
-        <div class="mySlides fade">
-          <img src="game2.jpg">
-        </div>
-        <div class="mySlides fade">
-          <img src="game3.jpg">
-        </div>
-      </div>    
+    <div class="">
+     <div class="registration">
+		<h1>Registration</h1>
+		<form>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<input type="submit" value="Submit">
+		</form>
+		<p>Already have an account? <a href="login.html">Login here</a></p>
+	</div>
     </div>
-    <div style="text-align:center">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-    </div>
+    
     <script>
     let slideIndex = 0;
     showSlides();
@@ -192,3 +192,4 @@ a.active,a:hover{
     </script>
   </body>
 </html>
+
