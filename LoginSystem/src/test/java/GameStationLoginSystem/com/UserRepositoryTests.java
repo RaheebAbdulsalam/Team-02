@@ -1,11 +1,12 @@
-package com.RegisterationExample;
+package GameStationLoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.RegisterationExample.model.Role;
-import com.RegisterationExample.model.User;
-import com.RegisterationExample.repository.RoleRepository;
-import com.RegisterationExample.repository.UserRepository;
+
+import GameStationLoginSystem.com.model.Role;
+import GameStationLoginSystem.com.model.User;
+import GameStationLoginSystem.com.repository.RoleRepository;
+import GameStationLoginSystem.com.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

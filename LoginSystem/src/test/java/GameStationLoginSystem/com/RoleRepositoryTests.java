@@ -1,7 +1,8 @@
-package com.RegisterationExample;
+package GameStationLoginSystem.com;
 
-import com.RegisterationExample.model.Role;
-import com.RegisterationExample.repository.RoleRepository;
+
+import GameStationLoginSystem.com.model.Role;
+import GameStationLoginSystem.com.repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

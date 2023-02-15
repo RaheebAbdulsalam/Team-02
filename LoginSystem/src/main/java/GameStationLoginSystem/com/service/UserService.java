@@ -7,7 +7,6 @@ import GameStationLoginSystem.com.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -21,6 +20,7 @@ public class UserService {
         BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
         String encodedPassword= encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+
         //Save a new user as a customer
         Role roleCustomer=roleRepo.findByName("Customer");
         user.addRole(roleCustomer);
