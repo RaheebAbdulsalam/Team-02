@@ -227,4 +227,31 @@
   .links a{
     text-decoration: none ;
   }
+  .aboutus{
+    background-image: url('Images/About.png');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .aboutus .story{
+    height: 350px;
+    width: 450px;
+    font-size: 15px;
+    background: linear-gradient(
+      217deg,
+      rgba(255, 0, 179, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ), linear-gradient(127deg, rgba(136, 1, 138, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    border-radius: 5%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .aboutus .story p{
+    text-align: justify;
+    padding: 30px;
+    justify-content: center;
+   }
   
