@@ -1,10 +1,10 @@
-package GameStationLoginSystem.com;
+package LoginSystem.com;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GameStationLoginSystemApplicationTests {
+class LoginSystemApplicationTests {
 
 	@Test
 	void contextLoads() {

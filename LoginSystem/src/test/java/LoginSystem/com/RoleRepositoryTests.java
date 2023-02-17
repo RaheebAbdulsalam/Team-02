@@ -1,8 +1,7 @@
-package GameStationLoginSystem.com;
+package LoginSystem.com;
 
-
-import GameStationLoginSystem.com.model.Role;
-import GameStationLoginSystem.com.repository.RoleRepository;
+import LoginSystem.com.model.Role;
+import LoginSystem.com.repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -18,16 +17,16 @@ import java.util.List;
 @Rollback(false)
 public class RoleRepositoryTests {
     @Autowired
-    RoleRepository repo;
+    RoleRepository RoleRepo;
 
     @Test
     public void testCreateRoles() {
-        Role admin = new Role("Admin");
-        Role customer = new Role("Customer");
+        Role user = new Role("USER");
+        Role admin = new Role("ADMIN");
 
-        repo.saveAll(List.of(admin, customer));
+        RoleRepo.saveAll(List.of(user, admin));
 
-        List<Role> listRoles = repo.findAll();
+        List<Role> listRoles = RoleRepo.findAll();
         assertThat(listRoles.size()).isEqualTo(2);
     }
 }

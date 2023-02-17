@@ -2,52 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Games Station</title>
-
+    <title>Game Station</title>
 </head>
 <body>
-<div>
-    <div>
-        <h1>User Registration - Sign Up</h1>
-    </div>
-    <form th:action="@{/process_register}" th:object="${user}"
-          method="post" style="max-width: 600px; margin: 0 auto;">
-        <div >
-            <div>
-                <label>E-mail: </label>
-                <div>
-                    <input type="email" th:field="*{email}"  required/>
-                </div>
-            </div>
+<div align="center">
+    <h1>Create New Account</h1>
+    <br/>
+    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>UserName:</td>
+                <td><input type="text" th:field="*{username}" /></td>
+            </tr>
 
-            <div >
-                <label >Password: </label>
-                <div >
-                    <input type="password" th:field="*{password}"
-                           required minlength="6" maxlength="10"/>
-                </div>
-            </div>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" th:field="*{email}" /></td>
+            </tr>
 
-            <div>
-                <label>First Name: </label>
-                <div>
-                    <input type="text" th:field="*{firstName}"
-                           required minlength="2" maxlength="20"/>
-                </div>
-            </div>
+                <td>Password:</td>
+                <td><input type="password" th:field="*{password}" /></td>
+            </tr>
 
-            <div>
-                <label>Last Name: </label>
-                <div >
-                    <input type="text" th:field="*{lastName}"
-                           required minlength="2" maxlength="20"/>
-                </div>
-            </div>
-
-            <div>
-                <button type="submit">Sign Up</button>
-            </div>
-        </div>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button></td>
+            </tr>
+        </table>
     </form>
 </div>
 </body>

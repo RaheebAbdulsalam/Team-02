@@ -1,12 +1,11 @@
-package GameStationLoginSystem.com;
+package LoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-import GameStationLoginSystem.com.model.Role;
-import GameStationLoginSystem.com.model.User;
-import GameStationLoginSystem.com.repository.RoleRepository;
-import GameStationLoginSystem.com.repository.UserRepository;
+import LoginSystem.com.model.User;
+import LoginSystem.com.model.Role;
+import LoginSystem.com.repository.RoleRepository;
+import LoginSystem.com.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -33,39 +32,24 @@ public class UserRepositoryTests {
     @Test
     public void testCreateUser() {
         User user = new User();
+        user.setUsername("Raheeb");
         user.setEmail("raheeb@gmail.com");
         user.setPassword("raheeb2023");
-        user.setFirstName("Raheeb");
-        user.setLastName("Abdulsalam");
-
         User savedUser = userRepo.save(user);
-
         User existUser = entityManager.find(User.class, savedUser.getId());
-
         assertThat(user.getEmail()).isEqualTo(existUser.getEmail());
-    }
-
-    @Test
-    public void testFindUserByEmail(){
-        String email="user@gmail.com";
-        User user=userRepo.findByEmail(email);
-
-        assertThat(user).isNotNull();
     }
 
     @Test
     public void testAddRoleToNewUser() {
         Role roleAdmin = roleRepo.findByName("Admin");
-
         User user = new User();
+        user.setUsername("Raheeb");
         user.setEmail("raheeb2023@gmail.com");
         user.setPassword("123456");
-        user.setFirstName("Raheeb");
-        user.setLastName("Abdusalam");
+        user.setEnabled(true);
         user.addRole(roleAdmin);
-
         User savedUser = userRepo.save(user);
-
         assertThat(savedUser.getRoles().size()).isEqualTo(1);
     }
 
