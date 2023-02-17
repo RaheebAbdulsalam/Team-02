@@ -115,4 +115,10 @@ a:hover {
     color: #fff;
 }
 
+/* Style for error message */
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
 
