@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -52,32 +53,45 @@
     </div>
 </nav>
 
-<table>
+<table id="product-table">
+    <thead>
     <tr>
-        <th>Product Name</th>
+        <th>ID</th>
+        <th>Name</th>
         <th>Price</th>
         <th>Description</th>
         <th>Stock Level</th>
         <th>Image</th>
         <th>Categories</th>
     </tr>
-    <tr th:each="product : ${products}">
-        <td th:text="${product.name}"></td>
-        <td th:text="${product.price}"></td>
-        <td th:text="${product.description}"></td>
-        <td th:text="${product.stockLevel}"></td>
-        <td th:text="${product.image}"></td>
-        <td>
-            <ul>
-                <li th:each="category : ${product.categories}" th:text="${category.name}"></li>
-            </ul>
-        </td>
-    </tr>
+    </thead>
+    <tbody>
+    </tbody>
 </table>
 
 
+<script>
+    $(document).ready(function() {
+        $.getJSON("/products/list", function(data) {
+            var tableBody = $("#product-table tbody");
+            $.each(data, function(index, product) {
+                var row = $("<tr>")
+                    .append($("<td>").text(product.id))
+                    .append($("<td>").text(product.name))
+                    .append($("<td>").text(product.price))
+                    .append($("<td>").text(product.description))
+                    .append($("<td>").text(product.stockLevel))
+                    .append($("<td>").text(product.image))
+                    .append($("<td>").text(product.categories.map(function(category) {
+                        return category.name;
+                    }).join(", ")));
+                tableBody.append(row);
+            });
+        });
+    });
+</script>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
