@@ -19,17 +19,16 @@ public class UserService {
 
     public void save(User user) {
         if (userRepository.findByEmail(user.getEmail()) != null) {
-            throw new RuntimeException("User with this email already exists");
+            throw new RuntimeException("Email is already in use. Please use a different email.");
         }
-        BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
-        String encodedPassword= encoder.encode(user.getPassword());
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         user.setEnabled(true);
-        Role roleUser=roleRepository.findByName("User");
+        Role roleUser = roleRepository.findByName("User");
         user.addRole(roleUser);
         userRepository.save(user);
     }
-
     public User get(Long id) {
         return userRepository.findById(id).get();
     }

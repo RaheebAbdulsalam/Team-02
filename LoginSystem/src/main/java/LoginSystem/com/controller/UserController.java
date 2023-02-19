@@ -36,7 +36,7 @@ public class UserController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveProduct(@ModelAttribute("product") Product product) {
         productService.save(product);
-        return "redirect:/";
+        return "redirect:/account";
     }
 
     @RequestMapping("/edit/{id}")

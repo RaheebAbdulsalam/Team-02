@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 public class ProductService {
 	@Autowired
 	private ProductRepository repo;
-	
+	@Autowired
+	private ProductRepository productRepository;
+
 	public List<Product> listAll() {
 		return repo.findAll();
 	}
@@ -26,5 +28,9 @@ public class ProductService {
 	
 	public void delete(Long id) {
 		repo.deleteById(id);
+	}
+
+	public List<Product> search(String query) {
+		return productRepository.findByNameContainingIgnoreCase(query);
 	}
 }

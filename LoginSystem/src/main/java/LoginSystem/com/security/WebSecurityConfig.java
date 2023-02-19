@@ -37,6 +37,7 @@ public class WebSecurityConfig{
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.requestMatchers("/account").permitAll()
+				.requestMatchers("/search").permitAll()
 				.requestMatchers("/new").hasAnyAuthority("ADMIN")
 			.requestMatchers("/edit/**").hasAnyAuthority("ADMIN")
 			.requestMatchers("/delete/**").hasAuthority("ADMIN")
@@ -47,6 +48,8 @@ public class WebSecurityConfig{
 			.logout().logoutSuccessUrl("/").permitAll()
 			.and()
 			.exceptionHandling().accessDeniedPage("/error")
+				.and()
+				.csrf().disable();
 			;
 		return http.build();
 	}
