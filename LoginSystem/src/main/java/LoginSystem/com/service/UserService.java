@@ -18,6 +18,7 @@ public class UserService {
 
 
     public void save(User user) {
+        //check if email already exists
         if (userRepository.findByEmail(user.getEmail()) != null) {
             throw new RuntimeException("Email is already in use. Please use a different email.");
         }
