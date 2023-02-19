@@ -25,7 +25,31 @@ public class UserController {
         return "index";
     }
 
+    @RequestMapping("/register")
+    public String showNewUserForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "signup_form";
+    }
 
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+    public String saveUser(@ModelAttribute("user") User user) {
+        userService.save(user);
+        return "redirect:/login";
+    }
+
+    @RequestMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
+
+    @RequestMapping("/account")
+    public String accountPage(Model model){
+        List<Product> listProducts = productService.listAll();
+        model.addAttribute("listProducts", listProducts);
+        return "account";
+    }
+///////////////////Products///////////////////////////////////////
     @RequestMapping("/new")
     public String showNewProductForm(Model model) {
         Product product = new Product();
@@ -53,33 +77,9 @@ public class UserController {
     public String deleteProduct(@PathVariable(name = "id") Long id) {
         productService.delete(id);
 
-        return "redirect:/";
+        return "redirect:/account";
     }
 
 
-    ///////////////////////////////////////////////
-    @RequestMapping("/login")
-    public String loginPage(){
-        return "login";
-    }
 
-    @RequestMapping("/account")
-    public String accountPage(Model model){
-        List<Product> listProducts = productService.listAll();
-        model.addAttribute("listProducts", listProducts);
-        return "account";
-    }
-
-    @RequestMapping("/register")
-    public String showNewUserForm(Model model) {
-        User user = new User();
-        model.addAttribute("user", user);
-        return "signup_form";
-    }
-
-    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
-    public String saveUser(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "redirect:/login";
-    }
 }

@@ -5,8 +5,10 @@ import LoginSystem.com.model.User;
 import LoginSystem.com.repository.RoleRepository;
 import LoginSystem.com.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class UserService {
@@ -20,7 +22,7 @@ public class UserService {
     public void save(User user) {
         //check if email already exists
         if (userRepository.findByEmail(user.getEmail()) != null) {
-            throw new RuntimeException("Email is already in use. Please use a different email.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already exists!");
         }
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
