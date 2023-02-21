@@ -1,7 +1,7 @@
 <style>
-    *{
-        /* border: 1px solid red; */
-    }
+  html{
+    background-color: lightgrey;
+  }
     body {
         margin: 0 auto; /* set left and right margin to auto */
         max-width: 900px;
@@ -11,7 +11,7 @@
         height:150px;
     }
     nav{
-        background: #808080;
+        background: #171918;
         height: 80px;
         width: 100%;
         position:relative;
@@ -19,7 +19,7 @@
     label.logo{
         position:relative;
         right:30px;
-        color: #5D3FD3;
+        color: #009999;
         font-size: 35px;
         line-height: 80px;
         padding: 0 100px;
@@ -36,7 +36,7 @@
         margin: 0 5px;
     }
     nav ul li a{
-        color: #5D3FD3;
+        color: #009999;
         font-size: 17px;
         padding: 7px 13px;
         border-radius: 3px;
@@ -44,7 +44,8 @@
         text-decoration: none;
     }
 a.active,a:hover{
-  background:#E0E0E0;
+  background:#009999;
+  color: white;
   transition: .5s;
 }
   .checkbtn{
@@ -124,188 +125,346 @@ a.active,a:hover{
         flex-direction: row;
         position: relative;
         left:30px;
-        top:20px;
         width: 200px;
+
     }
     .container1 {
         display: flex;
         flex-direction: row;
         position: relative;
-        bottom:134px;
+        bottom:1046px;
         width: 200px;
         left: 245px;
+    
     }
     .container2 {
         display: flex;
         flex-direction: row;
         position: relative;
-        left: 460px;
-        bottom:290px;
+        left: 457px;
+        bottom:1327px;
         width: 200px;
+    
     }
     .container3 {
         display: flex;
         flex-direction: row;
         position: relative;
         left: 675px;
-        bottom:447px;
+        bottom:1606px;
         width: 200px;
+  
     }
-    .slideshow-container {
-      position: relative;
-    }
-    .slideshow-container1 {
-      position: relative;
-    }
-    .slideshow-container2 {
-      position: relative;
-    }
-    .slideshow-container3{
-      position: relative;
-    }
+
     .slideimages{
         width:200px;
+        height:230px;
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+    h5{
+      position:relative;
+      left: 400px;
+      bottom: 205px;
+      width:470px;
+    
+    }
+    .links{
+      position: relative;
+      top:40px;
+      padding-bottom: 10px;
+      left:55px;
+      display: block;
+      width:300px;
+      height:70px;
+    }
+    .links2{
+      position: relative;
+      left:55px;
+      padding-bottom: 10px;
+      top:40px;
+      display: block;
+      width:300px;
+      height:70px;
+    }
+    .links3{
+      position: relative;
+      left:55px;
+      top:40px;
+      display: block;
+      width:300px;
+      height:70px;
+    }
+    .links:hover{
+      filter: grayscale(100%);
+    }
+    .links2:hover{
+      filter: grayscale(100%);
+    }
+    .links3:hover{
+      filter: grayscale(100%);
+    }
+    section{
+      background-color: grey;
+    }
+    .lastofus{
+      height:450px;
+      filter: drop-shadow(0 0 1.00rem rgb(4, 4, 68));
+    }
+    .fa-xbox{
+      font-size: 4em;
+      color: #009999;
+      position:relative;
+      width:90px;
+      height:180px;
+      padding-top:16px;
+      padding-left:20px;
+      transition: 1.5s;
+      
+    }
+    .fa-playstation{
+      font-size: 4em;
+      color: #009999;
+      position:relative;
+      width:90px;
+      height:180px;
+      padding-top:16px;
+      padding-left:20px;
+      transition: 1.5s;
+    }
+    .xbox{
+      position:relative;  
+      transition: 1.5s;
+      margin-right: 5px;
+      border: 3px solid #009999;
+      border-radius: 5px;
+      width:110px;
+      height:100px;
+    }
+    .playstation{
+      position:relative;  
+      transition: 1.5s;
+      margin-right: 5px;
+      border: 3px solid #009999;
+      border-radius: 5px;
+      width:110px;
+      height:100px;
+    }
+    .xbox:hover{
+      height:200px;
+      width:200px;
+      backdrop-filter: blur(5px);
+    }
+    .playstation:hover{
+      height:200px;
+      width:200px;
+      backdrop-filter: blur(5px);
+    }
+    .fa-xbox:hover{
+      padding-left:60px;
+      width:135px;
+    }
+    .fa-playstation:hover{
+      padding-left:60px;
+      width:135px;
+    }
+    .section3{
+      display: flex;
+      position: relative;
+      padding:5px;
+      width:235px;
+      left:570px;
+      bottom:1370px;
+    }
+    .watch{
+      opacity: 0;
+      font-size: 13px;
+      position:relative;
+      right:55px;  
+      bottom:90px;
+      width:145px;
+      height:40px;
+      padding-left: 32px;
+      padding-top: 123px;
+    }
+    .watch:hover{
+      opacity:1;
+      transition:3s;
+    }
+    .welcomel{
+      position:relative;
+      color: #009999;
+      text-decoration: underline;
+      font-size: 70px;
+      width:300px;
+      bottom: 1270px;
+      left:500px;
+    }
+    .welcome2{
+      position:relative;
+      color: #009999;
+      text-decoration: overline;
+      text-decoration-thickness: 6px;
+      font-size: 50px;
+      width:350px;
+      bottom: 1324px;
+      left:620px;
+    }
+    .welcome3{
+      position:relative;
+      color: #009999;
+      font-size: 20px;
+      width:80px;
+      bottom: 1360px;
+      left:820px;
+    }
+    .keyfeatures{
+      background-color:#171918;
+      position:relative;
+      bottom:1278px;
     }
 </style>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>GameStation</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-      </head>
-    <body>
-        <img src="gamelogo1.png" alt="Description of the image">
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo">GameStation</label>
-            <ul>
-                <li><a class="active" href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Feedback</a></li>
-            </ul>
-        </nav>
-        <div class="container">
-            <div class="slideshow-container">
-              <div class="mySlides">
-                  <img src="game16.jpg" class="slideimages">
-              </div>
-              <div class="mySlides">
-                <img src="game12.jpg" class="slideimages">
-              </div>
-              <div class="mySlides">
-                <img src="game3.jpg" class="slideimages">
-              </div>
-            </div>    
-          </div>
-          <div class="container1">
-              <div class="slideshow-container1">
-                <div class="mySlidesa">
-                    <img src="game7.jpg" class="slideimages">
-                </div>
-                <div class="mySlidesa">
-                  <img src="game15.jpg" class="slideimages">
-                </div>
-                <div class="mySlidesa">
-                  <img src="game9.jpg" class="slideimages">
-                </div>
-              </div>    
-          </div>
-          <div class="container2">
-              <div class="slideshow-container2">
-                <div class="mySlidesb">
-                    <img src="game6.jpg" class="slideimages">
-                </div>
-                <div class="mySlidesb">
-                  <img src="game8.jpg" class="slideimages">
-                </div>
-                <div class="mySlidesb">
-                  <img src="game1.jpg" class="slideimages">
-                </div>
-              </div>    
-          </div>
-          <div class="container3">
-            <div class="slideshow-container3">
-              <div class="mySlidesc">
-                  <img src="game6.jpg" class="slideimages">
-              </div>
-              <div class="mySlidesc">
-                <img src="game8.jpg" class="slideimages">
-              </div>
-              <div class="mySlidesc">
-                <img src="game1.jpg" class="slideimages">
-              </div>
-            </div>    
+<head>
+  <script src="https://kit.fontawesome.com/b0ac23aea9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <img src="images/gamelogo1.png" alt="Description of the image">
+  <nav>
+
+    <label class="logo">GameStation</label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+  </nav>
+  <div style="background-color: white;">
+    <div class="container" style="background-color: white;">
+        <div class="mySlides">
+            <img src="images/game4.jpg" class="slideimages">
         </div>
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-          </div>
-          <script>
-              let slideIndex = 0;
-              showSlides();
-              let slideIndexa = 0;
-              showSlidesa();
-              let slideIndexb = 0;
-              showSlidesb();
-              let slideIndexc = 0;
-              showSlidesc();
+        <div class="mySlides">
+          <img src="images/game12.jpg" class="slideimages">
+        </div>
+        <div class="mySlides">
+          <img src="images/game3.jpg" class="slideimages">
+        </div>  
+    </div>
+    <section style="background-color:#171918; height:310px;">       
+      <img src="images/playstationlogo.jpg" class="links">
+      <img src="images/xboxlogo.jpg" class="links2">
+      <img src="images/nintendo.jpg" class="links3">
+      <h5 style="color:#009999;">Video games have become one of the most popular forms of entertainment around the world. There are several types of games available on different platforms, including PlayStation and Xbox. In this essay, we will discuss different types of games available on these two consoles.
+        <br><br>
+        First, let's talk about PlayStation. PlayStation is a gaming console produced by Sony. One of the most popular types of games available on PlayStation is action games. These games usually involve a lot of fighting and include games like "God of War," "Uncharted," and "The Last of Us." 
+        <br><br>
+        Another type of game available on PlayStation is sports games. These games simulate different sports and include games like "FIFA," "NBA 2K," and "Madden NFL." These games allow players to experience the excitement of different sports from the comfort of their homes.
+      </h5>
+    </section> 
+    <img src="images/lastofus.jpg" class="lastofus">
+    <div class="container1">
+        <div class="mySlidesa">
+          <img src="images/game8.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesa">
+          <img src="images/game15.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesa">
+          <img src="images/game9.jpg" class="slideimages">
+        </div>  
+    </div>
+    <div class="container2">
+        <div class="mySlidesb">
+          <img src="images/game6.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesb">
+          <img src="images/game7.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesb">
+          <img src="images/game1.jpg" class="slideimages">
+        </div>  
+    </div>
+    <div class="container3">
+        <div class="mySlidesc">
+            <img src="images/game4.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesc">
+          <img src="images/game18.jpg" class="slideimages">
+        </div>
+        <div class="mySlidesc">
+          <img src="images/game17.jpg" class="slideimages">
+        </div>
+    </div> 
+    <h1 class="welcomel">Welcome</h1>
+    <h1 class="welcome2">To The Last</h1>
+    <h1 class="welcome3">Of Us</h1>
+    <div class="section3">
+    <div class="xbox"><i class="fa-brands fa-xbox"><p class="watch"><b>Watch trailer</b></p></i></div>
+    <div class="playstation"><i class="fa-brands fa-playstation"><p class="watch"><b>Watch trailer</b></p></i></div>
+    </div>
+  </div>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    let slideIndexa = 0;
+    showSlidesa();
+    let slideIndexb = 0;
+    showSlidesb();
+    let slideIndexc = 0;
+    showSlidesc();
           
-              function showSlides() {
-                  let i;
-                  let slides = document.getElementsByClassName("mySlides");
-                  let dots = document.getElementsByClassName("dot");
-                  for (i = 0; i < slides.length; i++) {
-                      slides[i].style.display = "none";  
-                  }
-                  slideIndex++;
-                  if (slideIndex > slides.length) {slideIndex = 1}    
-                  for (i = 0; i < dots.length; i++) {
-                      dots[i].className = dots[i].className.replace(" active", "");
-                  }
-                  slides[slideIndex-1].style.display = "block";  
-                  dots[slideIndex-1].className += " active";
-                  setTimeout(showSlides, 2000); // Change image every 2 seconds
-              }     
-              function showSlidesa() {
-                  let ia;
-                  let slidesa = document.getElementsByClassName("mySlidesa");
-                  for (ia = 0; ia < slidesa.length; ia++) {
-                      slidesa[ia].style.display = "none";  
-                  }
-                  slideIndexa++;
-                  if (slideIndexa > slidesa.length) {slideIndexa = 1} 
-                  slidesa[slideIndexa-1].style.display = "block";  
-                  setTimeout(showSlidesa, 2000); // Change image every 2 seconds
-              }
-              function showSlidesb() {
-                  let ib;
-                  let slidesb = document.getElementsByClassName("mySlidesb");
-                  for (ib = 0; ib < slidesb.length; ib++) {
-                      slidesb[ib].style.display = "none";  
-                  }
-                  slideIndexb++;
-                  if (slideIndexb > slidesb.length) {slideIndexb = 1} 
-                  slidesb[slideIndexb-1].style.display = "block";  
-                  setTimeout(showSlidesb, 2000); // Change image every 2 seconds
-              }
-              function showSlidesc() {
-                  let ic;
-                  let slidesc = document.getElementsByClassName("mySlidesc");
-                  for (ic = 0; ic < slidesc.length; ic++) {
-                      slidesc[ic].style.display = "none";  
-                  }
-                  slideIndexc++;
-                  if (slideIndexc > slidesc.length) {slideIndexc = 1} 
-                  slidesc[slideIndexc-1].style.display = "block";  
-                  setTimeout(showSlidesc, 2000); // Change image every 2 seconds
-              }
-          </script>
-    </body>
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+               
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 2000); // Change image every 2 secon
+    }     
+    function showSlidesa() {
+      let ia;
+      let slidesa = document.getElementsByClassName("mySlidesa");
+      for (ia = 0; ia < slidesa.length; ia++) {
+          slidesa[ia].style.display = "none";  
+      }
+      slideIndexa++;
+      if (slideIndexa > slidesa.length) {slideIndexa = 1} 
+      slidesa[slideIndexa-1].style.display = "block";  
+      setTimeout(showSlidesa, 2000); // Change image every 2 seconds
+    }
+    function showSlidesb() {
+      let ib;
+      let slidesb = document.getElementsByClassName("mySlidesb");
+      for (ib = 0; ib < slidesb.length; ib++) {
+          slidesb[ib].style.display = "none";  
+      }
+      slideIndexb++;
+      if (slideIndexb > slidesb.length) {slideIndexb = 1} 
+      slidesb[slideIndexb-1].style.display = "block";  
+      setTimeout(showSlidesb, 2000); // Change image every 2 seconds
+    }
+    function showSlidesc() {
+      let ic;
+      let slidesc = document.getElementsByClassName("mySlidesc");
+      for (ic = 0; ic < slidesc.length; ic++) {
+          slidesc[ic].style.display = "none";  
+      }
+      slideIndexc++;
+      if (slideIndexc > slidesc.length) {slideIndexc = 1} 
+      slidesc[slideIndexc-1].style.display = "block";  
+      setTimeout(showSlidesc, 2000); // Change image every 2 seconds
+    }
+  </script>
+    <div class="keyfeatures">
+      <p>hery</p>
+          </div>
+</body>
 </html>
