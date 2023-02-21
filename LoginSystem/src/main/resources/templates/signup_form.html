@@ -22,6 +22,7 @@
         <input type="submit" value="Submit">
     </form>
     <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+    <!-- Display an error message if email is already exists-->
     <p th:text="${error}" style="color: red;"></p>
 </div>
 
