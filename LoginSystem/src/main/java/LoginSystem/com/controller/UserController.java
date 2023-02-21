@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.server.ResponseStatusException;
 
 @Controller
 public class UserController {
@@ -33,10 +33,16 @@ public class UserController {
     }
 
     @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
-    public String saveUser(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "redirect:/login";
+    public String saveUser(@ModelAttribute("user") User user, Model model) {
+        try {
+            userService.save(user);
+            return "redirect:/login";
+        } catch (ResponseStatusException e) {
+            model.addAttribute("error", e.getReason());
+            return "signup_form";
+        }
     }
+
 
     @RequestMapping("/login")
     public String loginPage(){
@@ -49,37 +55,13 @@ public class UserController {
         model.addAttribute("listProducts", listProducts);
         return "account";
     }
-///////////////////Products///////////////////////////////////////
-    @RequestMapping("/new")
-    public String showNewProductForm(Model model) {
-        Product product = new Product();
-        model.addAttribute("product", product);
-        return "new_product";
+
+    @RequestMapping("/adminPanel")
+    public String adminPage(Model model){
+        List<Product> listProducts = productService.listAll();
+        model.addAttribute("listProducts", listProducts);
+        return "adminPanel";
     }
-
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") Product product) {
-        productService.save(product);
-        return "redirect:/account";
-    }
-
-    @RequestMapping("/edit/{id}")
-    public ModelAndView showEditProductForm(@PathVariable(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView("edit_product");
-
-        Product product = productService.get(id);
-        mav.addObject("product", product);
-
-        return mav;
-    }
-
-    @RequestMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable(name = "id") Long id) {
-        productService.delete(id);
-
-        return "redirect:/account";
-    }
-
 
 
 }
