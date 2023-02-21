@@ -227,12 +227,16 @@
   .links a{
     text-decoration: none ;
   }
+
+  /* About us page styling */
+  
   .aboutus{
     background-image: url('Images/About.png');
-    height: 600px;
+    height: 300px;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-position: center center; */
+    background-size: cover;
   }
   .aboutus .story{
     height: 350px;
@@ -245,9 +249,9 @@
     ), linear-gradient(127deg, rgba(136, 1, 138, 0.8), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
     border-radius: 5%;
-    position: absolute;
+    /* position: absolute;
     top: 20%;
-    left: 10%;
+    left: 10%; */
   }
   .aboutus .story p{
     text-align: justify;
