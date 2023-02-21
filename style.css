@@ -227,6 +227,10 @@
   .links a{
     text-decoration: none ;
   }
+  .links{
+    margin-top: 300px;
+    justify-content: center;
+  }
 
   /* About us page styling */
   
@@ -235,11 +239,11 @@
     height: 300px;
     width: 100%;
     background-repeat: no-repeat;
-    /* background-position: center center; */
+    background-position: center center;
     background-size: cover;
   }
   .aboutus .story{
-    height: 350px;
+    /* height: 350px; */
     width: 450px;
     font-size: 15px;
     background: linear-gradient(
@@ -252,10 +256,30 @@
     /* position: absolute;
     top: 20%;
     left: 10%; */
+    margin-right: 10%;
+    margin-left: 10%;
+   
+
   }
   .aboutus .story p{
     text-align: justify;
     padding: 30px;
     justify-content: center;
+    font-size:x-small;
+    /* margin-top: 10%; */
+   }
+   .value-details{
+    background-color: #c9e1f7;
+   }
+   .value-details p{
+   
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-content: center;
+    text-align: justify;
+
    }
   
