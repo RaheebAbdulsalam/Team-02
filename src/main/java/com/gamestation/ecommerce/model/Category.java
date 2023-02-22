@@ -1,8 +1,8 @@
 package com.gamestation.ecommerce.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.gamestation.ecommerce.model.Product;
 import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -16,6 +16,17 @@ public class Category {
     private String name;
     private String description;
     private String image;
+
+    @Transient
+    private MultipartFile imageFile; // Accepts the uploaded image file from the client-side.
+
+    public MultipartFile getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(MultipartFile imageFile) {
+        this.imageFile = imageFile;
+    }
 
     @ManyToMany(mappedBy = "categories")
     @JsonBackReference
