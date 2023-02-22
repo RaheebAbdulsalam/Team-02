@@ -16,6 +16,7 @@ public class SearchController {
     @Autowired
     private ProductService productService;
 
+    //A function to search for a product on the website
     @GetMapping("/search")
     public String search(@RequestParam("query") String query, Model model) {
         List<Product> products = productService.search(query);
