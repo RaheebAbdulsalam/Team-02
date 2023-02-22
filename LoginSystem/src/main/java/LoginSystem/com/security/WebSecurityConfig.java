@@ -38,6 +38,7 @@ public class WebSecurityConfig{
 		http.authorizeRequests()
 				.requestMatchers("/search").permitAll()
 				.requestMatchers("/account").hasAnyAuthority("USER","ADMIN")
+				.requestMatchers("/profile").hasAnyAuthority("USER","ADMIN")
 				.requestMatchers("/adminPanel").hasAnyAuthority("ADMIN")
 				.requestMatchers("/new").hasAnyAuthority("ADMIN")
 			.requestMatchers("/edit/**").hasAnyAuthority("ADMIN")

@@ -7,6 +7,10 @@ import org.springframework.data.repository.query.Param;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 	User findByEmail(String email);
+
+	User findByUsername(String username);
 	@Query("SELECT u FROM User u WHERE u.username = :username")
 	User getUserByUsername(@Param("username") String username);
+
+
 }
