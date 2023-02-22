@@ -1,5 +1,6 @@
 package LoginSystem.com.security;
 
+import LoginSystem.com.configration.LoginSuccessHandler;
 import LoginSystem.com.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +33,6 @@ public class WebSecurityConfig{
 		return authProvider;
 	}
 
-
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
@@ -44,7 +44,7 @@ public class WebSecurityConfig{
 			.requestMatchers("/delete/**").hasAuthority("ADMIN")
 			.anyRequest().permitAll()
 			.and()
-			.formLogin().loginPage("/login").defaultSuccessUrl("/account").permitAll()
+			.formLogin().loginPage("/login").successHandler(new LoginSuccessHandler()).defaultSuccessUrl("/account").permitAll()
 			.and()
 			.logout().logoutSuccessUrl("/").permitAll()
 			.and()

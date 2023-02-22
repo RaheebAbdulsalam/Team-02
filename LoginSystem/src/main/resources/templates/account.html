@@ -37,7 +37,7 @@
       <th>Made In</th>
       <th>Price</th>
 
-      <th sec:authorize="hasAnyAuthority('ADMIN')">Actions</th>
+     <!-- <th sec:authorize="hasAnyAuthority('ADMIN')">Actions</th>-->
 
     </tr>
     </thead>
@@ -49,14 +49,16 @@
       <td th:text="${product.madein}">Made in</td>
       <td th:text="${product.price}">Price</td>
 
-      <td sec:authorize="hasAnyAuthority('ADMIN')">
+     <!-- <td sec:authorize="hasAnyAuthority('ADMIN')">
         <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a sec:authorize="hasAuthority('ADMIN')" th:href="@{'/delete/' + ${product.id}}">Delete</a>
-      </td>
+      </td>-->
     </tr>
     </tbody>
   </table>
+
+
 </div>
 </body>
 </html>
