@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Catalog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1>Product Catalog</h1>
+  <hr>
+  <div class="row">
+    <div class="col-sm-4 mb-4" th:each="product : ${products}">
+      <div class="card">
+        <img th:src="@{|${product.image}|}" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 th:text="${product.name}" class="card-title"></h5>
+          <p th:text="${product.description}" class="card-text"></p>
+          <p th:text="${product.price}" class="card-text">$</p>
+          <a th:href="@{/buy(productId=${product.id})}" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
