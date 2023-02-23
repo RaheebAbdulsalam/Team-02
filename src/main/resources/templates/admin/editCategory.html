@@ -162,22 +162,24 @@
                     <div class="col-lg-4">
                         <h1>Edit Category: </h1>
                         <br>
-                        <form th:object="${category}" th:action="@{/admin/category/edit/{id}(id=${category.id})}" th:method="post" enctype="multipart/form-data">
-                            <input type="hidden" th:field="*{id}" />
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" th:field="*{name}" />
-                            </div>
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="image">Image</label>
-                                <input type="file" class="custom-file-input" name="image" id="image" th:field="*{imageFile}"/>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update Category</button>
-                        </form>
+                        <div class="form">
+                            <form class="form1" th:object="${category}" th:action="@{/admin/category/edit/{id}(id=${category.id})}" th:method="post" enctype="multipart/form-data">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" th:field="*{name}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="file" class="custom-file-input" name="image" id="image" th:field="*{imageFile}"/>
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-info">Save</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ package com.gamestation.ecommerce.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -28,6 +29,17 @@ public class Product {
     private Integer stockLevel;
 
     private String image;
+
+    @Transient
+    private MultipartFile imageFile; // Accepts the uploaded image file from the client-side.
+
+    public MultipartFile getImageFile() {
+        return imageFile;
+    }
+
+    public void setImageFile(MultipartFile imageFile) {
+        this.imageFile = imageFile;
+    }
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JsonManagedReference
