@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<style>
+  .nav-item {
+    padding-left:10px;
+    padding-right: 5px;
+  }
+.form-control.placeholder-width {
+    width: 430px;
+}
+  
+  @media (max-width: 991px) {
+    .form-control.placeholder-width {
+      width: 550px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-control.placeholder-width {
+      width: 370px;
+    }
+    .custom-navbar2 .search-input {
+      width: 50%;
+    }
+  }
+  /* .carousel {
+    height: 400px;
+  } */
+  .category a {
+    /* background-image: url(''); */
+    text-align: center;
+    color: rgb(233, 184, 218);
+    text-decoration: none;
+
+  }
+  .category a:hover{
+    text-align: center;
+    color: rgb(0, 238, 255);
+    text-decoration: none;
+  }
+
+
+  .categories li{
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+
+    padding: 10px;
+    height: 250px;
+    width: 250px;
+    /* background-color: black; */
+    border-radius: 50%;
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    /* justify-content: first baseline; */
+    /* backdrop-filter: blur(10px); */
+    text-align: center;
+
+  }
+ 
+  /* .categories ul {
+    /* margin-bottom: 50px; */
+    /* padding: 20px; */
+    /* margin-left: 20px; */
+    /* text-align: center; */
+
+   
+  .categories img{
+    display: inline-block;
+    list-style-type: none;
+    /* margin: 20px; */
+    /* padding: 1px; */
+    height: 200px;
+    width: 200px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 50%;
+    /* border: 3px; */
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    /* margin-bottom: 10px; */
+    /* justify-content: first baseline; */
+    object-fit: cover;
+    z-index: -100;
+    border: 3px solid transparent;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5); 
+    transition: transform 0.2s ease-out;
+  }
+  .categories img:hover{
+    transform: translateY(-15px);
+
+  }
+
+
+
+  .category_block_header h2{
+    background: linear-gradient( rgb(1, 25, 86),aliceblue);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 2px;
+    font-size: xx-large;
+    padding: 10px;
+  }
+  @media (max-width: 991px) {
+    .categories img{
+        height: 170px;
+        width: 170px;
+    }
+    .categories li{
+      height: 170px;
+      width: 170px;
+  }
+
+  }
+  
+
+  .category_block{
+    text-align: center;
+    background-color: #000000;
+    background: linear-gradient(black, rgb(127, 4, 215));
+    padding: 20px;
+  }
+  .category_block ul{
+    text-align: center;
+  }
+.video {
+    min-width: 100%;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+  
+  }
+  .custom-navbar2{
+    background-color: #000000;
+   
+  }
+  .custom-navbar1{
+    background-color: #000000;
+    background: linear-gradient(black, rgb(127, 4, 215));
+  }
+  .custom-navbar2 .search-input {
+    min-width: 385px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  .custom-navbar2 .search-btn{
+    background-color: black;
+    color:  rgb(25, 102, 217);
+    border: 1px solid rgb(25, 102, 217);
+
+  }
+  .custom-navbar2 .search-btn:hover{
+    background-color: rgb(25, 102, 217);
+    color: #000000;
+  }
+  /* .custom-navbar1 .navbarNav .nav-item .fas {
+    width: 200px;
+    height: 20px;
+  } */
+  /* .carousel .carousel-item img{
+    display: inline-block;
+    height: 30%;
+    width: 100%;
+  } */
+  .carousel-dark .carousel-item img {
+    max-width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .carousel-dark .carousel-item img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .video {
+      height: 70px;
+
+    }
+  }
+  .trend-card{
+    margin: 10px;
+    margin-top: 10px;
+  }
+  .trend-card img{
+    max-height: 350px;
+    object-fit: cover;
+    border: 2px solid gray;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-out;  
+  }
+  .trend-card img:hover {
+    transform: translateY(-15px);
+  }
+  .card.h-100{
+    background-color: #000000;
+    color: aliceblue;
+  }
+  .card.h-100 .card-body a{
+    background-color: black;
+    color:  rgb(25, 102, 217);
+    border: 1px solid rgb(25, 102, 217);
+
+  }
+  .card.h-100 .card-body a:hover{
+    background-color: rgb(25, 102, 217);
+    color: #000000; 
+
+  }
+  .card.h-100 .card-footer{
+    background-color: rgba(34, 34, 34, 0.581);
+  
+  }
+  .footer1 {
+    text-decoration: none ;
+    padding: 20px;
+    background: linear-gradient(rgb(32, 30, 40),rgb(127, 4, 215));
+
+  }
+  .links a{
+    text-decoration: none ;
+  }
+  .aboutus{
+    background-image: url('Images/About.png');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .aboutus .story{
+    height: 350px;
+    width: 450px;
+    font-size: 15px;
+    background: linear-gradient(
+      217deg,
+      rgba(255, 0, 179, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ), linear-gradient(127deg, rgba(136, 1, 138, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    border-radius: 5%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .aboutus .story p{
+    text-align: justify;
+    padding: 30px;
+    justify-content: center;
+   }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container-fluid border">
+        <!-- First Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="home.html">
+                <img src="" alt="" width="20" height="20" class="d-inline-block align-text-top">
+                GameStation 
+              </a>
+              
+                <!-- <form class="d-flex"> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Orders</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                      </li>
+                    </ul>
+                </div>
+                <!-- </form>  -->
+            </div>
+          </nav>
+
+    
+        
+          <!-- Second Navigation Bar includes Search -->
+          <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Video Games</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Accessories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Devices</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Consoles</a>
+                  </li>
+                </ul>
+                <form class="d-flex search-form">
+                  <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success search-btn"  type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <!--  End of Search Tab -->
+
+          <!-- Game station Banner -->
+        <video loop autoplay muted class="video">
+            <source src="Videos/GameStationWebsite2.mp4" type="video/mp4">
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Gaming Adverts carousel -->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <img src="Images/1.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Images/2.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="Images/3.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Categories Image Links -->
+       <div class="category_block_header">
+        <h2>Categories</h2>
+       </div>
+        <div class="category_block">
+            <ul class="categories">
+                <li class="category">
+                    <a href="#"> 
+                    <img src="Images/VideoGame.jpeg" alt="">
+                    Online Video games
+                    </a>
+                    
+                </li>
+                <li class="category">
+                    <a href="#"> 
+                        <img src="Images/download.jpeg" alt="">
+                        Video Games
+                    </a>
+                   
+                </li>
+                <li class="category">
+                    <a href="#"> 
+                    <img src="Images/images.jpeg" alt="">
+                    Accessories
+                    </a>
+                </li>
+                <li class="category">
+                    <a href="#"> 
+                        <img src="Images/OIP.jpeg" alt="">
+                        Devices
+                    </a>
+                </li>
+                <li class="category">
+                    <a href="#"> 
+                        <img src="Images/consol.jpg" alt="">
+                        Consoles
+                    </a>
+                </li>
+              </ul>
+        </div>
+
+        <!-- Trending Deals  -->
+        <div class="category_block_header">
+          <h2>Trending Deals </h2>
+         </div>
+        
+        <div class="row row-cols-2 row-cols-md-4 g-4 trend-card">
+            <div class="col">
+              <div class="card h-100">
+                <img src="Images/product1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Atomic Hearts £50</h5>
+                  <p class="card-text">Format: PlayStation 5 | Age Rating: PEGI-18 <br>
+                    Stock status: In Stock <br>
+                    Delivery: FREE UK Royal Mail 1st Class delivery on this item.</p>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="Images/product2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Scars Above  £45</h5>
+                  <p class="card-text">Format: PlayStation 5 | Age Rating: PEGI-16 <br>
+                    Stock status: In Stock <br>
+                    Delivery: FREE UK Royal Mail 1st Class delivery on this item.</p>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                  <img src="Images/product3.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">The Legend of Zelda  £65</h5>
+                    <p class="card-text">Format: PlayStation 5 | Age Rating: PEGI-16 <br>
+                      Stock status: In Stock <br>
+                      Delivery: FREE UK Royal Mail 1st Class delivery on this item.</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+                  <div class="card-footer">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+                </div>
+              </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="Images/44454_sm.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">HOGWARTS Legacy £110</h5>
+                  <p class="card-text">Format: Xbox Series X | S | Publisher: Warner | Age Rating: PEGI-16 <br>
+                    Stock status: In Stock <br>
+                    Delivery: FREE UK Royal Mail 1st Class delivery on this item </p>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white footer1" >
+            <!-- Grid container -->
+            
+        
+            <!-- Section: Links -->
+            <section class="myfooter">
+                <!--Grid row-->
+                <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-5 col-md-4 mb-4 mb-md-0 links">
+                    <h5 class="text-uppercase">Links</h5>
+        
+                    <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#!" class="text-white">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Products</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="text-white">Login</a>
+                    </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <div class="col-lg-7 col-md-8 mb-4 mb-md-0">
+                    <div class="container p-4">
+                        <!-- Section: Social media -->
+                        <section class="mb-4">
+                            <!-- Facebook -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-facebook-f"></i
+                            ></a>
+                    
+                            <!-- Twitter -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
+                    
+                            <!-- Google -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-google"></i
+                            ></a>
+                    
+                            <!-- Instagram -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+                    
+                            <!-- Linkedin -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                    
+                            <!-- Github -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-github"></i
+                            ></a>
+                        </section>
+                        <!-- Section: Social media -->
+                    
+                        <!-- Section: Form -->
+                        <section class="">
+                            <form action="">
+                            <!--Grid row-->
+                            <div class="row d-flex justify-content-center">
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up to our newsletter</strong>
+                                </p>
+                                </div>
+                                <!--Grid column-->
+                    
+                                <!--Grid column-->
+                                <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" />
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                                </div>
+                                <!--Grid column-->
+                    
+                                <!--Grid column-->
+                                <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                                </div>
+                                <!--Grid column-->
+                            </div>
+                            <!--Grid row-->
+                            </form>
+                        </section>
+                        <!-- Section: Form -->
+                    
+                        <!-- Section: Text -->
+                        <section class="mb-4">
+                            <p>
+                              Thank you for  visiting our website !  Pleae checkout ur products and get the most exclusive and trending games at the best and most affordable prices !
+                           
+                            </p>
+                        </section>
+                        <!-- Section: Text -->
+
+                </div>
+
+        
+                
+                <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+        
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">GamseStation</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+      </div>
+            
+           
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
