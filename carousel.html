@@ -8,10 +8,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
+
 .navbar {
     transition: all 0.4s;
 }
@@ -133,12 +136,12 @@ h2::after {
 	margin-bottom: 5px;
 }
 .carousel .thumb-content .btn {
-	color: #7ac400;
+	color: purple;
 	font-size: 11px;
 	text-transform: uppercase;
 	font-weight: bold;
 	background: none;
-	border: 1px solid #7ac400;
+	border: 1px solid purple;
 	padding: 6px 14px;
 	margin-top: 5px;
 	line-height: 16px;
@@ -146,7 +149,7 @@ h2::after {
 }
 .carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
 	color: #fff;
-	background: #7ac400;
+	background: purple;
 	box-shadow: none;
 }
 .carousel .thumb-content .btn i {
@@ -219,18 +222,17 @@ h2::after {
 	color: #abb0b8;
 }
 .carousel .wish-icon .fa-heart {
-	color: #ff6161;
+	color: purple;
 }
 .star-rating li {
 	padding: 0;
 }
 .star-rating i {
 	font-size: 14px;
-	color: #ffc000;
+	color: purple;
 }
 .container-xl{
     position:relative;
-    top:40px;
 }
 body{background:#eee}
 .ratings i{font-size: 16px;color: red}
@@ -405,6 +407,273 @@ ol, ul {
     margin: 0;
     padding: 0;
 }
+.nav-item {
+    padding-left:10px;
+    padding-right: 5px;
+  }
+.form-control.placeholder-width {
+    width: 430px;
+}
+  
+  @media (max-width: 991px) {
+    .form-control.placeholder-width {
+      width: 550px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-control.placeholder-width {
+      width: 370px;
+    }
+    .custom-navbar2 .search-input {
+      width: 50%;
+    }
+  }
+  /* .carousel {
+    height: 400px;
+  } */
+  .category a {
+    /* background-image: url(''); */
+    text-align: center;
+    color: rgb(233, 184, 218);
+    text-decoration: none;
+
+  }
+  .category a:hover{
+    text-align: center;
+    color: rgb(0, 238, 255);
+    text-decoration: none;
+  }
+
+
+  .categories li{
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+
+    padding: 10px;
+    height: 250px;
+    width: 250px;
+    /* background-color: black; */
+    border-radius: 50%;
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    /* justify-content: first baseline; */
+    /* backdrop-filter: blur(10px); */
+    text-align: center;
+
+  }
+ 
+  /* .categories ul {
+    /* margin-bottom: 50px; */
+    /* padding: 20px; */
+    /* margin-left: 20px; */
+    /* text-align: center; */
+
+   
+  .categories img{
+    display: inline-block;
+    list-style-type: none;
+    /* margin: 20px; */
+    /* padding: 1px; */
+    height: 200px;
+    width: 200px;
+    background-color: rgb(249, 249, 249);
+    border-radius: 50%;
+    /* border: 3px; */
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    /* margin-bottom: 10px; */
+    /* justify-content: first baseline; */
+    object-fit: cover;
+    z-index: -100;
+    border: 3px solid transparent;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5); 
+    transition: transform 0.2s ease-out;
+  }
+  .categories img:hover{
+    transform: translateY(-15px);
+
+  }
+
+
+
+  .category_block_header h2{
+    background: linear-gradient( rgb(1, 25, 86),aliceblue);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 2px;
+    font-size: xx-large;
+    padding: 10px;
+  }
+  @media (max-width: 991px) {
+    .categories img{
+        height: 170px;
+        width: 170px;
+    }
+    .categories li{
+      height: 170px;
+      width: 170px;
+  }
+
+  }
+  
+
+  .category_block{
+    text-align: center;
+    background-color: #000000;
+    background: linear-gradient(black, rgb(127, 4, 215));
+    padding: 20px;
+  }
+  .category_block ul{
+    text-align: center;
+  }
+.video {
+    min-width: 100%;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    z-index: -100;
+  
+  }
+  .custom-navbar2{
+    background-color: #000000;
+   
+  }
+  .custom-navbar1{
+    background-color: #000000;
+    background: linear-gradient(black, rgb(127, 4, 215));
+  }
+  .custom-navbar2 .search-input {
+    min-width: 385px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  .custom-navbar2 .search-btn{
+    background-color: black;
+    color:  rgb(25, 102, 217);
+    border: 1px solid rgb(25, 102, 217);
+
+  }
+  .custom-navbar2 .search-btn:hover{
+    background-color: rgb(25, 102, 217);
+    color: #000000;
+  }
+  /* .custom-navbar1 .navbarNav .nav-item .fas {
+    width: 200px;
+    height: 20px;
+  } */
+  /* .carousel .carousel-item img{
+    display: inline-block;
+    height: 30%;
+    width: 100%;
+  } */
+  .carousel-dark .carousel-item img {
+    max-width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .carousel-dark .carousel-item img {
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .video {
+      height: 70px;
+
+    }
+  }
+  .trend-card{
+    margin: 10px;
+    margin-top: 10px;
+  }
+  .trend-card img{
+    max-height: 350px;
+    object-fit: cover;
+    border: 2px solid gray;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-out;  
+  }
+  .trend-card img:hover {
+    transform: translateY(-15px);
+  }
+  .card.h-100{
+    background-color: #000000;
+    color: aliceblue;
+  }
+  .card.h-100 .card-body a{
+    background-color: black;
+    color:  rgb(25, 102, 217);
+    border: 1px solid rgb(25, 102, 217);
+
+  }
+  .card.h-100 .card-body a:hover{
+    background-color: rgb(25, 102, 217);
+    color: #000000; 
+
+  }
+  .card.h-100 .card-footer{
+    background-color: rgba(34, 34, 34, 0.581);
+  
+  }
+  .footer1 {
+    text-decoration: none ;
+    padding: 20px;
+    background: linear-gradient(rgb(32, 30, 40),rgb(127, 4, 215));
+
+  }
+  .links a{
+    text-decoration: none ;
+  }
+  .aboutus{
+    background-image: url('Images/About.png');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .aboutus .story{
+    height: 350px;
+    width: 450px;
+    font-size: 15px;
+    background: linear-gradient(
+      217deg,
+      rgba(255, 0, 179, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ), linear-gradient(127deg, rgba(136, 1, 138, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    border-radius: 5%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .aboutus .story p{
+    text-align: justify;
+    padding: 30px;
+    justify-content: center;
+   }
+.row{
+	background: linear-gradient(to top, black 0%, purple 100%);
+}
+.mb-5{
+	position:relative;
+	bottom: 40px;
+}
+.bg-dark text-center text-white footer1{
+	position:relative;
+	bottom:20px;
+}
+.mb-4aa{
+	position:relative;
+	left:226px;
+}
 </style>
 <script>
     $(function () {
@@ -426,26 +695,100 @@ $(document).ready(function(){
 <body>
     <!-- Navbar-->
 <header class="header">
-    <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">Transparent Nav</a>
-            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
-            
-            <div id="navbarSupportedContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
-                </ul>
+    <div class="container-fluid border">
+        <!-- First Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="home.html">
+                <img src="" alt="" width="20" height="20" class="d-inline-block align-text-top">
+                GameStation 
+              </a>
+              
+                <!-- <form class="d-flex"> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Orders</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                      </li>
+                    </ul>
+                </div>
+                <!-- </form>  -->
             </div>
-        </div>
-    </nav>
+          </nav>
+
+    
+        
+          <!-- Second Navigation Bar includes Search -->
+          <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Video Games</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Accessories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Devices</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Consoles</a>
+                  </li>
+                </ul>
+                <form class="d-flex search-form">
+                  <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success search-btn"  type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <!--  End of Search Tab -->
+
+          <!-- Game station Banner -->
+        <video loop autoplay muted class="video">
+            <source src="GameStationWebsite.mp4" type="video/mp4">
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+            Your browser does not support the video tag.
+        </video>
+	</div>
 </header>
 <div class="container-xl">
 	<div class="row">
 		<div class="col-md-12">
-			<h2>Featured <b>Products</b></h2>
+			<h2 style="color:white;">Featured <b style="color:white;">Products</b></h2>
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
 			<!-- Carousel indicators -->
 			<ol class="carousel-indicators">
@@ -464,7 +807,7 @@ $(document).ready(function(){
 									<img src="/examples/images/products/ipad.jpg" class="img-fluid" alt="">									
 								</div>
 								<div class="thumb-content">
-									<h4>Apple iPad</h4>									
+									<h4 style="color:purple;">Apple iPad</h4>									
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -474,8 +817,8 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<p class="item-price"><strike style="color:purple;" >$400.00</strike> <b style="color:purple;">$369.00</b></p>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>
@@ -486,7 +829,7 @@ $(document).ready(function(){
 									<img src="/examples/images/products/headphone.jpg" class="img-fluid" alt="Headphone">
 								</div>
 								<div class="thumb-content">
-									<h4>Sony Headphone</h4>									
+									<h4 style="color:purple;">Sony Headphone</h4>									
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -496,7 +839,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<p class="item-price"><strike>$25.00</strike> <b>$23.99</b></p>
+									<p class="item-price"><strike style="color:purple;">$25.00</strike> <b style="color:purple;">$23.99</b></p>
 									<a href="#" class="btn btn-primary">Add to Cart</a>
 								</div>						
 							</div>
@@ -508,7 +851,7 @@ $(document).ready(function(){
 									<img src="/examples/images/products/macbook-air.jpg" class="img-fluid" alt="Macbook">
 								</div>
 								<div class="thumb-content">
-									<h4>Macbook Air</h4>									
+									<h4 style="color:purple;">Macbook Air</h4>									
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -518,8 +861,8 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<p class="item-price"><strike>$899.00</strike> <b>$649.00</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<p class="item-price"><strike style="color:purple;">$899.00</strike> <b style="color:purple;">$649.00</b></p>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>								
@@ -530,7 +873,7 @@ $(document).ready(function(){
 									<img src="/examples/images/products/nikon.jpg" class="img-fluid" alt="Nikon">
 								</div>
 								<div class="thumb-content">
-									<h4>Nikon DSLR</h4>									
+									<h4 style="color:purple;">Nikon DSLR</h4>									
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -540,8 +883,8 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<p class="item-price"><strike>$315.00</strike> <b>$250.00</b></p>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<p class="item-price"><strike style="color:purple;">$315.00</strike> <b style="color:purple;">$250.00</b></p>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>
@@ -556,8 +899,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/play-station.jpg" class="img-fluid" alt="Play Station">
 								</div>
 								<div class="thumb-content">
-									<h4>Sony Play Station</h4>
-									<p class="item-price"><strike>$289.00</strike> <span>$269.00</span></p>
+									<h4 style="color:purple;">Sony Play Station</h4>
+									<p class="item-price"><strike style="color:purple;">$289.00</strike> <span style="color:purple;">$269.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -567,7 +910,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>
@@ -578,8 +921,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/macbook-pro.jpg" class="img-fluid" alt="Macbook">
 								</div>
 								<div class="thumb-content">
-									<h4>Macbook Pro</h4>
-									<p class="item-price"><strike>$1099.00</strike> <span>$869.00</span></p>
+									<h4 style="color:purple;">Macbook Pro</h4>
+									<p class="item-price"><strike style="color:purple;">$1099.00</strike> <span style="color:purple;">$869.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -589,7 +932,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>
@@ -600,8 +943,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/speaker.jpg" class="img-fluid" alt="Speaker">
 								</div>
 								<div class="thumb-content">
-									<h4>Bose Speaker</h4>
-									<p class="item-price"><strike>$109.00</strike> <span>$99.00</span></p>
+									<h4 style="color:purple;">Bose Speaker</h4>
+									<p class="item-price"><strike style="color:purple;">$109.00</strike> <span style="color:purple;">$99.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -622,8 +965,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/galaxy.jpg" class="img-fluid" alt="Galaxy">
 								</div>
 								<div class="thumb-content">
-									<h4>Samsung Galaxy S8</h4>
-									<p class="item-price"><strike>$599.00</strike> <span>$569.00</span></p>
+									<h4 style="color:purple;">Samsung Galaxy S8</h4>
+									<p class="item-price"><strike style="color:purple;">$599.00</strike> <span style="color:purple;">$569.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -633,7 +976,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>						
@@ -648,8 +991,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/iphone.jpg" class="img-fluid" alt="iPhone">
 								</div>
 								<div class="thumb-content">
-									<h4>Apple iPhone</h4>
-									<p class="item-price"><strike>$369.00</strike> <span>$349.00</span></p>
+									<h4 style="color:purple;">Apple iPhone</h4>
+									<p class="item-price"><strike style="color:purple;">$369.00</strike> <span style="color:purple;">$349.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -670,8 +1013,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/canon.jpg" class="img-fluid" alt="Canon">
 								</div>
 								<div class="thumb-content">
-									<h4>Canon DSLR</h4>
-									<p class="item-price"><strike>$315.00</strike> <span>$250.00</span></p>
+									<h4 style="color:purple;">Canon DSLR</h4>
+									<p class="item-price"><strike style="color:purple;">$315.00</strike> <span style="color:purple;">$250.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -681,7 +1024,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="#" class="btn btn-primary"">Add to Cart</a>
 								</div>						
 							</div>
 						</div>
@@ -692,8 +1035,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/pixel.jpg" class="img-fluid" alt="Pixel">
 								</div>
 								<div class="thumb-content">
-									<h4>Google Pixel</h4>
-									<p class="item-price"><strike>$450.00</strike> <span>$418.00</span></p>
+									<h4 style="color:purple;">Google Pixel</h4>
+									<p class="item-price"><strike style="color:purple;">$450.00</strike> <span style="color:purple;">$418.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -703,7 +1046,7 @@ $(document).ready(function(){
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<a href="#" class="btn btn-primary" >Add to Cart</a>
 								</div>						
 							</div>
 						</div>	
@@ -714,8 +1057,8 @@ $(document).ready(function(){
 									<img src="/examples/images/products/watch.jpg" class="img-fluid" alt="Watch">
 								</div>
 								<div class="thumb-content">
-									<h4>Apple Watch</h4>
-									<p class="item-price"><strike>$350.00</strike> <span>$330.00</span></p>
+									<h4 style="color:purple;">Apple Watch</h4>
+									<p class="item-price"><strike style="color:purple;">$350.00</strike> <span style="color:purple;">$330.00</span></p>
 									<div class="star-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -749,150 +1092,211 @@ $(document).ready(function(){
             <div class="row p-2 bg-white border rounded">
                 <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
                 <div class="col-md-6 mt-1">
-                    <h5>Quant olap shirts</h5>
+                    <h5 style="color:white;">Quant olap shirts</h5>
                     <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                        <div class="ratings mr-2"><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star"style="color:white;"></i></div><span style="color:white;">310</span>
                     </div>
-                    <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                    <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-                    <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">100% cotton</span><span class="dot" style="color:white;"></span><span style="color:white;">Light weight</span><span class="dot" style="color:white;"></span><span style="color:white;">Best finish<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">Unique design</span><span class="dot" style="color:white;"></span><span style="color:white;">For men</span><span class="dot" style="color:white;"></span><span style="color:white;">Casual<br></span></div>
+                    <p class="text-justify text-truncate para mb-0" style="color:white;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                        <h4 class="mr-1" style="color:white;">$13.99</h4><span class="strike-text">$20.99</span>
                     </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    <h6 class="text-success" style="color:white;">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" style="color:white;">Add to wishlist</button></div>
                 </div>
             </div>
             <div class="row p-2 bg-white border rounded mt-2">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/JvPeqEF.jpg"></div>
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
                 <div class="col-md-6 mt-1">
-                    <h5>Quant trident shirts</h5>
+                    <h5 style="color:white;">Quant olap shirts</h5>
                     <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
+                        <div class="ratings mr-2"><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star"style="color:white;"></i></div><span style="color:white;">310</span>
                     </div>
-                    <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                    <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-                    <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">100% cotton</span><span class="dot" style="color:white;"></span><span style="color:white;">Light weight</span><span class="dot" style="color:white;"></span><span style="color:white;">Best finish<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">Unique design</span><span class="dot" style="color:white;"></span><span style="color:white;">For men</span><span class="dot" style="color:white;"></span><span style="color:white;">Casual<br></span></div>
+                    <p class="text-justify text-truncate para mb-0" style="color:white;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">$14.99</h4><span class="strike-text">$20.99</span>
+                        <h4 class="mr-1" style="color:white;">$13.99</h4><span class="strike-text">$20.99</span>
                     </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    <h6 class="text-success" style="color:white;">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" style="color:white;">Add to wishlist</button></div>
                 </div>
             </div>
             <div class="row p-2 bg-white border rounded mt-2">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/Bf4dIaN.jpg"></div>
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
                 <div class="col-md-6 mt-1">
-                    <h5>Quant ruybi shirts</h5>
+                    <h5 style="color:white;">Quant olap shirts</h5>
                     <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>123</span>
+                        <div class="ratings mr-2"><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star"style="color:white;"></i></div><span style="color:white;">310</span>
                     </div>
-                    <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                    <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-                    <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">100% cotton</span><span class="dot" style="color:white;"></span><span style="color:white;">Light weight</span><span class="dot" style="color:white;"></span><span style="color:white;">Best finish<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">Unique design</span><span class="dot" style="color:white;"></span><span style="color:white;">For men</span><span class="dot" style="color:white;"></span><span style="color:white;">Casual<br></span></div>
+                    <p class="text-justify text-truncate para mb-0" style="color:white;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                        <h4 class="mr-1" style="color:white;">$13.99</h4><span class="strike-text">$20.99</span>
                     </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    <h6 class="text-success" style="color:white;">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" style="color:white;">Add to wishlist</button></div>
                 </div>
             </div>
             <div class="row p-2 bg-white border rounded mt-2">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/HO8e9b8.jpg"></div>
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://i.imgur.com/QpjAiHq.jpg"></div>
                 <div class="col-md-6 mt-1">
-                    <h5>Quant tinor shirts</h5>
+                    <h5 style="color:white;">Quant olap shirts</h5>
                     <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>110</span>
+                        <div class="ratings mr-2"><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star" style="color:white;"></i><i class="fa fa-star"style="color:white;"></i></div><span style="color:white;">310</span>
                     </div>
-                    <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
-                    <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
-                    <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">100% cotton</span><span class="dot" style="color:white;"></span><span style="color:white;">Light weight</span><span class="dot" style="color:white;"></span><span style="color:white;">Best finish<br></span></div>
+                    <div class="mt-1 mb-1 spec-1"><span style="color:white;">Unique design</span><span class="dot" style="color:white;"></span><span style="color:white;">For men</span><span class="dot" style="color:white;"></span><span style="color:white;">Casual<br></span></div>
+                    <p class="text-justify text-truncate para mb-0" style="color:white;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">$15.99</h4><span class="strike-text">$21.99</span>
+                        <h4 class="mr-1" style="color:white;">$13.99</h4><span class="strike-text">$20.99</span>
                     </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                    <h6 class="text-success" style="color:white;">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button" style="color:white;">Add to wishlist</button></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </body>
-<footer class="footer_area section_padding_130_0">
-    <div class="container">
-      <div class="row">
-        <!-- Single Widget-->
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="single-footer-widget section_padding_0_130">
-            <!-- Footer Logo-->
-            <div class="footer-logo mb-3"></div>
-            <p>Appland is completely creative, lightweight, clean app landing page.</p>
-            <!-- Copywrite Text-->
-            <div class="copywrite-text mb-5">
-              <p class="mb-0">Made with <i class="lni-heart mr-1"></i>by<a class="ml-1" href="https://wrapbootstrap.com/user/DesigningWorld">Designing World</a></p>
-            </div>
-            <!-- Footer Social Area-->
-            <div class="footer_social_area"><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i class="fa fa-skype"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
-          </div>
-        </div>
-        <!-- Single Widget-->
-        <div class="col-12 col-sm-6 col-lg">
-          <div class="single-footer-widget section_padding_0_130">
-            <!-- Widget Title-->
-            <h5 class="widget-title">About</h5>
-            <!-- Footer Menu-->
-            <div class="footer_menu">
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Corporate Sale</a></li>
-                <li><a href="#">Terms &amp; Policy</a></li>
-                <li><a href="#">Community</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Single Widget-->
-        <div class="col-12 col-sm-6 col-lg">
-          <div class="single-footer-widget section_padding_0_130">
-            <!-- Widget Title-->
-            <h5 class="widget-title">Support</h5>
-            <!-- Footer Menu-->
-            <div class="footer_menu">
-              <ul>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Term &amp; Conditions</a></li>
-                <li><a href="#">Help &amp; Support</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- Single Widget-->
-        <div class="col-12 col-sm-6 col-lg">
-          <div class="single-footer-widget section_padding_0_130">
-            <!-- Widget Title-->
-            <h5 class="widget-title">Contact</h5>
-            <!-- Footer Menu-->
-            <div class="footer_menu">
-              <ul>
-                <li><a href="#">Call Centre</a></li>
-                <li><a href="#">Email Us</a></li>
-                <li><a href="#">Term &amp; Conditions</a></li>
-                <li><a href="#">Help Center</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+<footer class="bg-dark text-center text-white footer1" >
+	<!-- Grid container -->
+	
+
+	<!-- Section: Links -->
+	<section class="myfooter">
+		<!--Grid row-->
+		<div class="row">
+		<!--Grid column-->
+		<div class="col-lg-5 col-md-4 mb-4 mb-md-0 links">
+			<h5 class="text-uppercase">Links</h5>
+
+			<ul class="list-unstyled mb-0">
+			<li>
+				<a href="#!" class="text-white">Home</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">About Us</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">Products</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">Login</a>
+			</li>
+			</ul>
+		</div>
+		<!--Grid column-->
+		<div class="col-lg-7 col-md-8 mb-4 mb-md-0">
+			<div class="container p-4">
+				<!-- Section: Social media -->
+				<section class="mb-4">
+					<!-- Facebook -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-facebook-f"></i
+					></a>
+			
+					<!-- Twitter -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-twitter"></i
+					></a>
+			
+					<!-- Google -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-google"></i
+					></a>
+			
+					<!-- Instagram -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-instagram"></i
+					></a>
+			
+					<!-- Linkedin -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-linkedin-in"></i
+					></a>
+			
+					<!-- Github -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-github"></i
+					></a>
+				</section>
+				<!-- Section: Social media -->
+			
+				<!-- Section: Form -->
+				<section class="">
+					<form action="">
+					<!--Grid row-->
+					<div >
+						<!--Grid column-->
+						<div class="col-auto">
+						<p class="pt-2">
+							<strong>Sign up to our newsletter</strong>
+						</p>
+						</div>
+						<!--Grid column-->
+			
+						<!--Grid column-->
+						<div class="col-md-5 col-12">
+						<!-- Email input -->
+						<div class="mb-4aa">
+							<input type="email" id="form5Example21" class="form-control" />
+							<label class="form-label" for="form5Example21">Email address</label>
+						</div>
+						</div>
+						<!--Grid column-->
+			
+						<!--Grid column-->
+						<div class="col-auto">
+						<!-- Submit button -->
+						<button type="submit" class="btn btn-outline-light mb-4">
+							Subscribe
+						</button>
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+					</form>
+				</section>
+				<!-- Section: Form -->
+			
+				<!-- Section: Text -->
+				<section class="mb-4">
+					<p>
+					  Thank you for  visiting our website !  Pleae checkout ur products and get the most exclusive and trending games at the best and most affordable prices !
+				   
+					</p>
+				</section>
+				<!-- Section: Text -->
+
+		</div>
+
+
+		
+		<!--Grid column-->
+		</div>
+		<!--Grid row-->
+	</section>
+	<!-- Section: Links -->
+	</div>
+	<!-- Grid container -->
+
+	<!-- Copyright -->
+	<div>
+	© 2023 Copyright:
+	<a class="text-white" href="#">GamseStation</a>
+	</div>
+	<!-- Copyright -->
+</footer>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </html>                                		
