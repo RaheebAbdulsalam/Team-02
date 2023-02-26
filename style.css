@@ -236,16 +236,18 @@
   
   .aboutus{
     background-image: url('Images/About.png');
-    height: 300px;
+    height: 400px;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    padding-top: 2%;
+    padding-bottom: 3%;
   }
   .aboutus .story{
     /* height: 350px; */
     width: 450px;
-    font-size: 15px;
+    /* font-size: 30px; */
     background: linear-gradient(
       217deg,
       rgba(255, 0, 179, 0.8),
@@ -258,6 +260,7 @@
     left: 10%; */
     margin-right: 10%;
     margin-left: 10%;
+    /* padding-top: 1%; */
    
 
   }
@@ -265,9 +268,17 @@
     text-align: justify;
     padding: 30px;
     justify-content: center;
-    font-size:x-small;
+    font-size: 90%;
     /* margin-top: 10%; */
+    /* padding-top: 20%; */
+    font-weight: 700;
+    font-style: italic;
    }
+   .styled-word {
+    color: rgb(0, 234, 255);
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+  }
    .value-details{
     background-color: #c9e1f7;
    }
