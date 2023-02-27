@@ -15,6 +15,15 @@
     </tr>
 
     </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.productId}">Product ID</td>
+        <td th:text="${order.email}">email</td>
+        <td th:text="${order.total}">total</td>
+        <td th:text="${order.status}"> status</td>
+
+    </tr>
+    </tbody>
 </table>
 </body>
 </html>
