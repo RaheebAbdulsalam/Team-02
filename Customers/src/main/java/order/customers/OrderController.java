@@ -95,7 +95,11 @@ public class OrderController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
+    @GetMapping()
+    public ModelAndView ordersPage() {
+        ModelAndView mav = new ModelAndView("index");
+        return mav;
+    }
 
 
 }
