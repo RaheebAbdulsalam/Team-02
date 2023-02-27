@@ -98,6 +98,7 @@ public class OrderController {
     @GetMapping()
     public ModelAndView ordersPage() {
         ModelAndView mav = new ModelAndView("index");
+        mav.addObject("orders", orderService.listAll());
         return mav;
     }
 
