@@ -3,7 +3,9 @@ package order.customers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
  * Controller for handling REST API requests related to orders.
  */
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/orders")
 public class OrderController {
 
     @Autowired
@@ -23,7 +25,7 @@ public class OrderController {
      * @return ResponseEntity with a list of Order objects and HTTP status OK (200) on success.
      */
 
-    @GetMapping
+    @GetMapping("/list")
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
         System.out.println("All Orders: " + orders.toString());
@@ -93,4 +95,7 @@ public class OrderController {
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
+
 }

@@ -89,4 +89,8 @@ public class OrderService {
         }
         return false;
     }
+
+    public List<Order> listAll(){
+        return orderRepository.findAllByOrderByOrderIdAsc();
+    }
 }
