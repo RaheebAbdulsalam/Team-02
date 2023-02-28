@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
+
 .navbar {
     transition: all 0.4s;
 }
@@ -673,6 +674,15 @@ ol, ul {
 	position:relative;
 	left:227px;
 }
+#navbarNav{
+	position:relative;
+	padding-left:700px;
+}
+.search-form{
+	position:relative;
+	display:flex;
+	left:250px;
+}
 </style>
 <script>
     $(function () {
@@ -731,7 +741,7 @@ $(document).ready(function(){
                 </div>
                 <!-- </form>  -->
             </div>
-          </nav>
+        </nav>
 
     
         
@@ -767,7 +777,7 @@ $(document).ready(function(){
                     <a class="nav-link" href="#">Consoles</a>
                   </li>
                 </ul>
-                <form class="d-flex search-form">
+                <form class="search-form">
                   <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success search-btn"  type="submit">Search</button>
                 </form>

@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
+
 .navbar {
     transition: all 0.4s;
 }
@@ -94,162 +95,7 @@ h2::after {
 	right: 0;
 	bottom: -20px;
 }
-.carousel {
-	margin: 50px auto;
-	padding: 0 70px;
-}
-.carousel .item {
-	color: #747d89;
-	min-height: 325px;
-	text-align: center;
-	overflow: hidden;
-}
-.carousel .thumb-wrapper {
-	padding: 25px 15px;
-	background: #fff;
-	border-radius: 6px;
-	text-align: center;
-	position: relative;
-	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-}
-.carousel .item .img-box {
-	height: 120px;
-	margin-bottom: 20px;
-	width: 100%;
-	position: relative;
-}
-.carousel .item img {	
-	max-width: 100%;
-	max-height: 100%;
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-}
-.carousel .item h4 {
-	font-size: 18px;
-}
-.carousel .item h4, .carousel .item p, .carousel .item ul {
-	margin-bottom: 5px;
-}
-.carousel .thumb-content .btn {
-	color: purple;
-	font-size: 11px;
-	text-transform: uppercase;
-	font-weight: bold;
-	background: none;
-	border: 1px solid purple;
-	padding: 6px 14px;
-	margin-top: 5px;
-	line-height: 16px;
-	border-radius: 20px;
-}
-.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
-	color: #fff;
-	background: purple;
-	box-shadow: none;
-}
-.carousel .thumb-content .btn i {
-	font-size: 14px;
-	font-weight: bold;
-	margin-left: 5px;
-}
-.carousel .item-price {
-	font-size: 13px;
-	padding: 2px 0;
-}
-.carousel .item-price strike {
-	opacity: 0.7;
-	margin-right: 5px;
-}
-.carousel-control-prev, .carousel-control-next {
-	height: 44px;
-	width: 40px;
-	background: #7ac400;	
-	margin: auto 0;
-	border-radius: 4px;
-	opacity: 0.8;
-}
-.carousel-control-prev:hover, .carousel-control-next:hover {
-	background: #78bf00;
-	opacity: 1;
-}
-.carousel-control-prev i, .carousel-control-next i {
-	font-size: 36px;
-	position: absolute;
-	top: 50%;
-	display: inline-block;
-	margin: -19px 0 0 0;
-	z-index: 5;
-	left: 0;
-	right: 0;
-	color: #fff;
-	text-shadow: none;
-	font-weight: bold;
-}
-.carousel-control-prev i {
-	margin-left: -2px;
-}
-.carousel-control-next i {
-	margin-right: -4px;
-}		
-.carousel-indicators {
-	bottom: -50px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-	width: 10px;
-	height: 10px;
-	margin: 4px;
-	border-radius: 50%;
-	border: none;
-}
-.carousel-indicators li {	
-	background: rgba(0, 0, 0, 0.2);
-}
-.carousel-indicators li.active {	
-	background: rgba(0, 0, 0, 0.6);
-}
-.carousel .wish-icon {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	z-index: 99;
-	cursor: pointer;
-	font-size: 16px;
-	color: #abb0b8;
-}
-.carousel .wish-icon .fa-heart {
-	color: purple;
-}
-.star-rating li {
-	padding: 0;
-}
-.star-rating i {
-	font-size: 14px;
-	color: purple;
-}
-.container-xl{
-    position:relative;
-}
-body{background:#eee}
-.ratings i{font-size: 16px;color: red}
-.strike-text{color: red;text-decoration: line-through}
-.product-image{width: 100%}
-.dot{height: 7px;width: 7px;margin-left: 6px;margin-right: 6px;margin-top: 3px;background-color: blue;border-radius: 50%;display: inline-block}
-.spec-1{color: #938787;font-size: 15px}
-h5{font-weight: 400}
-.para{font-size: 16px}
-body{margin-top:20px;}
-.footer_area {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-webkit-box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
-    box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
-    padding:60px;
-}
+
 .footer_area .row {
     margin-left: -25px;
     margin-right: -25px;
@@ -553,10 +399,6 @@ ol, ul {
     border: 1px solid gray;
   }
   .custom-navbar2 .search-btn{
-    position:relative;
-    bottom:38px;
-    left:385px;
-    width:200px;
     background-color: black;
     color:  rgb(25, 102, 217);
     border: 1px solid rgb(25, 102, 217);
@@ -603,28 +445,6 @@ ol, ul {
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-out;  
-  }
-  .trend-card img:hover {
-    transform: translateY(-15px);
-  }
-  .card.h-100{
-    background-color: #000000;
-    color: aliceblue;
-  }
-  .card.h-100 .card-body a{
-    background-color: black;
-    color:  rgb(25, 102, 217);
-    border: 1px solid rgb(25, 102, 217);
-
-  }
-  .card.h-100 .card-body a:hover{
-    background-color: rgb(25, 102, 217);
-    color: #000000; 
-
-  }
-  .card.h-100 .card-footer{
-    background-color: rgba(34, 34, 34, 0.581);
-  
   }
   .footer1 {
     text-decoration: none ;
@@ -677,238 +497,63 @@ ol, ul {
 	position:relative;
 	left:227px;
 }
-.login {
-	background: linear-gradient(to top, black 0%, purple 100%);
-	max-width: 500px;
-	margin: 0 auto;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px #9c9c9c;
-	margin-top:50px;
-}
-
-h1 {
-	text-align: center;
-	font-family: Arial, sans-serif;
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-}
-
-label {
-	margin-top: 10px;
-	font-family: Arial, sans-serif;
-	font-size: 18px;
-	color:#000;
-}
-
-input[type="text"], input[type="password"] {
-	padding: 10px;
-	border-radius: 5px;
-	
-	margin-bottom: 20px;
-}
-
-input[type="submit"] {
-	background-color: #4CAF50;
-	color: black;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-	font-size: 18px;
-}
-
-body {
-	background-color: #000;
-	color: #fff;
-	font-family: Arial, sans-serif;
-}
-
-.registration {
-	background-color: #000;
-	max-width: 500px;
-	margin: 0 auto;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px #222;
-	background:#fff;
-}
-
-h1 {
-	text-align: center;
-	font-size: 36px;
-	margin-bottom: 20px;
-	color: #000;
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-}
-
-label {
-	margin-top: 10px;
-	font-size: 18px;
-	
-}
-
-input[type="text"], input[type="email"], input[type="password"] {
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	margin-bottom: 20px;
-	background-color: #222;
-	color: #fff;
-}
-
-input[type="submit"] {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	cursor: pointer;
-	font-size: 18px;
-}
-
-p {
-	font-size: 14px;
-	text-align: center;
-	margin-top: 20px;
-	color:#000;
-}
-
-a {
-	color: #9b59b6;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #fff;
-}
-
-.contact {
-	background-color: #000000;
-	padding: 20px;
-	max-width: 600px;
-	margin: 50px auto;background:#fff;
-}
-
-.contact h1 {
-	font-size: 32px;
-	margin-bottom: 20px;color:#000;
-}
-
-.contact label {
-	display: block;
-	margin-bottom: 10px;color:#000;
-}
-
-.contact input[type="text"],
-.contact input[type="email"],
-.contact select,
-.contact textarea {
-	padding: 10px;
-	font-size: 16px;
-	border-radius: 5px;
-	border: none;
-	width: 100%;
-	margin-bottom: 20px;
-	background-color: #1a1a1a;
-	color: #ffffff;
-}
-
-.contact select option:first-child {
-	color: #a9a9a9;
-}
-
-.contact input[type="submit"] {
-	background-color: #4b0082;
-	color: #ffffff;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	cursor: pointer;
-}
-
-.contact input[type="submit"]:hover {
-	background-color: #663399;
-}
-
-.contact textarea {
-	height: 200px;
-}
-
-.g-recaptcha {
-	margin-bottom: 20px;
-}
-
-.contact p {
-	margin-top: 20px;
-	text-align: center;color:#000;
-}
-
-.contact a {
-	color: #ffffff;
-	text-decoration: underline;
-}
-
-@media screen and (max-width: 600px) {
-	.contact {
-		padding: 10px;
-	}
-	.contact h1 {
-		font-size: 24px;
-		margin-bottom: 10px;
-		color:#000;
-	}
-	.contact input[type="text"],
-	.contact input[type="email"],
-	.contact select,
-	.contact textarea {
-		padding: 5px;
-		font-size: 14px;
-		margin-bottom: 10px;
-	}
-	.contact input[type="submit"] {
-		padding: 5px 10px;
-	}
-	.contact textarea {
-		height: 150px;
-	}
-}
-.formform{
-  position:relative;
-  bottom:26px;
-}
 #navbarNav{
-  position:relative;
-  padding-left:760px;
+	position:relative;
+	padding-left:700px;
 }
-.search-form{
-  position:relative;
-  display:flex;
-  left:200px;
-  top:20px;
+.container {
+  padding: 16px;
+  background-color: white;
 }
-input[type=submit]{
-  background-color: black;
-  color:white;
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
-input[type=submit]:hover {
-    background-color: purple;
-    color:black;
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
-.username{
-  color:white;
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
 }
-#navbarScroll{
-  position:relative;
-  bottom:17px;
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
 }
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
 </style>
 <script>
     $(function () {
@@ -967,7 +612,7 @@ $(document).ready(function(){
                 </div>
                 <!-- </form>  -->
             </div>
-          </nav>
+        </nav>
 
     
         
@@ -1012,7 +657,7 @@ $(document).ready(function(){
           </nav>
           <!--  End of Search Tab -->
 
-          <!-- Game station Banner including video-->
+          <!-- Game station Banner -->
         <video loop autoplay muted class="video">
             <source src="GameStationWebsite.mp4" type="video/mp4">
             <!-- <source src="movie.ogg" type="video/ogg"> -->
@@ -1020,22 +665,33 @@ $(document).ready(function(){
         </video>
 	</div>
 </header>
-<div class="formform">
-    <div class="login">
-      <h1 class="username">Login</h1>
-      <form>
-        <label class="username" for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label class="username" for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Submit">
-      </form>
-      </div>    
-  </div>
 </body>
+<form action="/action_page.php">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+      <hr>
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+    
+    <div class="container signin">
+      <p>Already have an account? <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
 <footer class="bg-dark text-center text-white footer1" >
 	<!-- Grid container -->
-	
 
 	<!-- Section: Links -->
 	<section class="myfooter">
@@ -1153,7 +809,7 @@ $(document).ready(function(){
 	</section>
 	<!-- Section: Links -->
 	</div>
-	<!-- Grid container background -->
+	<!-- Grid container -->
 
 	<!-- Copyright -->
 	<div>
