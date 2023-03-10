@@ -1,6 +1,7 @@
 package LoginSystem.com.service;
 
-import LoginSystem.com.model.MyUserDetails;
+
+import LoginSystem.com.model.CustomUserDetails;
 import LoginSystem.com.model.User;
 import LoginSystem.com.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +14,17 @@ import org.springframework.stereotype.Service;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
-
+    private UserRepository userRepo;
     @Override
-    public UserDetails loadUserByUsername(String username)
-            throws UsernameNotFoundException {
-        User user = userRepository.getUserByUsername(username);
-
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepo.findByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("Could not find user");
+            throw new UsernameNotFoundException("User not found");
         }
-
-        return new MyUserDetails(user);
+        return new CustomUserDetails(user);
+    }
     }
 
-}
+
+
+
