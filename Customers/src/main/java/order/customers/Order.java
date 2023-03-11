@@ -2,6 +2,9 @@ package order.customers;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -22,6 +25,13 @@ public class Order {
 
     @Column(name = "status")
     private String status;
+
+
+
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderItem> orderItems = new ArrayList<>();
+
 
     public Order() {
     }
@@ -73,6 +83,8 @@ public class Order {
         this.status = status;
     }
 
+
+
     @Override
     public String toString() {
         return "Order{" +
@@ -81,6 +93,7 @@ public class Order {
                 ", email='" + email + '\'' +
                 ", total=" + total +
                 ", status='" + status + '\'' +
+                ", orderItems=" + orderItems +
                 '}';
     }
 }
