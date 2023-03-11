@@ -23,8 +23,15 @@ public class HomeController {
 
     // Returns home page
     @GetMapping
-    public ModelAndView getAdminHomePage() {
+    public ModelAndView getHomePage() {
         ModelAndView mav = new ModelAndView("index");
+        return mav;
+    }
+
+    // Returns about page
+    @GetMapping("/about")
+    public ModelAndView getAboutPage() {
+        ModelAndView mav = new ModelAndView("about");
         return mav;
     }
 
