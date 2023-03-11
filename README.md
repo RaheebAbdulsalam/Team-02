@@ -1,1 +1,3 @@
-# This is the front end of the game station ecommerce website
+Team 02
+
+Backend - User registration, authentication, products, categories, admin panel
