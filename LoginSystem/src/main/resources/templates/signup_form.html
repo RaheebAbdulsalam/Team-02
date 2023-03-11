@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<body>
+<div class="container-fluid border">
+
+    <!-- First Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/Images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
+                <!-- GameStation  -->
+            </a>
+
+            <!-- <form class="d-flex"> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/about}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+
+                    <!--Changing the nav bar when user logged in-->
+                    <li th:if="${loggedIn}">
+                        <form th:action="@{/logout}" method="post">
+                            <input class="btn" type="submit" style="color: white" value="Logout"/>
+                        </form>
+                    </li>
+                    <li th:unless="${loggedIn}">
+                        <a class="nav-link active" aria-current="page" th:href="@{/login}"><i
+                                class="fa-regular fa-user"></i> Login/ Register</a>
+                    </li>
+                    <!--------------------------------------------->
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="login">
+        <h1>Registration</h1>
+        <form th:action="@{/process_register}" th:object="${user}" method="post" onsubmit="return validateForm()">
+            <label for="firstName">First-Name:</label>
+            <input type="text" id="firstName" name="firstName" th:field="*{firstName}" required>
+            <label for="firstName">Last-Name:</label>
+            <input type="text" id="lastName" name="lastName" th:field="*{lastName}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" th:field="*{email}" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" th:field="*{password}" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirmPassword" required>
+            <input type="submit" value="Submit">
+        </form>
+        <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+        <p id="error-message" style="color: red;"></p>
+        <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+    </div>
+
+    </br>
+    </br>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white footer1">
+        <!-- Grid container -->
+
+
+        <!-- Section: Links -->
+        <section class="myfooter">
+            <!--Grid row-->
+            <div class="row">
+                <!--Grid column-->
+                <div class="col-lg-5 col-md-4 mb-4 mb-md-0 links">
+                    <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#!" class="text-white">Home</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Products</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <div class="col-lg-7 col-md-8 mb-4 mb-md-0">
+                    <div class="container p-4">
+                        <!-- Section: Social media -->
+                        <section class="mb-4">
+                            <!-- Facebook -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-facebook-f"></i
+                            ></a>
+
+                            <!-- Twitter -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-twitter"></i
+                            ></a>
+
+                            <!-- Google -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-google"></i
+                            ></a>
+
+                            <!-- Instagram -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+
+                            <!-- Linkedin -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-linkedin-in"></i
+                            ></a>
+
+                            <!-- Github -->
+                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                            ><i class="fab fa-github"></i
+                            ></a>
+                        </section>
+                        <!-- Section: Social media -->
+
+                        <!-- Section: Form -->
+                        <section class="">
+                            <form action="">
+                                <!--Grid row-->
+                                <div class="row d-flex justify-content-center">
+                                    <!--Grid column-->
+                                    <div class="col-auto">
+                                        <p class="pt-2">
+                                            <strong>Sign up to our newsletter</strong>
+                                        </p>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-md-5 col-12">
+                                        <!-- Email input -->
+                                        <div class="form-outline form-white mb-4">
+                                            <input type="email" id="form5Example21" class="form-control"/>
+                                            <label class="form-label" for="form5Example21">Email address</label>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+
+                                    <!--Grid column-->
+                                    <div class="col-auto">
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-outline-light mb-4">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                            </form>
+                        </section>
+                        <!-- Section: Form -->
+
+                        <!-- Section: Text -->
+                        <section class="mb-4">
+                            <p>
+                                Thank you for visiting our website ! Please checkout our products and get the most
+                                exclusive and trending games at the best and most affordable prices !
+
+                            </p>
+                        </section>
+                        <!-- Section: Text -->
+
+                    </div>
+
+
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2023 Copyright:
+                    <a class="text-white" href="#">GamseStation</a>
+                </div>
+                <!-- Copyright -->
+
+        </section>
+        <!-- Section: Links -->
+</div>
+
+<!-- Grid container -->
+
+
+</footer>
+<!-- Footer -->
+</div>
+
+
+<script>
+    function validateForm() {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+        const errorMessage = document.getElementById("error-message");
+
+        if (password !== confirmPassword) {
+            errorMessage.innerHTML = "Passwords do not match!";
+            return false;
+        } else {
+            errorMessage.innerHTML = "";
+            return true;
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
