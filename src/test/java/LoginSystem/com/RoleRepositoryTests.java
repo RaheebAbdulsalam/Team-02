@@ -1,7 +1,8 @@
 package LoginSystem.com;
 
-import LoginSystem.com.model.Role;
-import LoginSystem.com.repository.RoleRepository;
+
+import com.gamestation.ecommerce.model.Role;
+import com.gamestation.ecommerce.repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

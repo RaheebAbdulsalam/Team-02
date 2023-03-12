@@ -2,10 +2,11 @@ package LoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import LoginSystem.com.model.User;
-import LoginSystem.com.model.Role;
-import LoginSystem.com.repository.RoleRepository;
-import LoginSystem.com.repository.UserRepository;
+
+import com.gamestation.ecommerce.model.Role;
+import com.gamestation.ecommerce.model.User;
+import com.gamestation.ecommerce.repository.RoleRepository;
+import com.gamestation.ecommerce.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
