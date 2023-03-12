@@ -23,19 +23,20 @@ public class UserRepositoryTests {
     @Autowired
     private TestEntityManager entityManager;
 
-    @Autowired
+
     private UserRepository userRepo;
 
-    @Autowired
+
     private RoleRepository roleRepo;
 
     // test methods go below
     @Test
     public void testCreateUser() {
         User user = new User();
-        user.setUsername("Raheeb");
+        user.setFirstName("Raheeb");
+        user.setLastName("Abdulsalam");
         user.setEmail("raheeb@gmail.com");
-        user.setPassword("raheeb2023");
+        user.setPassword("123456");
         User savedUser = userRepo.save(user);
         User existUser = entityManager.find(User.class, savedUser.getId());
         assertThat(user.getEmail()).isEqualTo(existUser.getEmail());
@@ -45,10 +46,10 @@ public class UserRepositoryTests {
     public void testAddRoleToNewUser() {
         Role roleAdmin = roleRepo.findByName("Admin");
         User user = new User();
-        user.setUsername("Raheeb");
+        user.setFirstName("Raheeb");
+        user.setLastName("Abdusalam");
         user.setEmail("raheeb2023@gmail.com");
         user.setPassword("123456");
-        user.setEnabled(true);
         user.addRole(roleAdmin);
         User savedUser = userRepo.save(user);
         assertThat(savedUser.getRoles().size()).isEqualTo(1);
