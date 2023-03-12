@@ -1,3 +1,3 @@
-# Team-02
+Team 02
 
-Spring Boot Application for User Login and Registration with User authentication and authorisation
+Backend - User registration, authentication, products, categories, admin panel
