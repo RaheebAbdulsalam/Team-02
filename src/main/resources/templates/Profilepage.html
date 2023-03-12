@@ -1,13 +1,15 @@
 <style>
-    body{
-        margin-top:20px;
-        background:#f8f8f8
+    body {
+        margin-top: 20px;
+        background: #f8f8f8
     }
-    .container{
-        position:relative;
-        top:30px;
+
+    .container {
+        position: relative;
+        top: 30px;
     }
-    .btn-secondary{
+
+    .btn-secondary {
         background-color: black;
     }
 </style>
@@ -16,166 +18,191 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesgeet"
+          href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body class="profile-page">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-<div class="row flex-lg-nowrap">
-  <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
-    <div class="card p-3">
-      <div class="e-navlist e-navlist--active-bg">
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link px-2 active" th:href="@{/admin}"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Admin Panel</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="https://www.bootdey.com/snippets/view/bs4-crud-users" target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>My Orders</span></a></li>
-          <li class="nav-item"><a class="nav-link px-2" href="https://www.bootdey.com/snippets/view/bs4-edit-profile-page" target="__blank"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <div class="row flex-lg-nowrap">
+        <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+            <div class="card p-3">
+                <div class="e-navlist e-navlist--active-bg">
+                    <ul class="nav">
 
-  <div class="col">
-    <div class="row">
-      <div class="col mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="e-profile">
-              <div class="row">
-                <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
-                    </div>
-                  </div>
+                        <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                            <a class="nav-link px-2 active" th:href="@{/admin}">
+                                <i class="fa fa-fw fa-bar-chart mr-1"></i>
+                                <span>Admin Panel</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link px-2"
+                                                href="https://www.bootdey.com/snippets/view/bs4-crud-users"
+                                                target="__blank"><i
+                                class="fa fa-fw fa-th mr-1"></i><span>My Orders</span></a></li>
+                        <li class="nav-item"><a class="nav-link px-2"
+                                                href="https://www.bootdey.com/snippets/view/bs4-edit-profile-page"
+                                                target="__blank"><i
+                                class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+                    </ul>
                 </div>
-                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                  <div class="text-center text-sm-left mb-2 mb-sm-0">
-                    <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap"><span sec:authentication="name"></span></h4>
-
-                    <div class="text-muted"><small>Last seen 2 hours ago</small></div>
-                    <div class="mt-2">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="text-center text-sm-right">
-                    <span class="badge badge-secondary" sec:authentication="principal.authorities"></span>
-                    <div class="text-muted"><small>Joined 23 Feb 2023</small></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tab-content pt-3">
-                <div class="tab-pane active">
-                  <form class="form"   method="post" th:action="@{/edit-profile}">
-                    <div class="row">
-                      <div class="col">
-
-                        <!----------------ID Section-------------------->
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>ID Number</label>
-                              <input class="form-control"  th:field="*{user.id}" readonly="readonly" type="text" name="id" placeholder="ID" >
-                            </div>
-                          </div>
-
-                          <!----------------UserName Section-------------------->
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Username</label>
-                                <input class="form-control"  type="text" name="firstName" readonly="readonly"
-                                       th:value="${user.firstName + ' ' + user.lastName}" />
-
-
-                            </div>
-                          </div>
-                        </div>
-                        <!----------------Email Section-------------------->
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Email</label>
-                              <input class="form-control" th:field="*{user.email}" type="text">
-                            </div>
-                          </div>
-                        </div>
-
-
-                          <!----------------Password Section-------------------->
-                          <div class="row">
-                              <div class="col">
-                                  <div class="form-group">
-                                      <label>Password</label>
-                                      <input class="form-control" th:field="*{user.password}" type="password" placeholder="••••••">
-                                  </div>
-                              </div>
-                          </div>
-
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col d-flex justify-content-end">
-                        <button class="btn btn-primary" type="submit" value="Update Profile">Save Changes</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
 
-        <!----------------Logout Button-------------------->
-        <div class="col-12 col-md-3 mb-3">
-        <div class="card mb-3">
-          <div class="card-body">
-            <div class="px-xl-3">
-              <button class="btn-secondary" id="logout-button">
-                <i class="fa fa-sign-out"></i>
-                <span>Logout</span>
-              </button>
-              <form id="logout-form" th:action="@{/logout}" method="post">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-              </form>
-              <script>
-                $(document).ready(function() {
-                  $('#logout-button').click(function() {
-                    $('#logout-form').submit();
-                  });
-                });
-              </script>
+        <div class="col">
+            <div class="row">
+                <div class="col mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="e-profile">
+                                <div class="row">
+                                    <div class="col-12 col-sm-auto mb-3">
+                                        <div class="mx-auto" style="width: 140px;">
+                                            <div class="d-flex justify-content-center align-items-center rounded"
+                                                 style="height: 140px; background-color: rgb(233, 236, 239);">
+                                                <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                        <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap"><span
+                                                    sec:authentication="name"></span></h4>
+
+                                            <div class="text-muted"><small>Last seen 2 hours ago</small></div>
+                                            <div class="mt-2">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fa fa-fw fa-camera"></i>
+                                                    <span>Change Photo</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="text-center text-sm-right">
+                                            <span class="badge badge-secondary"
+                                                  sec:authentication="principal.authorities"></span>
+                                            <div class="text-muted"><small>Joined 23 Feb 2023</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content pt-3">
+                                    <div class="tab-pane active">
+                                        <form class="form" method="post" th:action="@{/edit-profile}">
+                                            <div class="row">
+                                                <div class="col">
+
+                                                    <!----------------ID Section-------------------->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>ID Number</label>
+                                                                <input class="form-control" th:field="*{user.id}"
+                                                                       readonly="readonly" type="text" name="id"
+                                                                       placeholder="ID">
+                                                            </div>
+                                                        </div>
+
+                                                        <!----------------UserName Section-------------------->
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Username</label>
+                                                                <input class="form-control" type="text" name="firstName"
+                                                                       readonly="readonly"
+                                                                       th:value="${user.firstName + ' ' + user.lastName}"/>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!----------------Email Section-------------------->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Email</label>
+                                                                <input class="form-control" th:field="*{user.email}"
+                                                                       type="text">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <!----------------Password Section-------------------->
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Password</label>
+                                                                <input class="form-control" th:field="*{user.password}"
+                                                                       type="password" placeholder="••••••">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-end">
+                                                    <button class="btn btn-primary" type="submit"
+                                                            value="Update Profile">Save Changes
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!----------------Logout Button-------------------->
+                <div class="col-12 col-md-3 mb-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="px-xl-3">
+                                <button class="btn-secondary" id="logout-button">
+                                    <i class="fa fa-sign-out"></i>
+                                    <span>Logout</span>
+                                </button>
+                                <form id="logout-form" th:action="@{/logout}" method="post">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#logout-button').click(function () {
+                                            $('#logout-form').submit();
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------>
+
+                    <!----------------Support Section------------------->
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title font-weight-bold">Support</h6>
+                            <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                            <button type="button" class="btn btn-primary">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <!------------------------------------>
 
-        <!----------------Support Section------------------->
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title font-weight-bold">Support</h6>
-            <p class="card-text">Get fast, free help from our friendly assistants.</p>
-            <button type="button" class="btn btn-primary">Contact Us</button>
-          </div>
         </div>
-      </div>
     </div>
-
-  </div>
 </div>
-</div>
-
-
 
 
 <!--<form method="post" th:action="@{/edit-profile}">-->
