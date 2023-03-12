@@ -29,21 +29,11 @@ public class UserController {
 
     @GetMapping("")
     public String viewHomePage(Model model, Principal principal) {
-//        if (principal != null) {
-//            model.addAttribute("loggedIn", true);
-//        } else {
-//            model.addAttribute("loggedIn", false);
-//        }
         return "index";
     }
 
     @GetMapping("/about")
     public String viewAbout(Model model, Principal principal) {
-        if (principal != null) {
-            model.addAttribute("loggedIn", true);
-        } else {
-            model.addAttribute("loggedIn", false);
-        }
         return "about";
     }
 
@@ -108,8 +98,6 @@ public class UserController {
     public String saveCurrentUser(@ModelAttribute("user") User user, Principal principal) {
         String email = principal.getName();
         User currentUser = userRepo.findByEmail(email);
-//        currentUser.setFirstName(user.getFirstName());
-//        currentUser.setLastName(user.getLastName());
         currentUser.setEmail(user.getEmail());
         currentUser.setPassword(user.getPassword());
         service.save(currentUser);

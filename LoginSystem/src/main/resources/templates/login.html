@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link"  th:href="@{/}">Home</a>
+            <a class="nav-link" th:href="@{/}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/about}">About Us</a>
@@ -40,16 +40,9 @@
             <a class="nav-link" href="#">Product</a>
           </li>
 
-          <!--Changing the nav bar when user logged in-->
-          <li class="nav-item" sec:authorize="isAuthenticated()">
-            <form method="post" th:action="@{/logout}">
-              <input type="submit" class="btn btn-primary" value="Logout">
-            </form>
-          </li>
           <li class="nav-item" sec:authorize="isAnonymous()">
-            <a class="nav-link" th:href="@{/login}">Login</a>
+            <a class="nav-link active" aria-current="page" th:href="@{/login}">Login/ Register</a>
           </li>
-          <!--------------------------------------------->
 
           <li class="nav-item">
             <a class="nav-link" th:href="@{/contact}">Contact Us</a>
@@ -57,9 +50,13 @@
           <li class="nav-item">
             <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
           </li>
+          <li class="nav-item" sec:authorize="isAuthenticated()">
+            <form method="post" th:action="@{/logout}">
+              <input type="submit" class="btn btn-primary" value="Logout">
+            </form>
+          </li>
         </ul>
       </div>
-      <!-- </form>  -->
     </div>
   </nav>
 
