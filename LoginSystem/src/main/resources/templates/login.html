@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http:/www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
   <meta charset="UTF-8">
@@ -38,16 +39,18 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Product</a>
           </li>
+
           <!--Changing the nav bar when user logged in-->
-          <li th:if="${loggedIn}" >
-            <form th:action="@{/logout}" method="post" >
-              <input class="btn" type="submit" style="color: white" value="Logout"/>
+          <li class="nav-item" sec:authorize="isAuthenticated()">
+            <form method="post" th:action="@{/logout}">
+              <input type="submit" class="btn btn-primary" value="Logout">
             </form>
           </li>
-          <li th:unless="${loggedIn}">
-            <a class="nav-link active" aria-current="page" th:href="@{/login}"><i class="fa-regular fa-user"></i> Login/ Register</a>
+          <li class="nav-item" sec:authorize="isAnonymous()">
+            <a class="nav-link" th:href="@{/login}">Login</a>
           </li>
           <!--------------------------------------------->
+
           <li class="nav-item">
             <a class="nav-link" th:href="@{/contact}">Contact Us</a>
           </li>

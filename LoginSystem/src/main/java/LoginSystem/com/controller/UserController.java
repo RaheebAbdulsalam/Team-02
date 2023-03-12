@@ -29,11 +29,11 @@ public class UserController {
 
     @GetMapping("")
     public String viewHomePage(Model model, Principal principal) {
-        if (principal != null) {
-            model.addAttribute("loggedIn", true);
-        } else {
-            model.addAttribute("loggedIn", false);
-        }
+//        if (principal != null) {
+//            model.addAttribute("loggedIn", true);
+//        } else {
+//            model.addAttribute("loggedIn", false);
+//        }
         return "index";
     }
 
