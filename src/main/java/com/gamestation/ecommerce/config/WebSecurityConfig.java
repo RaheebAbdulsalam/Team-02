@@ -49,7 +49,8 @@ public class WebSecurityConfig{
                 .requestMatchers("/updateProfile").authenticated()
                 .requestMatchers("/profile").authenticated()
                 .requestMatchers("/edit-profile").authenticated()
-                .requestMatchers("/users").hasAnyAuthority("ADMIN")
+                // ONLY ADMINS CAN ACCESS ADMIN PAGES
+                .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin().loginPage("/login")
