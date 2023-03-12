@@ -54,19 +54,13 @@
                 </a>
             </li>
             <li>
-                <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/message">
+                <a href="#">
                     <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
-                    <span class="title">Message</span>
+                    <span class="title">Messages</span>
                 </a>
             </li>
             <li>
-                <a href="/admin/setting">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="title">Settings</span>
-                </a>
-            </li>
-            <li>
-                <a sec:authorize="isAuthenticated()" th:href="@{/logout}" href="#">
+                <a th:href="@{/logout}" href="#">
                     <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
                 </a>

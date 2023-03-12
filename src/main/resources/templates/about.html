@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,11 +16,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
         <div class="container-fluid">
             <a class="navbar-brand" th:href="@{/}">
-                <img src="" alt="" width="20" height="20" class="d-inline-block align-text-top">
-                GameStation
+                <img src="/images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
             </a>
 
-            <!-- <form class="d-flex"> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,23 +26,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                        <a class="nav-link" th:href="@{/}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/about}">About Us</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/about}">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+
+                    <!--Changing the nav bar when user logged in-->
+                    <li th:if="${loggedIn}">
+                        <form th:action="@{/logout}" method="post">
+                            <input class="btn" type="submit" style="color: white" value="Logout"/>
+                        </form>
                     </li>
+                    <li th:unless="${loggedIn}">
+                        <a class="nav-link" th:href="@{/login}"><i class="fa-regular fa-user"></i> Login/ Register</a>
+                    </li>
+                    <!--------------------------------------------->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Orders</a>
+                        <a class="nav-link" th:href="@{/contact}">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
                 </ul>
             </div>
-            <!-- </form>  -->
         </div>
     </nav>
 
@@ -97,25 +102,144 @@
     <!-- About us  definition , history, vision -->
     <div class="aboutus">
         <div class="story">
-            <p>Here at Game Station, We Strive to be the best , and offer the best products and services, Our company
-                started with a group of innovating students
-                whose common goal is to provide the most exclusive games at most affordable prices. We strive for the
-                best of our clients interest through our
-                values which include Integrity, Diversity and inclusion, Customer centricty and being the standard of
-                Excellence.
+            <p><span class="styled-word">At Game Station,</span> we strive for the best in the products and services we
+                offer. <br>
+                <span class="styled-word">Our Company</span> started with a group of innovative students whose common
+                goal is to provide the most exclusive games at the most affordable prices. <br>
+                <span class="styled-word">Our Values</span> which include Integrity, Innovation, Diversity and
+                inclusion, customer centricity and being the standard of excellence. <br>
+                <span class="styled-word">Our Mission</span> is to create the most valuable community of gamers who use
+                the most exclusive products. <br>
+                We are passionate about gaming. We love what we do, and we do what we love. We are all working together
+                to create the best experience possible for our gamers.
+
             </p>
 
         </div>
     </div>
+    <div class="values">
+        <div class="category_block_header">
+            <h2>Our Values</h2>
+        </div>
+        <div class="category_block">
+            <ul class="categories">
+                <li class="category">
+                    <a href="#integrity">
+                        <img src="Images/integrity.png" alt="">
+                        Integrity
+                    </a>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+                </li>
+                <li class="category">
+                    <a href="#diversity">
+                        <img src="Images/diversity.png" alt="">
+                        Diversity & Inclusion
+                    </a>
+
+                </li>
+                <li class="category">
+                    <a href="#excellence">
+                        <img src="Images/excellence.png" alt="">
+                        Excellence
+                    </a>
+                </li>
+                <li class="category">
+                    <a href="#innovative">
+                        <img src="Images/innovative.webp" alt="">
+                        Innovative
+                    </a>
+                </li>
+                <li class="category">
+                    <a href="#customer">
+                        <img src="Images/customer.png" alt="">
+                        Customer Centricity
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="value-details">
+        <div class="integrity-details" id="integrity">
+            <div class="category_block_header">
+                <h2>Integrity</h2>
+            </div>
+            <p>
+                We build trust with our clients by proving services which are secure, consistently available and
+                satisfies your needs, giving you what you asked for, exactly what you need and exceeding your
+                expectations. <br>
+                We ensure that there is integrity in the fun and engaging experiences for our customers. <br>
+                We thrive in creating a lively and upbeat atmosphere when you visit our online store. <br>
+                Create engaging and interactive website content that appeals to gamers of all skill levels and ages
+                above 18, which contains videos, and links to tutorials, and game demos.<br>
+                Our wide range of gaming products and accessories have guaranties because they are not only
+                high-quality, but also interesting and unique, providing our customers with a sense of excitement and
+                discovery.<br>
+            </p>
+        </div>
+        <div class="integrity-details" id="diversity">
+
+            <div class="category_block_header">
+                <h2>
+                    Diversity & Inclusion
+                </h2>
+            </div>
+            <p>
+                We offer a diverse range of games and gaming products that appeal to gamers of all ages, genders, races,
+                and abilities. <br>
+                We provide a safe and welcoming environment for all customers, including those who may feel marginalized
+                or excluded in other gaming spaces. <br>
+                We offer products and services which cater for every one of our client’s to foster and ensure diversity
+                and inclusion to encourage minority – backgrounds communities, such as women gaming or LGBT+ gaming
+                products and services.
+
+            </p>
+        </div>
+        <div class="integrity-details" id="excellence">
+            <div class="category_block_header">
+                <h2>
+                    Excellence
+                </h2>
+            </div>
+            <p>
+                We strive to be the standard of excellence,
+                we prioritize offering high-quality products and services, such as top-of-the-line games, gaming
+                devices, consoles , accessories and equipment
+                and we also offer a channel where you can contact us for any questions and support to receive expert
+                advice and support.
+
+            </p>
+        </div>
+        <div class="integrity-details" id="innovative">
+            <div class="category_block_header">
+                <h2>
+                    Innovative
+                </h2>
+            </div>
+            <p>
+                We strive to stay ahead of the curve by offering the latest and greatest gaming products and
+                technologies, as well as hosting innovative offers, sales and promotions. <br>
+                We value innovation and strive to stay at the forefront of the gaming industry, offering our customers
+                the latest and greatest products and technologies. Our ecommerce store recognizes that gaming is a
+                rapidly evolving field, and we are committed to exploring new ideas and pushing the boundaries of what
+                is possible.
+            </p>
+        </div>
+        <div class="integrity-details" id="customer">
+            <div class="category_block_header">
+                <h2>
+                    Customer Centriciy
+                </h2>
+            </div>
+            <p>
+                We prioritize excellent customer service by providing prompt and friendly assistance to customers,
+                addressing any concerns or issues quickly and efficiently, and building long-lasting relationships with
+                our customers. <br>
+                Our ecommerce store can aim to foster a strong sense of community among our customers by providing a
+                welcoming and inclusive environment for gamers of all backgrounds and skill levels.
+            </p>
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
@@ -132,16 +256,10 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Home</a>
+                            <a th:href="@{/}" class="text-white">Home</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Products</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Login</a>
+                            <a th:href="@{/about}" class="text-white">About Us</a>
                         </li>
                     </ul>
                 </div>
@@ -222,30 +340,33 @@
                         <!-- Section: Text -->
                         <section class="mb-4">
                             <p>
-                                Thank you for visiting our website ! Please check out our products and get the most
+                                Thank you for visiting our website ! Please checkout our products and get the most
                                 exclusive and trending games at the best and most affordable prices !
 
                             </p>
                         </section>
                         <!-- Section: Text -->
+
                     </div>
+
 
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2023 Copyright:
+                    <a class="text-white" href="#">GameStation</a>
+                </div>
+                <!-- Copyright -->
 
-            </div>
         </section>
         <!-- Section: Links -->
+</div>
 
 <!-- Grid container -->
 
-<!-- Copyright -->
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white" href="#">GameStation</a>
-</div>
-<!-- Copyright -->
+
 </footer>
 <!-- Footer -->
 </div>
