@@ -8,3 +8,47 @@ It is a website that is dedicated to the gaming community. It provides an extens
 design. Using these colours on the website helps establish a robust and easily recognizable brand identity that is memorable.
 
 The functionality of the Game Station website is designed with the user in mind. The website is easy to navigate, with clear categories and subcategories that allow customers to quickly find the products they are looking for. The website aims to become a one-stop shop for all gaming related needs, catering to the needs of gamers of different ages and preferences with a commitment to quality, reliability, and customer satisfaction.
+
+<h2>Team Members</h2> 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>ID Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RAHEEB ABDUSALAM</td>
+      <td>210119617</td>
+    </tr>
+    <tr>
+      <td>IBRAHEEM KHAN</td>
+      <td>200154725 </td>
+    </tr>
+    <tr>
+      <td>ALABAS ALATIKI </td>
+      <td>200127774</td>
+    </tr>
+    <tr>
+      <td>MIKHAIL MIRZA</td>
+      <td>190163329</td>
+    </tr>
+    <tr>
+      <td>BOLUWATIFE OLUSINA</td>
+      <td>220036388</td>
+    </tr>
+    <tr>
+      <td>RAIHAAN ARSHAD </td>
+      <td>190070142 </td>
+    </tr>
+     <tr>
+      <td>ALISHA WALTERS </td>
+      <td>210178500 </td>
+    </tr>
+     <tr>
+      <td>GURVIR BRAR</td>
+      <td>210113442</td>
+    </tr>
+  </tbody>
+</table>
