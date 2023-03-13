@@ -31,11 +31,6 @@ public class HomeController {
     @GetMapping()
     public ModelAndView viewHomePage(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("index");
-        if (principal != null) {
-            mav.addObject("loggedIn", true);
-        } else {
-            mav.addObject("loggedIn", false);
-        }
         return mav;
     }
 
@@ -43,11 +38,6 @@ public class HomeController {
     @GetMapping("/about")
     public ModelAndView viewAbout(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("about");
-        if (principal != null) {
-            mav.addObject("loggedIn", true);
-        } else {
-            mav.addObject("loggedIn", false);
-        }
         return mav;
     }
 
