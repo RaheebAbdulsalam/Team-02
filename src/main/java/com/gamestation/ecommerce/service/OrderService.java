@@ -1,10 +1,12 @@
-package order.customers;
+package com.gamestation.ecommerce.service;
 
+import com.gamestation.ecommerce.model.Order;
+import com.gamestation.ecommerce.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 /**
  * Service class that handles business logic for managing orders.
@@ -22,9 +24,7 @@ public class OrderService {
      * @return a list of orders.
      */
     public List<Order> getAllOrders() {
-        List<Order> orders = orderRepository.findAllByOrderByOrderIdAsc();
-        System.out.println("Retrieved " + orders.size() + " orders from the database.");
-        return orders;
+        return orderRepository.findAll();
     }
 
     /**
@@ -34,64 +34,52 @@ public class OrderService {
      * @return the order with the given ID, or null if not found.
      */
 
-    public Order getOrderById(Long orderId) {
-         Optional<Order> order = orderRepository.findById(orderId);
-        return order.orElse(null);
+    public Order getOrderById(Integer orderId) {
+        return orderRepository.findById(orderId).orElse(null);
     }
 
     /**
      * Creates a new order in the database.
      *
-     * @param order the order to create.
+     * @param name the name of the order.
+     * @param userId the ID of the user associated with the order.
+     * @param order the details of the order to create.
      * @return the created order.
      */
 
-    public Order createOrder(Order order) {
-        Order createdOrder = orderRepository.save(order);
-        System.out.println("Created order with ID " + createdOrder.getOrderId());
-        return createdOrder;
-
+    public Order createOrder(Order order, String name, Integer userId) {
+        order.setName(name);
+        order.setUserId(userId);
+        return orderRepository.save(order);
     }
+
 
 
     /**
      * Updates an existing order in the database.
      *
      * @param orderId the ID of the order to update.
-     * @param order   the updated order data.
-     * @return the updated order, or null if the order was not found.
+     * @return the updated order
      */
 
-    public Order updateOrder(Long orderId, Order order) {
-        Optional<Order> optionalOrder = orderRepository.findByOrderId(orderId);
-        if (optionalOrder.isPresent()) {
-            Order existingOrder = optionalOrder.get();
-            existingOrder.setProductId(order.getProductId());
-            existingOrder.setEmail(order.getEmail());
-            existingOrder.setTotal(order.getTotal());
-            existingOrder.setStatus(order.getStatus());
-            return orderRepository.save(existingOrder);
-        }
-        return null;
+    public Order updateOrder(Integer orderId, Order orderDetails) {
+        Order order = getOrderById(orderId);
+        order.setEmail(orderDetails.getEmail());
+        order.setTotal(orderDetails.getTotal());
+        order.setStatus(orderDetails.getStatus());
+        order.setName(orderDetails.getName());
+        order.setUserId(orderDetails.getUserId());
+        return orderRepository.save(order);
     }
 
     /**
      * Deletes an order with the given ID from the database.
      *
      * @param orderId the ID of the order to delete.
-     * @return true if the order was deleted, false if the order was not found.
      */
 
-    public boolean deleteOrder(Long orderId) {
-        Optional<Order> optionalOrder = orderRepository.findByOrderId(orderId);
-        if (optionalOrder.isPresent()) {
-            orderRepository.delete(optionalOrder.get());
-            return true;
-        }
-        return false;
+    public void deleteOrder(Integer orderId) {
+        orderRepository.deleteById(orderId);
     }
 
-    public List<Order> listAll(){
-        return orderRepository.findAllByOrderByOrderIdAsc();
-    }
 }

@@ -1,7 +1,8 @@
-package order.customers;
+package com.gamestation.ecommerce.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,52 +12,60 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
-    private Long orderId;
+    @Column(name = "id")
+    private Integer orderId;
 
-    @Column(name = "product_id")
-    private String productId;
+    @Column(name = "user_id")
+    private Integer userId;
 
+    @Column(name = "name")
+    private String name;
     @Column(name = "email")
     private String email;
 
     @Column(name = "total")
-    private Double total;
+    private BigDecimal total;
 
-    @Column(name = "status")
+    @Column(name = "status", columnDefinition = "varchar(10) default 'NEW'")
     private String status;
-
-
-
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
-
     public Order() {
     }
 
-    public Order(String productId, String email, Double total, String status) {
-        this.productId = productId;
+    public Order(String name, Integer userId, String email, BigDecimal total, String status) {
+        this.name = name;
+        this.userId = userId;
         this.email = email;
         this.total = total;
         this.status = status;
     }
 
-    public Long getOrderId() {
+    // getters and setters
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Long orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getName() {
+        return name;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getEmail() {
@@ -67,11 +76,11 @@ public class Order {
         this.email = email;
     }
 
-    public Double getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 
@@ -83,13 +92,20 @@ public class Order {
         this.status = status;
     }
 
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
 
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
 
     @Override
     public String toString() {
         return "Order{" +
                 "orderId=" + orderId +
-                ", productId='" + productId + '\'' +
+                ", name='" + name + '\'' +
+                ", userId=" + userId +
                 ", email='" + email + '\'' +
                 ", total=" + total +
                 ", status='" + status + '\'' +

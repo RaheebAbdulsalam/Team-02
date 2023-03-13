@@ -1,9 +1,10 @@
-package order.customers;
+package com.gamestation.ecommerce.controller;
 
+import com.gamestation.ecommerce.model.Order;
+import com.gamestation.ecommerce.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,27 +29,7 @@ public class OrderController {
     @GetMapping("/list")
     public ResponseEntity<List<Order>> getAllOrders() {
         List<Order> orders = orderService.getAllOrders();
-        System.out.println("All Orders: " + orders.toString());
         return new ResponseEntity<>(orders, HttpStatus.OK);
-    }
-
-    /**
-     * GET endpoint for printing all orders to the console.
-     *
-     * @return ResponseEntity with a success message and HTTP status OK (200) on success.
-     */
-    @GetMapping("/printOrders")
-    public ResponseEntity<String> printOrders() {
-        List<Order> orders = orderService.getAllOrders();
-        for (Order order : orders) {
-            System.out.println("Order ID: " + order.getOrderId());
-            System.out.println("Product ID: " + order.getProductId());
-            System.out.println("Email: " + order.getEmail());
-            System.out.println("Total: " + order.getTotal());
-            System.out.println("Status: " + order.getStatus());
-            System.out.println("-----------");
-        }
-        return new ResponseEntity<>("Orders printed successfully", HttpStatus.OK);
     }
 
     /**
@@ -59,9 +40,8 @@ public class OrderController {
      */
 
     @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
-        Order createdOrder = orderService.createOrder(order);
-        System.out.println("Couldn't create Order");
+    public ResponseEntity<Order> createOrder(@RequestBody Order order, @RequestParam String name, @RequestParam Integer userId) {
+        Order createdOrder = orderService.createOrder(order, name, userId);
         return new ResponseEntity<>(createdOrder, HttpStatus.CREATED);
     }
 
@@ -69,12 +49,11 @@ public class OrderController {
      * PUT endpoint for updating an existing order.
      *
      * @param orderId the ID of the order to be updated.
-     * @param order the updated Order object.
      * @return ResponseEntity with the updated Order object and HTTP status OK (200) on success, or HTTP status NOT_FOUND (404) if the order was not found.
      */
     @PutMapping("/{order_id}")
-    public ResponseEntity<Order> updateOrder(@PathVariable ("order_id") Long orderId, @RequestBody Order order) {
-        Order updatedOrder = orderService.updateOrder(orderId, order);
+    public ResponseEntity<Order> updateOrder(@PathVariable ("order_id") Integer orderId, @RequestBody Order orderDetails) {
+        Order updatedOrder = orderService.updateOrder(orderId, orderDetails);
         if (updatedOrder == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -88,17 +67,14 @@ public class OrderController {
      * @return ResponseEntity with HTTP status NO_CONTENT (204) on success, or HTTP status NOT_FOUND (404) if the order was not found.
      */
     @DeleteMapping("/{order_id}")
-    public ResponseEntity<HttpStatus> deleteOrder(@PathVariable("order_id") Long orderId) {
-        boolean deleted = orderService.deleteOrder(orderId);
-        if (!deleted) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<HttpStatus> deleteOrder(@PathVariable("order_id") Integer orderId) {
+        orderService.deleteOrder(orderId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     @GetMapping()
     public ModelAndView ordersPage() {
-        ModelAndView mav = new ModelAndView("index");
-        mav.addObject("orders", orderService.listAll());
+        ModelAndView mav = new ModelAndView("admin/orders");
+        mav.addObject("orders", orderService.getAllOrders());
         return mav;
     }
 

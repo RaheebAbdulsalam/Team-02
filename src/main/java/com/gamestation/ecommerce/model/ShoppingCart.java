@@ -1,42 +1,36 @@
 package com.gamestation.ecommerce.model;
+
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
 
 @Entity
-@Table(name = "order_items")
-public class OrderItem {
+@Table(name = "shopping_carts")
+public class ShoppingCart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
-
-    @Column(name = "price")
-    private BigDecimal price;
 
     @Column(name = "quantity")
     private Integer quantity;
 
-    @Column(name = "status", columnDefinition = "varchar(10) default 'NEW'")
-    private String status;
+    public ShoppingCart() {}
 
-    public OrderItem() {
-    }
-
-    public OrderItem(Order order, Product product, Integer quantity) {
-        this.order = order;
+    public ShoppingCart(User user, Product product, Integer quantity) {
+        this.user = user;
         this.product = product;
         this.quantity = quantity;
-        this.price = product.getPrice();
     }
+
+    // getters and setters
 
     public Integer getId() {
         return id;
@@ -46,12 +40,12 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Order getOrder() {
-        return order;
+    public User getUser() {
+        return user;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Product getProduct() {
@@ -69,10 +63,5 @@ public class OrderItem {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-
 }
+
