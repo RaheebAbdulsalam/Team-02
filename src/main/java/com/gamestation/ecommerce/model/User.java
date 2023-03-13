@@ -78,7 +78,7 @@ public class User {
     public Set<Role> getRoles() {
         return roles;
     }
-    
+
 
     public void addRole(Role role){
         this.roles.add(role);

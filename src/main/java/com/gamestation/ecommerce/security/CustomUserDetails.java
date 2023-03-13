@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.model;
+package com.gamestation.ecommerce.security;
 
 
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import com.gamestation.ecommerce.model.Role;
+import com.gamestation.ecommerce.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
