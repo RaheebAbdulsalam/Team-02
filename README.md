@@ -1,6 +1,5 @@
-# TEAM 4 CS2TP!
+# TEAM 2 CS2TP!
 
-[Games logo new](https://user-images.githubusercontent.com/99501966/224842229-5a99e6f8-bdfb-4027-8668-a38963909810.png)
 
 <h2>About Games Station </h2>
 
