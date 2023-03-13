@@ -2,7 +2,6 @@ package LoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.RoleRepository;
