@@ -1,6 +1,8 @@
 # TEAM 2 CS2TP!
 
-<img  src="https://user-images.githubusercontent.com/99501966/224846803-058718dc-ec7c-42eb-8d11-bdcd0d0d3457.png">
+<div style="text-align:center">
+  <img src="https://user-images.githubusercontent.com/99501966/224846803-058718dc-ec7c-42eb-8d11-bdcd0d0d3457.png" style="width:50%;height:50%;">
+</div>
 
 
 <h2>About Games Station </h2>
