@@ -1,3 +1,4 @@
-# Team-02
+ =======
+Team 02
 
-Creating user's orders page functionality 
+Backend - User registration, authentication, products, categories, admin panel, order system
