@@ -1,5 +1,5 @@
 # TEAM 2 CS2TP!
-  <img src="https://user-images.githubusercontent.com/99501966/224846803-058718dc-ec7c-42eb-8d11-bdcd0d0d3457.png" width:200  style="max-width=%100">
+  <img src="https://user-images.githubusercontent.com/99501966/224847617-72f1a015-516f-4df6-9ace-d4d300a46850.png" width:200  style="max-width=%100">
 <h2>About Games Station </h2> 
 
 Game Station is an e-commerce platform aimed at gamers who are looking for a convenient and reliable online store to purchase their video games and accessories. The target audience for Game Station includes a wide range of ages starting from 10 years old who are interested in video games, including both enthusiastic and hardcore gamers, as well as casual players, all individuals can find a vast selection of gaming products at competitive prices.
