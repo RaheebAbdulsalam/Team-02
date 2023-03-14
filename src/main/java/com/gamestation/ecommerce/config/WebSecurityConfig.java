@@ -46,6 +46,7 @@ public class WebSecurityConfig{
         http
                 .authorizeRequests()
                 //.requestMatchers("/users").authenticated()
+                .requestMatchers("/shoppingcart/**").authenticated()
                 .requestMatchers("/updateProfile").authenticated()
                 .requestMatchers("/profile").authenticated()
                 .requestMatchers("/edit-profile").authenticated()
