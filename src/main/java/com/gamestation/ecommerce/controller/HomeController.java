@@ -1,9 +1,11 @@
 package com.gamestation.ecommerce.controller;
 
 import com.gamestation.ecommerce.model.Category;
+import com.gamestation.ecommerce.model.Product;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.UserRepository;
 import com.gamestation.ecommerce.service.CategoryService;
+import com.gamestation.ecommerce.service.ProductService;
 import com.gamestation.ecommerce.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,8 @@ public class HomeController {
     private UserRepository userRepo;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ProductService productService;
 
     /* Code to return pages */
     // Returns home page
@@ -117,6 +121,14 @@ public class HomeController {
         ModelAndView mav = new ModelAndView("productPage");
         mav.addObject("category", category);
         mav.addObject("products", category.getProducts());
+        return mav;
+    }
+
+    @GetMapping("/product/{id}")
+    public ModelAndView getProductPage(@PathVariable("id") Integer id) {
+        Product product = productService.getProductById(id);
+        ModelAndView mav = new ModelAndView("productDetail");
+        mav.addObject("product", product);
         return mav;
     }
 
