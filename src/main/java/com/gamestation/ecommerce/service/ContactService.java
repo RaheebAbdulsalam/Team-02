@@ -21,4 +21,8 @@ public class ContactService {
     public Contact getMessageById(Long id) {
         return contactRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Message not found with id: " + id));
     }
+
+    public void deleteMessage(Long id) {
+        contactRepository.deleteById(id);
+    }
 }

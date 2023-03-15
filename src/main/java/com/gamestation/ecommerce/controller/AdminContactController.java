@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -21,7 +19,7 @@ public class AdminContactController {
     @Autowired
     private ContactService contactService;
 
-    // Returns admin category page and category list
+    // Returns admin messages page and category list
     @GetMapping
     public ModelAndView getAdminMessagesPage() {
         ModelAndView mav = new ModelAndView("admin/messages");
@@ -45,5 +43,12 @@ public class AdminContactController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    // method for deleting messages, and reloading page
+    @DeleteMapping("/{id}")
+    public RedirectView deleteMessages(@PathVariable("id") Long id) {
+        contactService.deleteMessage(id);
+        return new RedirectView("/admin/category");
     }
 }
