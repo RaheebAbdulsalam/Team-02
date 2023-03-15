@@ -7,8 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 @Entity
 @Table(name = "product")
 public class Product {

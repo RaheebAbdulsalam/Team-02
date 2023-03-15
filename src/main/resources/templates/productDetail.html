@@ -808,16 +808,22 @@
                             <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand" th:text="${product.categories.get(0).name}"></span>
                                 <h5 class="text-uppercase" th:text="${product.name}"></h5>
                                 <div class="price d-flex flex-row align-items-center"> <span class="act-price" th:text="${product.price}">$</span>
-                                    <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span></div>
                                 </div>
                             </div>
                             <p class="about" th:text="${product.description}"></p>
-                            <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
-                        </div>
+                            <div class="cart mt-4 align-items-center">
+                                <form id="add-to-cart-form" action="/shoppingcart" method="post">
+                                    <input type="hidden" name="productId" th:value="${product.id}">
+                                    <input type="number" name="quantity" value="1" min="1">
+                                    <button type="submit" class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>
+                                </form>
+                                <div id="message"></div>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 </body>
@@ -946,4 +952,23 @@
 	<!-- Copyright -->
 </footer>
 <script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
-</html>                                		
+</html>
+
+<!--JavaScript - Message for adding item to cart, or not being logged in-->
+<script>
+    const form = document.getElementById('add-to-cart-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        fetch('/shoppingcart', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(message => {
+                const messageElement = document.getElementById('message');
+                messageElement.innerText = message;
+            })
+            .catch(error => console.error(error));
+    });
+</script>

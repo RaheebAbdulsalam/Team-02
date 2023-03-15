@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,10 +45,15 @@ public class ShoppingCartController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addToCart(@RequestParam("productId") Integer productId, @RequestParam("quantity") Integer quantity, Authentication authentication) {
+    public ResponseEntity<String> addToCart(@RequestParam("productId") Integer productId, @RequestParam("quantity") Integer quantity, Authentication authentication) {
+        // Users must log in to add to cart - return to login page
+        if (authentication == null) {
+            return ResponseEntity.ok("You must be logged in to make purchases.");
+        }
+
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         shoppingCartService.addToCart(userDetails.getUser(), productId, quantity);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("Item added successfully to cart.");
     }
 
     @PutMapping("/{itemId}")
