@@ -1,7 +1,7 @@
 package com.gamestation.ecommerce.model;
 
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "shopping_carts")
@@ -12,20 +12,20 @@ public class ShoppingCart {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
 
     @Column(name = "quantity")
     private Integer quantity;
 
+    @JoinColumn(name = "user_id")
+    private Integer userId;
+
+
     public ShoppingCart() {}
 
-    public ShoppingCart(User user, Product product, Integer quantity) {
-        this.user = user;
+    public ShoppingCart(Integer userId, Product product, Integer quantity) {
+        this.userId = userId;
         this.product = product;
         this.quantity = quantity;
     }
@@ -40,12 +40,8 @@ public class ShoppingCart {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public Integer getUser() {
+        return userId;
     }
 
     public Product getProduct() {

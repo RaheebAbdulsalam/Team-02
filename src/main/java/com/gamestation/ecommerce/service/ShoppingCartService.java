@@ -1,9 +1,9 @@
 package com.gamestation.ecommerce.service;
 
-import com.gamestation.ecommerce.exception.ResourceNotFoundException;
 import com.gamestation.ecommerce.model.Product;
 import com.gamestation.ecommerce.model.ShoppingCart;
 import com.gamestation.ecommerce.model.User;
+import com.gamestation.ecommerce.repository.ProductRepository;
 import com.gamestation.ecommerce.repository.ShoppingCartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,42 +17,43 @@ public class ShoppingCartService {
     private ShoppingCartRepository shoppingCartRepository;
 
     @Autowired
-    private UserService userService;
+    private ProductRepository productRepository;
 
-    @Autowired
-    private ProductService productService;
-
-    public List<ShoppingCart> findByUserId(Integer userId) {
-        return shoppingCartRepository.findByUserId(userId);
+    public List<ShoppingCart> getCartItems(User user) {
+        return shoppingCartRepository.findByUserId(user.getId());
     }
 
-    public ShoppingCart findById(Integer id) {
-        return shoppingCartRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Item not found with id: " + id));
-    }
+    public void addToCart(User user, Integer productId, Integer quantity) {
+        Product product = productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+        ShoppingCart existingItem = shoppingCartRepository.findByUserIdAndProductId(user.getId(), productId);
 
-    public void addToCart(Integer userId, Integer productId, Integer quantity) {
-        User user = userService.get(userId);
-        Product product = productService.getProductById(productId);
-        ShoppingCart cartItem = shoppingCartRepository.findByUserAndProduct(user, product);
-
-        if (cartItem == null) {
-            cartItem = new ShoppingCart(user, product, quantity);
+        if (existingItem != null) {
+            existingItem.setQuantity(existingItem.getQuantity() + quantity);
+            shoppingCartRepository.save(existingItem);
         } else {
-            cartItem.setQuantity(cartItem.getQuantity() + quantity);
+            ShoppingCart newItem = new ShoppingCart(user.getId(), product, quantity);
+            shoppingCartRepository.save(newItem);
         }
-
-        shoppingCartRepository.save(cartItem);
     }
 
-    public void removeFromCart(Integer cartItemId) {
-        shoppingCartRepository.deleteById(cartItemId);
+    public void updateCartItemQuantity(User user, Integer itemId, Integer quantity) {
+        ShoppingCart cartItem = shoppingCartRepository.findByUserIdAndId(user.getId(), itemId);
+
+        if (cartItem != null) {
+            cartItem.setQuantity(quantity);
+            shoppingCartRepository.save(cartItem);
+        } else {
+            throw new RuntimeException("Cart item not found");
+        }
     }
 
-    public void updateCartItem(Integer cartItemId, Integer quantity) {
-        ShoppingCart cartItem = findById(cartItemId);
-        cartItem.setQuantity(quantity);
-        shoppingCartRepository.save(cartItem);
+    public void removeCartItem(User user, Integer itemId) {
+        ShoppingCart cartItem = shoppingCartRepository.findByUserIdAndId(user.getId(), itemId);
+
+        if (cartItem != null) {
+            shoppingCartRepository.delete(cartItem);
+        } else {
+            throw new RuntimeException("Cart item not found");
+        }
     }
-
-
 }

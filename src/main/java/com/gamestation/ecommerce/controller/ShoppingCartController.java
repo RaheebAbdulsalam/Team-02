@@ -1,15 +1,15 @@
 package com.gamestation.ecommerce.controller;
 
-import com.gamestation.ecommerce.model.ShoppingCart;
+import com.gamestation.ecommerce.model.*;
+import com.gamestation.ecommerce.model.dto.ShoppingCartDto;
 import com.gamestation.ecommerce.service.ShoppingCartService;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -21,47 +21,50 @@ public class ShoppingCartController {
     @Autowired
     private ShoppingCartService shoppingCartService;
 
-    @GetMapping("/{userId}")
-    @PreAuthorize("isAuthenticated() and #userId == principal.userId")
-    public ModelAndView showShoppingCart(@PathVariable("userId") Integer userId) {
-        List<ShoppingCart> shoppingCartItems = shoppingCartService.findByUserId(userId);
-        ModelAndView modelAndView = new ModelAndView("shoppingCart");
-        modelAndView.addObject("shoppingCartItems", shoppingCartItems);
-        BigDecimal cartTotal = BigDecimal.ZERO;
-        for (ShoppingCart item : shoppingCartItems) {
-            BigDecimal itemPrice = item.getProduct().getPrice();
-            BigDecimal itemQuantity = new BigDecimal(item.getQuantity());
-            BigDecimal itemTotal = itemPrice.multiply(itemQuantity);
-            cartTotal = cartTotal.add(itemTotal);
+    @GetMapping
+    public ModelAndView getShoppingCart(Authentication authentication) {
+        // Users must log in to access cart - return to login page
+        if (authentication == null) {
+            return new ModelAndView("redirect:/login");
         }
-        modelAndView.addObject("cartTotal", cartTotal);
+
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        List<ShoppingCart> cartItems = shoppingCartService.getCartItems(userDetails.getUser());
+
+        BigDecimal totalPrice = BigDecimal.ZERO; // initialize the total price variable
+        for (ShoppingCart cartItem : cartItems) {
+            BigDecimal productPrice = cartItem.getProduct().getPrice();
+            BigDecimal quantity = new BigDecimal(cartItem.getQuantity()); // convert the Integer to a BigDecimal
+            totalPrice = totalPrice.add(productPrice.multiply(quantity)); // calculate the total price
+        }
+
+        ModelAndView modelAndView = new ModelAndView("shoppingCart");
+        modelAndView.addObject("cartItems", cartItems);
+        modelAndView.addObject("totalPrice", totalPrice); // add the total price to the model
         return modelAndView;
     }
 
-    @PostMapping("/{userId}")
-    @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<Void> addToCart(@PathVariable("userId") Integer userId,
-                                          @RequestParam("productId") Integer productId,
-                                          @RequestParam("quantity") Integer quantity) {
-        shoppingCartService.addToCart(userId, productId, quantity);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    @PostMapping
+    public ResponseEntity<?> addToCart(@RequestBody ShoppingCartDto shoppingCartDto, Authentication authentication) {
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        shoppingCartService.addToCart(userDetails.getUser(), shoppingCartDto.getProductId(), shoppingCartDto.getQuantity());
+        return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/{cartItemId}")
-    @PreAuthorize("isAuthenticated()")
-    public RedirectView removeFromCart(@PathVariable("cartItemId") Integer cartItemId, HttpServletRequest request) {
-        shoppingCartService.removeFromCart(cartItemId);
-        String referer = request.getHeader("Referer");
-        return new RedirectView(referer);
+    @PutMapping("/{itemId}")
+    public ResponseEntity<?> updateCartItemQuantity(@PathVariable Integer itemId, @RequestParam("quantity") Integer quantity, Authentication authentication, HttpServletResponse response) {
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        shoppingCartService.updateCartItemQuantity(userDetails.getUser(), itemId, quantity);
+        response.setHeader("Location", "/shoppingcart");
+        return ResponseEntity.status(HttpStatus.FOUND).build();
     }
 
-    @PutMapping("/{cartItemId}")
-    @PreAuthorize("isAuthenticated()")
-    public RedirectView updateCartItem(@PathVariable("cartItemId") Integer cartItemId,
-                                               @RequestParam("quantity") Integer quantity, HttpServletRequest request) {
-        shoppingCartService.updateCartItem(cartItemId, quantity);
-        String referer = request.getHeader("Referer");
-        return new RedirectView(referer);
+    @DeleteMapping("/{itemId}")
+    public ResponseEntity<?> removeCartItem(@PathVariable Integer itemId, Authentication authentication, HttpServletResponse response) {
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        shoppingCartService.removeCartItem(userDetails.getUser(), itemId);
+        response.setHeader("Location", "/shoppingcart");
+        return ResponseEntity.status(HttpStatus.FOUND).build();
     }
 
 }

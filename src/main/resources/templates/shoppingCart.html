@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
   <title>Shopping Cart</title>
 </head>
 <body>
@@ -9,37 +8,42 @@
 <table>
   <thead>
   <tr>
-    <th>Item Name</th>
+    <th>Name</th>
     <th>Price</th>
     <th>Image</th>
     <th>Quantity</th>
+    <th>Subtotal</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
-  <tr th:each="item : ${shoppingCartItems}">
-    <td th:text="${item.product.name}"></td>
-    <td th:text="${item.product.price}"></td>
-    <td><img th:src="${item.product.image}" alt="Product Image"></td>
+  <tr th:each="cartItem : ${cartItems}">
+    <td th:text="${cartItem.product.name}"></td>
+    <td th:text="${cartItem.product.price}"></td>
     <td>
-      <form th:action="@{/shoppingcart/{cartItemId}(cartItemId=${item.id})}" method="post">
-        <input type="hidden" name="_method" value="put" />
-        <input type="hidden" name="productId" th:value="${item.product.id}" />
-        <input type="number" name="quantity" th:value="${item.quantity}" min="1" max="10" />
+      <img th:src="@{${cartItem.product.image}}" height="50" alt="Product Image"/>
+    </td>
+    <td>
+      <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
+        <input type="hidden" name="_method" value="PUT" />
+        <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1" th:max="${cartItem.product.stockLevel}" />
         <button type="submit">Update</button>
       </form>
     </td>
+    <td th:text="${cartItem.product.price * cartItem.quantity}"></td>
     <td>
-      <form th:action="@{/shoppingcart/{cartItemId}(cartItemId=${item.id})}" method="post">
+      <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
         <input type="hidden" name="_method" value="DELETE" />
         <button type="submit">Remove</button>
       </form>
     </td>
   </tr>
+  <tr>
+    <td colspan="4"></td>
+    <td><strong>Total Price:</strong></td>
+    <td th:text="${totalPrice}"></td> // display the total price here
+  </tr>
   </tbody>
 </table>
-<p>Total: <span th:text="${cartTotal}"></span></p>
 </body>
 </html>
-
-
