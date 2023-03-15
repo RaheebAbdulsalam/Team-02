@@ -49,7 +49,7 @@ public class UserService {
         user.setPassword(encodedPassword);
         userRepo.save(user);
     }
-    
+
     public boolean emailExists(String email) {
         Optional<User> userOptional = Optional.ofNullable(userRepo.findByEmail(email));
         return userOptional.isPresent();
