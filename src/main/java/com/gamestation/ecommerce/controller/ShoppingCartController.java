@@ -1,7 +1,6 @@
 package com.gamestation.ecommerce.controller;
 
 import com.gamestation.ecommerce.model.*;
-import com.gamestation.ecommerce.model.dto.ShoppingCartDto;
 import com.gamestation.ecommerce.service.ShoppingCartService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +44,9 @@ public class ShoppingCartController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addToCart(@RequestBody ShoppingCartDto shoppingCartDto, Authentication authentication) {
+    public ResponseEntity<?> addToCart(@RequestParam("productId") Integer productId, @RequestParam("quantity") Integer quantity, Authentication authentication) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
-        shoppingCartService.addToCart(userDetails.getUser(), shoppingCartDto.getProductId(), shoppingCartDto.getQuantity());
+        shoppingCartService.addToCart(userDetails.getUser(), productId, quantity);
         return ResponseEntity.ok().build();
     }
 
