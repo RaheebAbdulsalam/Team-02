@@ -46,7 +46,6 @@ public class WebSecurityConfig{
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                //.requestMatchers("/users").authenticated()
                 .requestMatchers("/updateProfile").authenticated()
                 .requestMatchers("/profile").authenticated()
                 .requestMatchers("/edit-profile").authenticated()
