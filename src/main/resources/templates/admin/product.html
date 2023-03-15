@@ -151,7 +151,12 @@
                     <div class="col-lg-4">
                         <h1>Product List</h1>
 
-
+                        <!---------------- Search Button--------------------------->
+                        <form th:action="@{/search}" method="get">
+                            <input type="text" name="query" placeholder="Enter search term">
+                            <button type="submit">Search</button>
+                        </form>
+                        <!--------------------------------------------------------->
 
                         <br>
                         <div>
