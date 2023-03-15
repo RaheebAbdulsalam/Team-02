@@ -90,4 +90,9 @@ public class ProductService {
     public void deleteProduct(Integer id) {
         productRepository.deleteById(id);
     }
+
+
+    public List<Product> search(String query) {
+        return productRepository.findByNameContainingIgnoreCase(query);
+    }
 }

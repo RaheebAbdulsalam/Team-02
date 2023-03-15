@@ -23,11 +23,18 @@ public class AdminProductController {
 
     // Returns admin product page and product list
     @GetMapping
-    public ModelAndView getAdminProductPage() {
+    public ModelAndView getAdminProductPage(@RequestParam(required = false) String query) {
         ModelAndView mav = new ModelAndView("admin/product");
-        mav.addObject("products", productService.getAllProducts());
+        if (query != null) {
+            List<Product> products = productService.search(query);
+            mav.addObject("products", products);
+        } else {
+            List<Product> products = productService.getAllProducts();
+            mav.addObject("products", products);
+        }
         return mav;
     }
+
     @GetMapping("/list")
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = productService.getAllProducts();
@@ -82,5 +89,15 @@ public class AdminProductController {
     public RedirectView deleteProduct(@PathVariable("id") Integer id) {
         productService.deleteProduct(id);
         return new RedirectView("/admin/product");
+    }
+
+    // method to search for products by name
+    @GetMapping("/search")
+    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam("query") String query) {
+        List<Product> products = productService.search(query);
+        if(products.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 }
