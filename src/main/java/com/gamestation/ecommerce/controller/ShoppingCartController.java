@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -104,6 +105,18 @@ public class ShoppingCartController {
         order.setEmail(userDetails.getUser().getEmail());
         order.setTotal(totalPrice);
         order.setStatus("NEW");
+
+        order = orderService.createOrder(order, userDetails.getFullName(), userDetails.getUser().getId());
+
+        List<OrderItem> orderItems = new ArrayList<>();
+        for (ShoppingCart cartItem : cartItems) {
+            OrderItem orderItem = new OrderItem(order, cartItem.getProduct(), cartItem.getQuantity());
+            orderItem.setOrder(order); // set the order ID
+            orderItems.add(orderItem); // add the order item to the list
+            orderItem.setStatus("NEW");
+        }
+
+        order.setOrderItems(orderItems); // set the order items for the order
 
         orderService.createOrder(order, userDetails.getFullName(), userDetails.getUser().getId());
         shoppingCartService.removeAllCartItems(userDetails.getUser().getId());

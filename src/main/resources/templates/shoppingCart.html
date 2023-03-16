@@ -46,29 +46,40 @@
   </tbody>
 </table>
 
+
 <form id="checkout-form" th:action="@{/shoppingcart/checkout}" method="post">
   <button type="submit" name="checkout">Checkout</button>
 </form>
+<br>
+<div id="checkout-message"></div>
 
 </body>
 </html>
-
-
-
 <script>
-  const checkoutForm = document.querySelector('#checkout-form');
+  document.querySelector("#checkout-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
 
-  checkoutForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // prevent the form from submitting
-
-    fetch('/shoppingcart/checkout', { method: 'POST' })
-            .then(response => response.text())
+    // Send a POST request to the server
+    fetch(this.action, {
+      method: "POST",
+      credentials: "same-origin"
+    })
+            .then(response => response.text()) // Parse the response text
             .then(message => {
-              // update the page to show the message
-              const messageContainer = document.createElement('p');
-              messageContainer.textContent = message;
-              checkoutForm.parentNode.insertBefore(messageContainer, checkoutForm);
+              // Display the checkout message
+              document.querySelector("#checkout-message").textContent = message;
+
+              // Clear the shopping cart table rows
+              const cartTableBody = document.querySelector("#cart-table tbody");
+              cartTableBody.querySelectorAll("tr:not(:last-child)").forEach(row => {
+                row.remove();
+              });
+
+              // Reload the page to update the total price
+              location.reload();
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+              console.error(error);
+            });
   });
 </script>

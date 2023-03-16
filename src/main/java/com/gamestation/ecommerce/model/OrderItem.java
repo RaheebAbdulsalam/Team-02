@@ -73,6 +73,14 @@ public class OrderItem {
     public BigDecimal getPrice() {
         return price;
     }
+    public void setPrice(BigDecimal price) {this.price = price;}
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 }
