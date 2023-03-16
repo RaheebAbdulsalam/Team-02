@@ -1,6 +1,8 @@
 package com.gamestation.ecommerce.controller;
 
 import com.gamestation.ecommerce.model.Contact;
+import com.gamestation.ecommerce.model.Role;
+import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,24 +28,6 @@ public class AdminContactController {
         return mav;
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<Contact>> getAllMessages() {
-        List<Contact> messages = contactService.getAllMessages();
-        if(messages.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(messages, HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Contact> getMessageById(@PathVariable("id") Long id) {
-       Contact message = contactService.getMessageById(id);
-        if(message == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(message, HttpStatus.OK);
-    }
-
     // method for deleting messages, and reloading page
     @DeleteMapping("/{id}")
     public RedirectView deleteMessages(@PathVariable("id") Long id) {
@@ -51,6 +35,23 @@ public class AdminContactController {
         return new RedirectView("/admin/category");
     }
 
+
+//    @GetMapping("/show/{id}")
+//    public ModelAndView getMessagePage(@PathVariable("id") Long id) {
+//        ModelAndView mav = new ModelAndView("admin/messageDisplay");
+//        Contact contact = contactService.getMessageById(id);
+//        mav.addObject("messages", contact);
+//        mav.addObject("allMessages", contactService.getMessageById(id));
+//        return mav;
+//    }
+
+    @GetMapping("/show/{id}")
+    public ModelAndView showMessage(@PathVariable("id") Long id) {
+        ModelAndView mav = new ModelAndView("admin/messageDisplay");
+        Contact contact= contactService.getMessageById(id);
+        mav.addObject("messages", contact);
+        return mav;
+    }
 
 
 }
