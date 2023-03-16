@@ -19,7 +19,7 @@ public class AdminContactController {
     @Autowired
     private ContactService contactService;
 
-    // Returns admin messages page and category list
+    // Returns admin messages page and messages list
     @GetMapping
     public ModelAndView getAdminMessagesPage() {
         ModelAndView mav = new ModelAndView("admin/messages");
