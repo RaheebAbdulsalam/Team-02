@@ -176,11 +176,19 @@
                 <td th:text="${messages.name}"></td>
                 <td th:text="${messages.email}"></td>
                 <td th:text="${messages.phone}"></td>
-                <td th:text="${messages.message}"></td>
+<!--                <td th:text="${messages.message}"></td>-->
 
                 <td>
                   <a href="#" class="btn btn-success" id="lines">Show</a>
                 </td>
+
+                <td>
+                  <form th:action="@{/admin/messages/__${messages.id}__}" method="post">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" id="lines" class="btn btn-danger" style= "cursor:pointer" onclick="return confirm('Are you sure you want to delete this message?')">Delete</button>
+                  </form>
+                </td>
+
               </tr>
               </tbody>
             </table>
