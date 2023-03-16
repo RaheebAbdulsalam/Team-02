@@ -5,26 +5,28 @@ import com.gamestation.ecommerce.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/admin/messages")
-public class AdminContactController {
+@RequestMapping("/admin/messageDisplay")
+public class AdminMessageDisplayController {
 
     @Autowired
     private ContactService contactService;
 
-    // Returns admin messages page and messages list
     @GetMapping
-    public ModelAndView getAdminMessagesPage() {
-        ModelAndView mav = new ModelAndView("admin/messages");
+    public ModelAndView displayMessageDetails() {
+        ModelAndView mav = new ModelAndView("admin/messageDisplay");
         mav.addObject("messages", contactService.getAllMessages());
         return mav;
     }
+
 
     @GetMapping("/list")
     public ResponseEntity<List<Contact>> getAllMessages() {
@@ -37,20 +39,10 @@ public class AdminContactController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Contact> getMessageById(@PathVariable("id") Long id) {
-       Contact message = contactService.getMessageById(id);
+        Contact message = contactService.getMessageById(id);
         if(message == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
-
-    // method for deleting messages, and reloading page
-    @DeleteMapping("/{id}")
-    public RedirectView deleteMessages(@PathVariable("id") Long id) {
-        contactService.deleteMessage(id);
-        return new RedirectView("/admin/category");
-    }
-
-
-
 }

@@ -179,7 +179,8 @@
 <!--                <td th:text="${messages.message}"></td>-->
 
                 <td>
-                  <a href="#" class="btn btn-success" id="lines">Show</a>
+                  <a href="#" class="btn btn-success" id="lines" onclick="showPopup()">Show</a>
+
                 </td>
 
                 <td>
@@ -218,6 +219,17 @@
               list.forEach((item) =>
                       item.addEventListener('mouseover', activeLink));
             </script>
+
+
+            <script th:inline="javascript">
+              // Display a pop-up page to display message
+              function showPopup() {
+                var popupUrl = "messageDisplay.html";
+                window.open(popupUrl, "Popup", "width=400,height=400");
+              }
+            </script>
+
+
           </div>
         </div>
       </div>

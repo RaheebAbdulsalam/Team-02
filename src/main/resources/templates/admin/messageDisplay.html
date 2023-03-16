@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Show</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="messages : ${messages}">
+        <td th:text="${messages.id}"></td>
+        <td th:text="${messages.name}"></td>
+        <td th:text="${messages.email}"></td>
+        <td th:text="${messages.phone}"></td>
+        <td th:text="${messages.message}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
