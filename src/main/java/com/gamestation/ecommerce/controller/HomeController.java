@@ -18,7 +18,6 @@ import java.security.Principal;
 @RequestMapping("/")
 public class HomeController {
 
-
     @Autowired
     private UserService service;
     @Autowired
