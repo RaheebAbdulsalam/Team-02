@@ -5,7 +5,6 @@ import com.gamestation.ecommerce.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
@@ -37,7 +36,7 @@ public class AdminContactController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Contact> getMesssageById(@PathVariable("id") Long id) {
+    public ResponseEntity<Contact> getMessageById(@PathVariable("id") Long id) {
        Contact message = contactService.getMessageById(id);
         if(message == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
