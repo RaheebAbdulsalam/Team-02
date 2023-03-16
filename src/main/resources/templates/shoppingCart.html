@@ -45,5 +45,30 @@
   </tr>
   </tbody>
 </table>
+
+<form id="checkout-form" th:action="@{/shoppingcart/checkout}" method="post">
+  <button type="submit" name="checkout">Checkout</button>
+</form>
+
 </body>
 </html>
+
+
+
+<script>
+  const checkoutForm = document.querySelector('#checkout-form');
+
+  checkoutForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // prevent the form from submitting
+
+    fetch('/shoppingcart/checkout', { method: 'POST' })
+            .then(response => response.text())
+            .then(message => {
+              // update the page to show the message
+              const messageContainer = document.createElement('p');
+              messageContainer.textContent = message;
+              checkoutForm.parentNode.insertBefore(messageContainer, checkoutForm);
+            })
+            .catch(error => console.error(error));
+  });
+</script>

@@ -56,4 +56,11 @@ public class ShoppingCartService {
             throw new RuntimeException("Cart item not found");
         }
     }
+
+    // Used when order is made - deletes cart data
+    public void removeAllCartItems(Integer userId) {
+        List<ShoppingCart> cartItems = shoppingCartRepository.findByUserId(userId);
+        shoppingCartRepository.deleteAll(cartItems);
+    }
+
 }

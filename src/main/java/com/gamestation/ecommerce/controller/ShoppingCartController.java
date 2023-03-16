@@ -1,16 +1,15 @@
 package com.gamestation.ecommerce.controller;
 
 import com.gamestation.ecommerce.model.*;
+import com.gamestation.ecommerce.service.OrderService;
 import com.gamestation.ecommerce.service.ShoppingCartService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -20,6 +19,11 @@ public class ShoppingCartController {
 
     @Autowired
     private ShoppingCartService shoppingCartService;
+
+    @Autowired
+    private OrderService orderService;
+
+    private BigDecimal totalPrice;
 
     @GetMapping
     public ModelAndView getShoppingCart(Authentication authentication) {
@@ -31,7 +35,7 @@ public class ShoppingCartController {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         List<ShoppingCart> cartItems = shoppingCartService.getCartItems(userDetails.getUser());
 
-        BigDecimal totalPrice = BigDecimal.ZERO; // initialize the total price variable
+        totalPrice = BigDecimal.ZERO; // initialize the total price variable
         for (ShoppingCart cartItem : cartItems) {
             BigDecimal productPrice = cartItem.getProduct().getPrice();
             BigDecimal quantity = new BigDecimal(cartItem.getQuantity()); // convert the Integer to a BigDecimal
@@ -71,5 +75,42 @@ public class ShoppingCartController {
         response.setHeader("Location", "/shoppingcart");
         return ResponseEntity.status(HttpStatus.FOUND).build();
     }
+
+    @PostMapping("/checkout")
+    public ResponseEntity<String> checkout(Authentication authentication) {
+        // Users must log in to checkout - return to login page
+        if (authentication == null) {
+            return ResponseEntity.ok("You must be logged in to make purchases.");
+        }
+
+        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        List<ShoppingCart> cartItems = shoppingCartService.getCartItems(userDetails.getUser());
+
+        // Check if the cart is empty
+        if (cartItems.isEmpty()) {
+            return ResponseEntity.ok("Your shopping cart is empty. Please add items to your cart before checking out.");
+        }
+
+        totalPrice = BigDecimal.ZERO; // initialize the total price variable
+        for (ShoppingCart cartItem : cartItems) {
+            BigDecimal productPrice = cartItem.getProduct().getPrice();
+            BigDecimal quantity = new BigDecimal(cartItem.getQuantity()); // convert the Integer to a BigDecimal
+            totalPrice = totalPrice.add(productPrice.multiply(quantity)); // calculate the total price
+        }
+
+        Order order = new Order();
+        order.setUserId(userDetails.getUser().getId());
+        order.setName(userDetails.getFullName());
+        order.setEmail(userDetails.getUser().getEmail());
+        order.setTotal(totalPrice);
+        order.setStatus("NEW");
+
+        orderService.createOrder(order, userDetails.getFullName(), userDetails.getUser().getId());
+        shoppingCartService.removeAllCartItems(userDetails.getUser().getId());
+
+        return ResponseEntity.ok("Checkout successful.");
+    }
+
+
 
 }
