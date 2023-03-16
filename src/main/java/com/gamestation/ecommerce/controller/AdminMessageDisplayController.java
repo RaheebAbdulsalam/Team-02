@@ -29,20 +29,10 @@ public class AdminMessageDisplayController {
 
 
     @GetMapping("/list")
-    public ResponseEntity<List<Contact>> getAllMessages() {
-        List<Contact> messages = contactService.getAllMessages();
-        if(messages.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(messages, HttpStatus.OK);
+    public ModelAndView getMessageList() {
+        ModelAndView mav = new ModelAndView("admin/messageDisplay");
+        mav.addObject("messages", contactService.getAllMessages());
+        return mav;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Contact> getMessageById(@PathVariable("id") Long id) {
-        Contact message = contactService.getMessageById(id);
-        if(message == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(message, HttpStatus.OK);
-    }
 }

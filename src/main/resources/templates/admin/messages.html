@@ -163,9 +163,8 @@
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Edit</th>
+                <th>Email</th>
+                <th>Phone</th>
                 <th>Show</th>
                 <th>Delete</th>
               </tr>
@@ -179,7 +178,7 @@
 <!--                <td th:text="${messages.message}"></td>-->
 
                 <td>
-                  <a href="#" class="btn btn-success" id="lines" onclick="showPopup()">Show</a>
+                  <a  class="btn btn-success" id="lines" onclick="showPopup()">Show</a>
 
                 </td>
 
@@ -221,13 +220,13 @@
             </script>
 
 
-            <script th:inline="javascript">
-              // Display a pop-up page to display message
+            <script>
               function showPopup() {
-                var popupUrl = "messageDisplay.html";
-                window.open(popupUrl, "Popup", "width=400,height=400");
+                var popupUrl = "/admin/messageDisplay/list";
+                window.open(popupUrl, "Popup", "width=450,height=450");
               }
             </script>
+
 
 
           </div>

@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- CSS -->
+    <link th:href="@{/css/admin.css}" rel="stylesheet"/>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Image</th>
-        <th>Edit</th>
-        <th>Show</th>
-        <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="messages : ${messages}">
-        <td th:text="${messages.id}"></td>
-        <td th:text="${messages.name}"></td>
-        <td th:text="${messages.email}"></td>
-        <td th:text="${messages.phone}"></td>
-        <td th:text="${messages.message}"></td>
-    </tr>
-    </tbody>
-</table>
+<h1 style="text-align: center">Messages</h1>
+<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
+
+                    <table th:each="messages : ${messages}">
+                        <tr>
+                            <th>Id</th>
+                            <td th:text="${messages.id}"></td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td th:text="${messages.name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td th:text="${messages.email}"></td>
+                        </tr>
+                        <tr>
+                            <th>Phone No.</th>
+                            <td th:text="${messages.phone}"></td>
+                        </tr>
+                        <tr>
+                            <th>Message</th>
+                            <td th:text="${messages.message}"></td>
+                        </tr>
+
+                    </table>
+                    </div>
+
 </body>
 </html>
