@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <style>
     * {
@@ -102,18 +102,18 @@
 </html>
 
 <script>
-    $(document).ready(function() {
-        $('form').submit(function(e) {
+    $(document).ready(function () {
+        $('form').submit(function (e) {
             e.preventDefault();
             $.ajax({
                 type: 'POST',
                 url: $(this).attr('action'),
                 data: $(this).serialize(),
-                success: function(response) {
+                success: function (response) {
                     $('#success-message').html('Thanks for contacting us! We will be in touch with you shortly.').addClass('success').fadeIn('slow');
                     $('form')[0].reset();
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     $('#success-message').html('Error sending message!').addClass('error').fadeIn('slow');
                 }
             });

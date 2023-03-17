@@ -9,7 +9,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #9c9c9c;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 h1 {
@@ -26,7 +26,7 @@ label {
     margin-top: 10px;
     font-family: Arial, sans-serif;
     font-size: 18px;
-    color:#000;
+    color: #000;
 }
 
 input[type="text"], input[type="password"] {
@@ -59,7 +59,7 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #222;
-    background:#fff;
+    background: #fff;
 }
 
 h1 {
@@ -103,7 +103,7 @@ p {
     font-size: 14px;
     text-align: center;
     margin-top: 20px;
-    color:#000;
+    color: #000;
 }
 
 a {
@@ -126,17 +126,20 @@ a:hover {
     background-color: black;
     padding: 20px;
     max-width: 600px;
-    margin: 50px auto;background:#fff;
+    margin: 50px auto;
+    background: #fff;
 }
 
 .contact h1 {
     font-size: 32px;
-    margin-bottom: 20px;color:#000;
+    margin-bottom: 20px;
+    color: #000;
 }
 
 .contact label {
     display: block;
-    margin-bottom: 10px;color:#000;
+    margin-bottom: 10px;
+    color: #000;
 }
 
 .contact input[type="text"],
@@ -180,7 +183,8 @@ a:hover {
 
 .contact p {
     margin-top: 20px;
-    text-align: center;color:#000;
+    text-align: center;
+    color: #000;
 }
 
 .contact a {
@@ -192,11 +196,13 @@ a:hover {
     .contact {
         padding: 10px;
     }
+
     .contact h1 {
         font-size: 24px;
         margin-bottom: 10px;
-        color:#000;
+        color: #000;
     }
+
     .contact input[type="text"],
     .contact input[type="email"],
     .contact select,
@@ -205,9 +211,11 @@ a:hover {
         font-size: 14px;
         margin-bottom: 10px;
     }
+
     .contact input[type="submit"] {
         padding: 5px 10px;
     }
+
     .contact textarea {
         height: 150px;
     }

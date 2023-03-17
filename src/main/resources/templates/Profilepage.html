@@ -197,7 +197,7 @@
                         <div class="card-body">
                             <h6 class="card-title font-weight-bold">Support</h6>
                             <p class="card-text">Get fast, free help from our friendly assistants.</p>
-                            <button type="button" class="btn btn-primary" th:href="@{/contact}">Contact Us</button>
+                            <a type="button" class="btn btn-primary" th:href="@{/contact}">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -208,10 +208,10 @@
 </div>
 
 
-
 <script>
-    $(document).ready(function() {
-        $("button[type='submit']").click(function() {
+    //Successful message when user update his profile//
+    $(document).ready(function () {
+        $("button[type='submit']").click(function () {
             $("#success-message").text("Profile updated successfully.").addClass("alert alert-success").show();
         });
     });
