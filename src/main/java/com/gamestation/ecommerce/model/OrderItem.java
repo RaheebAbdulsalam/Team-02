@@ -1,4 +1,5 @@
 package com.gamestation.ecommerce.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ public class OrderItem {
     private Integer id;
 
     @ManyToOne
+    @JsonBackReference
     @JoinColumn(name = "order_id")
     private Order order;
 

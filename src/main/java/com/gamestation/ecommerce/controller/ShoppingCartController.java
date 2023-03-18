@@ -10,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,10 +81,11 @@ public class ShoppingCartController {
     }
 
     @PostMapping("/checkout")
-    public ResponseEntity<String> checkout(Authentication authentication) {
+    public RedirectView checkout(Authentication authentication, RedirectAttributes redirectAttributes) {
         // Users must log in to checkout - return to login page
         if (authentication == null) {
-            return ResponseEntity.ok("You must be logged in to make purchases.");
+            redirectAttributes.addAttribute("message", "You must be logged in to make purchases.");
+            return new RedirectView("/shoppingcart");
         }
 
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -89,7 +93,8 @@ public class ShoppingCartController {
 
         // Check if the cart is empty
         if (cartItems.isEmpty()) {
-            return ResponseEntity.ok("Your shopping cart is empty. Please add items to your cart before checking out.");
+            redirectAttributes.addAttribute("message", "Your shopping cart is empty. Please add items to your cart before checking out.");
+            return new RedirectView("/shoppingcart");
         }
 
         totalPrice = BigDecimal.ZERO; // initialize the total price variable
@@ -121,7 +126,10 @@ public class ShoppingCartController {
         orderService.createOrder(order, userDetails.getFullName(), userDetails.getUser().getId());
         shoppingCartService.removeAllCartItems(userDetails.getUser().getId());
 
-        return ResponseEntity.ok("Checkout successful.");
+        redirectAttributes.addAttribute("message", "Checkout successful.");
+
+
+        return new RedirectView("/shoppingcart");
     }
 
 

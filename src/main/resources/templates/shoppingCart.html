@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Shopping Cart</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <h1>Shopping Cart</h1>
-<table>
+<table id="cart-table">
   <thead>
   <tr>
     <th>Name</th>
@@ -48,38 +49,11 @@
 
 
 <form id="checkout-form" th:action="@{/shoppingcart/checkout}" method="post">
-  <button type="submit" name="checkout">Checkout</button>
+  <button id="checkout-button" type="submit" name="checkout">Checkout</button>
 </form>
 <br>
-<div id="checkout-message"></div>
+<div th:text="${param.message}"></div>
 
 </body>
 </html>
-<script>
-  document.querySelector("#checkout-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
 
-    // Send a POST request to the server
-    fetch(this.action, {
-      method: "POST",
-      credentials: "same-origin"
-    })
-            .then(response => response.text()) // Parse the response text
-            .then(message => {
-              // Display the checkout message
-              document.querySelector("#checkout-message").textContent = message;
-
-              // Clear the shopping cart table rows
-              const cartTableBody = document.querySelector("#cart-table tbody");
-              cartTableBody.querySelectorAll("tr:not(:last-child)").forEach(row => {
-                row.remove();
-              });
-
-              // Reload the page to update the total price
-              location.reload();
-            })
-            .catch(error => {
-              console.error(error);
-            });
-  });
-</script>

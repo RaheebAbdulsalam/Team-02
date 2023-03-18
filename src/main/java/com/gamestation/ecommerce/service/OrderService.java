@@ -1,6 +1,7 @@
 package com.gamestation.ecommerce.service;
 
 import com.gamestation.ecommerce.model.Order;
+import com.gamestation.ecommerce.model.OrderItem;
 import com.gamestation.ecommerce.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,10 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public List<Order> getOrdersByStatus(String status) {
+        return orderRepository.findByStatus(status);
+    }
+
     /**
      * Retrieves an order with the given ID from the database.
      *
@@ -55,8 +60,6 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-
-
     /**
      * Updates an existing order in the database.
      *
@@ -71,6 +74,27 @@ public class OrderService {
         order.setStatus(orderDetails.getStatus());
         order.setName(orderDetails.getName());
         order.setUserId(orderDetails.getUserId());
+
+        return orderRepository.save(order);
+    }
+
+    public Order updateOrderItem(Integer orderId, Order orderDetails, Integer itemId) {
+        Order order = getOrderById(orderId);
+
+        OrderItem orderItem = null;
+        for (OrderItem item: order.getOrderItems()) {
+            if (item.getId() == itemId){
+                orderItem = item;
+                orderItem.setStatus(item.getStatus());
+            }
+        }
+
+        order.setEmail(orderDetails.getEmail());
+        order.setTotal(orderDetails.getTotal());
+        order.setStatus(orderDetails.getStatus());
+        order.setName(orderDetails.getName());
+        order.setUserId(orderDetails.getUserId());
+
         return orderRepository.save(order);
     }
 

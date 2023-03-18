@@ -1,5 +1,6 @@
 package com.gamestation.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -29,6 +30,7 @@ public class Order {
     @Column(name = "status", columnDefinition = "varchar(10) default 'NEW'")
     private String status;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
