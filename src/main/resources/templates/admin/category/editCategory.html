@@ -24,7 +24,7 @@
             <li>
                 <a href="#">
                     <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
-                    <span class="title">Sports4Us - Test Admin</span>
+                    <span class="title">GameStation - Test Admin</span>
                 </a>
             </li>
             <li>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/user">
+                <a th:href="@{/admin/user}" href="#">
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                     <span class="title">Users</span>
                 </a>
@@ -52,7 +52,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a th:href="@{/admin/messages}">
                     <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                     <span class="title">Messages</span>
                 </a>
@@ -152,23 +152,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h1>Add Category</h1>
+                        <h1>Edit Category: </h1>
                         <br>
-
                         <div class="form">
-                            <form class="form1" th:action="@{/admin/category}" th:object="${category}" method="post" enctype="multipart/form-data">
-                                <label for="name">Title:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Title" th:field="*{name}" required/><br/>
-
-                                <label for="description">Description:</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description" th:field="*{description}"/><br/>
-
-                                <label for="image">Image:</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="image" id="image" th:field="*{imageFile}"/>
-                                        <label class="custom-file-label">Choose Image</label><br/>
-                                    </div>
+                            <form class="form1" th:object="${category}" th:action="@{/admin/category/edit/{id}(id=${category.id})}" th:method="post" enctype="multipart/form-data">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" th:field="*{name}" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" th:field="*{description}"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input type="file" class="custom-file-input" name="image" id="image" th:field="*{imageFile}"/>
                                 </div>
                                 <br/>
                                 <button type="submit" class="btn btn-info">Save</button>
@@ -179,7 +178,7 @@
             </div>
         </div>
 
-
+        </script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script>
@@ -205,7 +204,3 @@
     </div>
 </div>
 </html>
-
-
-
-</form>

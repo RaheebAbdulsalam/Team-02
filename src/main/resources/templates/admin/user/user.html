@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product List</title>
+    <title>Category List</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -22,7 +22,7 @@
             <li>
                 <a href="#">
                     <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
-                    <span class="title">Sports4Us - Test Admin</span>
+                    <span class="title">GameStation - Test Admin</span>
                 </a>
             </li>
             <li>
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/user">
+                <a th:href="@{/admin/user}" href="#">
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                     <span class="title">Users</span>
                 </a>
@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a th:href="@{/admin/messages}">
                     <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                     <span class="title">Messages</span>
                 </a>
@@ -149,66 +149,32 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h1>Product List</h1>
-
-                        <!---------------- Search Button--------------------------->
-                        <form action="/admin/product" method="get" class="form-inline mt-2 mt-md-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="query">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-
-                        <!--------------------------------------------------------->
-
-                        <br>
-                        <div>
-                            <a th:href="@{/admin/product/create}" href="#" id="lines"
-                               class="btn btn-dark">Add Product</a>
-                        </div>
-                        <br>
-
+                        <h1>User List</h1>
                         <table>
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Categories</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Stock Level</th>
-                                <th>Image</th>
+                                <th>User ID</th>
+                                <th>E-mail</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Roles</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
-                                <th>Show</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="product : ${products}">
-                                <td th:text="${product.id}"></td>
+                            <tr th:each="user : ${users}">
+                                <td th:text="${user.id}"></td>
+                                <td th:text="${user.email}"></td>
+                                <td th:text="${user.firstName}"></td>
+                                <td data-th="Gross" th:text="${user.lastName}">Last Name</td>
+                                <td data-th="Gross" th:text="${user.roles}">Role</td>
                                 <td>
-
-                                    <li th:each="category : ${product.categories}" th:text="${category.name}"></li>
-
-                                </td>
-                                <td th:text="${product.name}"></td>
-                                <td th:text="${product.price}"></td>
-                                <td th:text="${product.stockLevel}"></td>
-                                <td>
-                                    <img th:src="@{|${product.image}|}" width="100"/>
-                                </td>
-                                <td>
-                                    <a th:href="@{/admin/product/edit/{id}(id=${product.id})}" id="lines" class="btn btn-info">Edit</a>
-                                </td>
-                                <td>
-                                    <form th:action="@{/admin/product/__${product.id}__}" method="post">
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <button type="submit" id="lines" class="btn btn-danger" style= "cursor:pointer" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <a href="#" class="btn btn-success" id="lines">Show</a>
+                                    <a class="btn btn-info" th:href="@{/admin/user/edit/{id}(id=${user.id})}">Edit</a>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
+
                         <script type="module"
                                 src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
                         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

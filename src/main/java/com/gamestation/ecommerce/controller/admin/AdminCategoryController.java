@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.controller;
+package com.gamestation.ecommerce.controller.admin;
 
 import com.gamestation.ecommerce.model.Category;
 import com.gamestation.ecommerce.service.CategoryService;
@@ -22,7 +22,7 @@ public class AdminCategoryController {
     // Returns admin category page and category list
     @GetMapping
     public ModelAndView getAdminCategoryPage() {
-        ModelAndView mav = new ModelAndView("admin/category");
+        ModelAndView mav = new ModelAndView("admin/category/category");
         mav.addObject("categories", categoryService.getAllCategories());
         return mav;
     }
@@ -48,7 +48,7 @@ public class AdminCategoryController {
     // Returns page for creating categories
     @GetMapping("/create")
     public ModelAndView getAddCategoryPage() {
-        ModelAndView mav = new ModelAndView("admin/addCategory");
+        ModelAndView mav = new ModelAndView("admin/category/addCategory");
         mav.addObject("category", new Category()); // create a new empty category object to bind with the form
         return mav;
     }
@@ -61,7 +61,7 @@ public class AdminCategoryController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView getUpdateCategoryPage(@PathVariable("id") Integer id) {
-        ModelAndView mav = new ModelAndView("admin/editCategory");
+        ModelAndView mav = new ModelAndView("admin/category/editCategory");
         Category category = categoryService.getCategoryById(id);
         mav.addObject("category", category);
         return mav;

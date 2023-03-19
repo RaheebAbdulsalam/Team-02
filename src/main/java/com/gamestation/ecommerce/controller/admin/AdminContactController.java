@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.controller;
+package com.gamestation.ecommerce.controller.admin;
 
 import com.gamestation.ecommerce.model.Contact;
 import com.gamestation.ecommerce.service.ContactService;
@@ -18,7 +18,7 @@ public class AdminContactController {
     // Returns admin messages page and messages list
     @GetMapping
     public ModelAndView getAdminMessagesPage() {
-        ModelAndView mav = new ModelAndView("admin/messages");
+        ModelAndView mav = new ModelAndView("admin/message/messages");
         mav.addObject("messages", contactService.getAllMessages());
         return mav;
     }
@@ -27,13 +27,13 @@ public class AdminContactController {
     @DeleteMapping("/{id}")
     public RedirectView deleteMessages(@PathVariable("id") Long id) {
         contactService.deleteMessage(id);
-        return new RedirectView("/admin/messages");
+        return new RedirectView("/admin/message/messages");
     }
 
     // method for displaying a message by id
     @GetMapping("/show/{id}")
     public ModelAndView showMessage(@PathVariable("id") Long id) {
-        ModelAndView mav = new ModelAndView("admin/messageDisplay");
+        ModelAndView mav = new ModelAndView("admin/message/messageDisplay");
         Contact contact = contactService.getMessageById(id);
         mav.addObject("messages", contact);
         return mav;

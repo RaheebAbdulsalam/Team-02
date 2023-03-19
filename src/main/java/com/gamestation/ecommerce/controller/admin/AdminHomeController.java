@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.controller;
+package com.gamestation.ecommerce.controller.admin;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;

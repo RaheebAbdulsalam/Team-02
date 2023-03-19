@@ -12,14 +12,12 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.security.Principal;
 import java.util.List;
 
@@ -92,7 +90,7 @@ public class HomeController {
 
     @GetMapping("/profile")
     public ModelAndView editCurrentUser(Principal principal) {
-        ModelAndView mav = new ModelAndView("Profilepage");
+        ModelAndView mav = new ModelAndView("user/Profilepage");
         String email = principal.getName();
         User currentUser = userRepo.findByEmail(email);
         mav.addObject("user", currentUser);
@@ -101,7 +99,7 @@ public class HomeController {
 
     @PostMapping("/edit-profile")
     public ModelAndView saveCurrentUser(@ModelAttribute("user") User user, Principal principal) {
-        ModelAndView mav = new ModelAndView("Profilepage");
+        ModelAndView mav = new ModelAndView("user/Profilepage");
         String email = principal.getName();
         User currentUser = userRepo.findByEmail(email);
         currentUser.setEmail(user.getEmail());
@@ -113,7 +111,7 @@ public class HomeController {
     // returns user order page
     @GetMapping("/profile/orders")
     public ModelAndView showOrders(Principal principal) {
-        ModelAndView mav = new ModelAndView("userOrders");
+        ModelAndView mav = new ModelAndView("user/userOrders");
         String email = principal.getName();
         User currentUser = userRepo.findByEmail(email);
         List<Order> orders = orderRepo.findByUserId(currentUser.getId());
@@ -137,7 +135,7 @@ public class HomeController {
     // view further order details
     @GetMapping("/profile/orders/orderdetail/{orderId}")
     public ModelAndView showOrderPage(@PathVariable Integer orderId) {
-        ModelAndView mav = new ModelAndView("userOrderDetails");
+        ModelAndView mav = new ModelAndView("user/userOrderDetails");
         Order order = orderService.getOrderById(orderId);
         mav.addObject("order", order);
         return mav;

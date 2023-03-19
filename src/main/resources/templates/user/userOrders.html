@@ -38,7 +38,7 @@
           <a th:href="@{/profile/orders/orderdetail/{order_id}(order_id=${order.orderId})}"
              th:target="_blank"  class="btn btn-success">Show</a>
         </td>
-        <td>
+        <td th:if="${order.getStatus() != 'CANCELLED'}">
           <form th:action="@{/profile/orders/{order_id}(order_id=${order.orderId})}" method="post">
             <input type="hidden" name="_method" value="PUT" />
             <input type="hidden" name="status" value="CANCELLED" />

@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.controller;
+package com.gamestation.ecommerce.controller.admin;
 
 
 import com.gamestation.ecommerce.model.Product;
@@ -24,7 +24,7 @@ public class AdminProductController {
     // Returns admin product page and product list
     @GetMapping
     public ModelAndView getAdminProductPage(@RequestParam(required = false) String query) {
-        ModelAndView mav = new ModelAndView("admin/product");
+        ModelAndView mav = new ModelAndView("admin/product/product");
         if (query != null) {
             List<Product> products = productService.search(query);
             mav.addObject("products", products);
@@ -58,7 +58,7 @@ public class AdminProductController {
     // returns page to add products
     @GetMapping("/create")
     public ModelAndView getAddProductPage() {
-        ModelAndView mav = new ModelAndView("admin/addProduct");
+        ModelAndView mav = new ModelAndView("admin/product/addProduct");
         mav.addObject("product", new Product());
         mav.addObject("allCategories", categoryService.getAllCategories());
         return mav;
@@ -71,7 +71,7 @@ public class AdminProductController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView getUpdateProductPage(@PathVariable("id") Integer id) {
-        ModelAndView mav = new ModelAndView("admin/editProduct");
+        ModelAndView mav = new ModelAndView("admin/product/editProduct");
         Product product = productService.getProductById(id);
         mav.addObject("product", product);
         mav.addObject("allCategories", categoryService.getAllCategories());

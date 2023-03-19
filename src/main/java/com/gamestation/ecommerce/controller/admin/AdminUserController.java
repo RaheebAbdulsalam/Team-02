@@ -1,4 +1,4 @@
-package com.gamestation.ecommerce.controller;
+package com.gamestation.ecommerce.controller.admin;
 
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.model.User;
@@ -18,7 +18,7 @@ public class AdminUserController {
 
     @GetMapping
     public ModelAndView getAdminUsersPage() {
-        ModelAndView mav = new ModelAndView("admin/user");
+        ModelAndView mav = new ModelAndView("admin/user/user");
         List<User> listUsers = service.listAll();
         mav.addObject("users", listUsers);
         return mav;
@@ -26,7 +26,7 @@ public class AdminUserController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView editUser(@PathVariable("id") Integer id) {
-        ModelAndView mav = new ModelAndView("admin/user_form");
+        ModelAndView mav = new ModelAndView("admin/user/user_form");
         User user = service.get(id);
         List<Role> listRoles = service.getRoles();
         mav.addObject("user", user);
@@ -36,7 +36,7 @@ public class AdminUserController {
 
     @PostMapping("/save")
     public ModelAndView saveUser(User user) {
-        ModelAndView mav = new ModelAndView("redirect:/admin/user");
+        ModelAndView mav = new ModelAndView("redirect:/admin/user/user");
         service.save(user);
         return mav;
     }
