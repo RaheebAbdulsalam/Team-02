@@ -158,6 +158,14 @@
                         </form>
 
                         <!--------------------------------------------------------->
+                        <form th:action="@{/admin/products}" method="get">
+                            <select name="sort">
+                                <option value="asc">Price low to high</option>
+                                <option value="desc">Price high to low</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">Sort</button>
+                        </form>
+                        <!--------------------------------------------------------->
 
                         <br>
                         <div>
