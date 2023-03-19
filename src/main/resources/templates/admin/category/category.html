@@ -45,8 +45,8 @@
             </li>
             <li>
                 <a th:href="@{/admin/product}" href="#">
-                <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
-                <span class="title">Products</span>
+                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="title">Products</span>
                 </a>
             </li>
             <li>
@@ -149,32 +149,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-<<<<<<< HEAD:target/classes/templates/admin/product.html
-                        <h1>Product List</h1>
-
-                        <!---------------- Search Button--------------------------->
-                        <form action="/admin/product" method="get" class="form-inline mt-2 mt-md-0">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="query">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-
-                        <!--------------------------------------------------------->
-                        <form th:action="@{/admin/products}" method="get">
-                            <select name="sort">
-                                <option value="asc">Price low to high</option>
-                                <option value="desc">Price high to low</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary">Sort</button>
-                        </form>
-                        <!--------------------------------------------------------->
-=======
                         <h1>Category List</h1>
->>>>>>> 740c47456dc6577b536504a905b1c6017e8663ac:src/main/resources/templates/admin/category/category.html
 
                         <br>
                         <div>
                             <a th:href="@{/admin/category/create}" href="#" id="lines"
-                        class="btn btn-dark">Add Category</a>
+                               class="btn btn-dark">Add Category</a>
                         </div>
                         <br>
 

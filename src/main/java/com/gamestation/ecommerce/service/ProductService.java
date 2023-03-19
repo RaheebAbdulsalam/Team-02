@@ -93,13 +93,4 @@ public class ProductService {
 
     public List<Product> search(String query) {return productRepository.findByNameContainingIgnoreCase(query);}
 
-<<<<<<< HEAD
-    public List<Product> search(String query) {
-        return productRepository.findByNameContainingIgnoreCase(query);
-    }
-
-
-
-=======
->>>>>>> 740c47456dc6577b536504a905b1c6017e8663ac
 }
