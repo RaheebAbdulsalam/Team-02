@@ -2,7 +2,7 @@ package com.gamestation.ecommerce.service;
 
 
 
-import com.gamestation.ecommerce.model.CustomUserDetails;
+import com.gamestation.ecommerce.security.CustomUserDetails;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

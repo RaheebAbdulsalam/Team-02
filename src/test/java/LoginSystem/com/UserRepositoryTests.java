@@ -33,7 +33,8 @@ public class UserRepositoryTests {
     @Test
     public void testCreateUser() {
         User user = new User();
-        user.setUsername("Raheeb");
+        user.setFirstName("Raheeb");
+        user.setLastName("Abdulsalam");
         user.setEmail("raheeb@gmail.com");
         user.setPassword("raheeb2023");
         User savedUser = userRepo.save(user);
@@ -45,10 +46,10 @@ public class UserRepositoryTests {
     public void testAddRoleToNewUser() {
         Role roleAdmin = roleRepo.findByName("Admin");
         User user = new User();
-        user.setUsername("Raheeb");
+        user.setFirstName("Raheeb");
+        user.setLastName("Abdulsalam");
         user.setEmail("raheeb2023@gmail.com");
         user.setPassword("123456");
-        user.setEnabled(true);
         user.addRole(roleAdmin);
         User savedUser = userRepo.save(user);
         assertThat(savedUser.getRoles().size()).isEqualTo(1);

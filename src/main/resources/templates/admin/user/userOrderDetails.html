@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>My Orders</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+        integrity="sha512-cpRyCx50/nXc98jKvJFYZq3llHdC8eNCrJthmUhpd5y6YRJl9Jj6U5x6M5zt0U+zi6NjJOG2QvNOfLMz6U7NwQ=="
+        crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center my-4">My Orders</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-sm">
+      <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Show</th>
+        <th>Cancel</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Loop through the list of user orders and display them in the table -->
+      <tr th:each="order : ${userOrders}">
+        <td th:text="${order.getOrderId()}"></td>
+        <td th:text="${order.getName()}"></td>
+        <td th:text="${order.getEmail()}"></td>
+        <td th:text="${order.getTotal()}"></td>
+        <td th:text="${order.getStatus()}"></td>
+        <td>
+          <a th:href="@{/admin/order/show/{order_id}(order_id=${order.orderId})}"
+             th:target="_blank"
+             class="btn btn-success"
+             onclick="window.open(this.href, 'newwindow', 'top=50, left=100, width=1100, height=700'); return false;">
+            Show
+          </a>
+        </td>
+        <td>
+          <form th:action="@{/profile/orders/{order_id}(order_id=${order.orderId})}" method="post">
+            <input type="hidden" name="_method" value="PUT" />
+            <input type="hidden" name="status" value="CANCELLED" />
+            <button type="submit" class="btn btn-danger" style="cursor:pointer" onclick="return confirm('Are you sure you want to cancel this order?')">Cancel</button>
+          </form>
+        </td>
+
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-gb49JzZ8+fcI9pMstJk6z/ZpLj8T6W+THeCHG51dJjUZOOq3sWdd9v+ECnNyxMxT"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
+        integrity="sha512-ZIz/xvupNYrjZLtlr+8WY9P+dI4zi4O7V0H0hWw7V5v5OaS5V5/S61iQ2tX/NL1C0BpqE+WBJ+s3w3iKdnb0tw=="
+        crossorigin="anonymous"></script>
+</body>
+</html>
