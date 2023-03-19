@@ -18,53 +18,52 @@
 
     <div class="container">
     <!-- Side Nav bar starts -->
-    <div class="navigation">
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
-                    <span class="title">GameStation - Test Admin</span>
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/admin}" href="#">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="title">Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="/admin/user">
-                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                    <span class="title">Users</span>
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/admin/category}" href="#">
-                    <span class="icon"><ion-icon name="copy-outline"></ion-icon></span>
-                    <span class="title">Categories</span>
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/admin/product}" href="#">
-                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
-                    <span class="title">Products</span>
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/admin/messages}">
-                    <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
-                    <span class="title">Messages</span>
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/logout}" href="#">
-                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                    <span class="title">Sign Out</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    </div>
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                        <span class="title">GameStation - Test Admin</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin}" href="#">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/user}" href="#">
+                        <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/category}" href="#">
+                        <span class="icon"><ion-icon name="copy-outline"></ion-icon></span>
+                        <span class="title">Categories</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/product}" href="#">
+                        <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                        <span class="title">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/admin/messages}">
+                        <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/logout}" href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     <!-- Side Nav bar Ends -->
 
 
@@ -80,7 +79,7 @@
                 <div class="card" onclick="">
                     <div>
                         <div class="numbers">New Orders</div>
-                        <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/New"></a>
+                        <a th:href="@{/admin/order?status=new}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="person-add-outline"></ion-icon>
@@ -89,7 +88,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Accepted Orders</div>
-                        <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Accepted"></a>
+                        <a th:href="@{/admin/order?status=accepted}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="checkmark-done-circle-outline"></ion-icon>
@@ -98,7 +97,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Shipping Orders</div>
-                        <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Shipped"></a>
+                        <a th:href="@{/admin/order?status=shipped}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="boat-outline"></ion-icon>
@@ -107,7 +106,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Completed Orders</div>
-                        <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Completed"></a>
+                        <a th:href="@{/admin/order?status=completed}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="checkmark-done-outline"></ion-icon>
@@ -115,8 +114,8 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">Canceled Orders</div>
-                        <a href="http://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Canceled"></a>
+                        <div class="numbers">Cancelled Orders</div>
+                        <a th:href="@{/admin/order?status=cancelled}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="stop-circle-outline"></ion-icon>
