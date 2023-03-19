@@ -80,7 +80,7 @@
                 <div class="card" onclick="">
                     <div>
                         <div class="numbers">New Orders</div>
-                        <a href="https://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/New"></a>
+                        <a th:href="@{/admin/order?status=new}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="person-add-outline"></ion-icon>
@@ -89,7 +89,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Accepted Orders</div>
-                        <a href="https://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Accepted"></a>
+                        <a th:href="@{/admin/order?status=accepted}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="checkmark-done-circle-outline"></ion-icon>
@@ -98,7 +98,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Shipping Orders</div>
-                        <a href="https://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Shipped"></a>
+                        <a th:href="@{/admin/order?status=shipped}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="boat-outline"></ion-icon>
@@ -107,7 +107,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Completed Orders</div>
-                        <a href="https://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Completed"></a>
+                        <a th:href="@{/admin/order?status=completed}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="checkmark-done-outline"></ion-icon>
@@ -115,8 +115,8 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">Canceled Orders</div>
-                        <a href="https://200154725.cs2410-web01pvm.aston.ac.uk/admin/order/Canceled"></a>
+                        <div class="numbers">Cancelled Orders</div>
+                        <a th:href="@{/admin/order?status=cancelled}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="stop-circle-outline"></ion-icon>

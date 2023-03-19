@@ -25,7 +25,7 @@ public class AdminUserController {
     }
 
     @GetMapping("/edit/{id}")
-    public ModelAndView editUser(@PathVariable("id") Long id) {
+    public ModelAndView editUser(@PathVariable("id") Integer id) {
         ModelAndView mav = new ModelAndView("admin/user_form");
         User user = service.get(id);
         List<Role> listRoles = service.getRoles();

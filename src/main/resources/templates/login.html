@@ -17,7 +17,7 @@
   <!-- First Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" th:href="@{/}">
         <img src="/Images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
         <!-- GameStation  -->
       </a>
@@ -34,9 +34,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/about}">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Product</a>
           </li>
 
           <li class="nav-item" sec:authorize="isAnonymous()">
@@ -64,7 +61,9 @@
     </div>
   </nav>
 
-<div class="login">
+
+
+  <div class="login">
   <h1>Login</h1>
   <form th:action="@{/login}" method="post" >
     <label for="email">Email:</label>

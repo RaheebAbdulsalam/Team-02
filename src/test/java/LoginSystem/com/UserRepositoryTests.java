@@ -2,6 +2,7 @@ package LoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.RoleRepository;
@@ -22,10 +23,10 @@ public class UserRepositoryTests {
     @Autowired
     private TestEntityManager entityManager;
 
-
+    @Autowired
     private UserRepository userRepo;
 
-
+    @Autowired
     private RoleRepository roleRepo;
 
     // test methods go below
@@ -35,7 +36,7 @@ public class UserRepositoryTests {
         user.setFirstName("Raheeb");
         user.setLastName("Abdulsalam");
         user.setEmail("raheeb@gmail.com");
-        user.setPassword("123456");
+        user.setPassword("raheeb2023");
         User savedUser = userRepo.save(user);
         User existUser = entityManager.find(User.class, savedUser.getId());
         assertThat(user.getEmail()).isEqualTo(existUser.getEmail());
@@ -46,7 +47,7 @@ public class UserRepositoryTests {
         Role roleAdmin = roleRepo.findByName("Admin");
         User user = new User();
         user.setFirstName("Raheeb");
-        user.setLastName("Abdusalam");
+        user.setLastName("Abdulsalam");
         user.setEmail("raheeb2023@gmail.com");
         user.setPassword("123456");
         user.addRole(roleAdmin);

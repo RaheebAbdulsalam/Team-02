@@ -35,7 +35,7 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User get(Long id) {
+    public User get(Integer id) {
         return userRepo.findById(id).get();
     }
 
@@ -49,6 +49,7 @@ public class UserService {
         user.setPassword(encodedPassword);
         userRepo.save(user);
     }
+
 
     public boolean emailExists(String email) {
         Optional<User> userOptional = Optional.ofNullable(userRepo.findByEmail(email));
