@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap Multiple Item Product Carousel</title>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+    $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 10 ) {
+            $('.navbar').addClass('active');
+        } else {
+            $('.navbar').removeClass('active');
+        }
+    });
+});
+$(document).ready(function(){
+	$(".wish-icon i").click(function(){
+		$(this).toggleClass("fa-heart fa-heart-o");
+	});
+});	
+</script>
+</head>
+<body>
+    <!-- Navbar-->
+<header class="header">
+    <div class="container-fluid border">
+        <!-- First Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
+          <div class="container-fluid" style="width:200px;">
+            <a class="navbar-brand" href="home.html" style="position:relative;right:580px;">
+              <img src="logo.png" alt="" width="200" height="60" class="d-inline-block align-text-top">
+            </a>
+            
+              <!-- <form class="d-flex"> -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" style="width:100px;"href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                    </li>
+                  </ul>
+              </div>
+              <!-- </form>  -->
+          </div>
+      </nav>
+
+  
+      
+        <!-- Second Navigation Bar includes Search -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+              <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                  <a class="nav-link active" style="width:170px;" aria-current="page" href="#"> Online Video games</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="width:120px;" href="#">Video Games</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Accessories
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Devices</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Consoles</a>
+                </li>
+              </ul>
+              <div class="search-form">
+                <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success search-btn"  type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+        </nav>
+          <!--  End of Search Tab -->
+
+          <!-- Game station Banner including video-->
+        <video loop autoplay muted class="video">
+            <source src="GameStationWebsite.mp4" type="video/mp4">
+            <!-- <source src="movie.ogg" type="video/ogg"> -->
+            Your browser does not support the video tag.
+        </video>
+	</div>
+</header>
+<div class="aboutus">
+  <div class="story" style="position:relative; top:1px;">
+      <p><span class="styled-word">At Game Station,</span> we strive for the best in the products and services we offer. <br>
+        <span class="styled-word">Our Company</span> started with a group of innovative students whose common goal is to provide the most exclusive games at the most affordable prices.  <br>
+        <span class="styled-word">Our Values</span> which include Integrity, Innovation, Diversity and inclusion, customer centricity and being the standard of excellence. <br>
+        <span class="styled-word">Our Mission</span> is to create the most valuable community of gamers who use the most exclusive products. <br>
+        We are passionate about gaming. We love what we do, and we do what we love. We are all working together to create the best experience possible for our gamers. 
+        
+      </p>
+
+  </div>
+</div>
+<div class="values">
+  <div class="category_block_header">
+      <h2>Our Values</h2>
+  </div>
+  <div class="category_block">
+      <ul class="categories">
+          <li class="category">
+              <a href="#integrity"> 
+              <img src="integrity.png" alt="">
+              Integrity
+              </a>
+              
+          </li>
+          <li class="category">
+              <a href="#diversity"> 
+                  <img src="diversity.png" alt="">
+                  Diversity & Inclusion
+              </a>
+             
+          </li>
+          <li class="category">
+              <a href="#excellence"> 
+              <img src="excellence.png" alt="">
+              Excellence
+              </a>
+          </li>
+          <li class="category">
+              <a href="#innovative"> 
+                  <img src="innovative.webp" alt="">
+                  Innovative
+              </a>
+          </li>
+          <li class="category">
+              <a href="#customer"> 
+                  <img src="customer.png" alt="">
+                  Customer Centricity
+              </a>
+          </li>
+        </ul>
+  </div>
+</div>
+<video loop autoplay muted class="video aboutvideo">
+  <source src="Videos/car_vid.mp4" type="video/mp4">
+  <!-- <source src="movie.ogg" type="video/ogg"> -->
+  Your browser does not support the video tag.
+</video>
+
+<div class="value-details">
+  <div class="integrity-details" id="integrity">
+    <div class="category_block_header">
+      <h2>Integrity</h2>
+    </div>
+    <p>
+      We build trust with our clients by proving services which are secure, consistently available and satisfies your needs, giving you what you asked for, exactly what you need and exceeding your expectations. <br> 
+      We ensure that there is integrity in the fun and engaging experiences for our customers. <br>
+      We thrive in creating a lively and upbeat atmosphere when you visit our online store. <br>
+      Create engaging and interactive website content that appeals to gamers of all skill levels and ages above 18,  which contains videos, and links to tutorials, and game demos.<br>
+      Our wide range of gaming products and accessories have guaranties because they are not only high-quality, but also interesting and unique, providing our customers with a sense of excitement and discovery.<br>
+      </p>
+  </div>
+  <div class="integrity-details" id="diversity">
+   
+    <div class="category_block_header">
+      <h2>
+        Diversity & Inclusion
+      </h2>
+    </div>
+    <p>
+      We offer a diverse range of games and gaming products that appeal to gamers of all ages, genders, races, and abilities. <br>
+      We provide a safe and welcoming environment for all customers, including those who may feel marginalized or excluded in other gaming spaces. <br>
+      We offer products and services which cater for every one of our client’s to  foster and ensure diversity and inclusion to  encourage minority – backgrounds communities, such as women gaming or LGBT+ gaming products and services.
+
+     </p>
+  </div>
+  <div class="integrity-details" id="excellence">
+    <div class="category_block_header">
+      <h2>
+        Excellence
+      </h2>
+    </div>
+    <p>
+      We strive to be the standard of excellence,
+      we prioritize offering high-quality products and services, such as top-of-the-line games, gaming devices, consoles , accessories and  equipment 
+      and we also offer a channel where you can contact us for any questions and support to receive expert advice and support.
+
+     </p>
+  </div>
+  <div class="integrity-details" id="innovative">
+    <div class="category_block_header">
+      <h2>
+        Innovative
+      </h2>
+    </div>
+    <p>
+      We  strive to stay ahead of the curve by offering the latest and greatest gaming products and technologies, as well as hosting innovative offers, sales and promotions. <br>
+      We value innovation and strive to stay at the forefront of the gaming industry, offering our customers the latest and greatest products and technologies.  Our ecommerce store recognizes that gaming is a rapidly evolving field, and we are committed to exploring new ideas and pushing the boundaries of what is possible.
+    </p>
+  </div>
+  <div class="integrity-details" id="customer">
+    <div class="category_block_header">
+      <h2>
+        Customer Centriciy
+      </h2>
+    </div>
+    <p>
+      We prioritize excellent customer service by providing prompt and friendly assistance to customers, addressing any concerns or issues quickly and efficiently, and building long-lasting relationships with our customers. <br>
+      Our ecommerce store can aim to foster a strong sense of community among  our customers by providing a welcoming and inclusive environment for gamers of all backgrounds and skill levels.
+    </p>
+  </div>
+</div>
+<footer class="bg-dark text-center text-white footer1" >
+	<!-- Grid container -->
+	
+
+	<!-- Section: Links -->
+	<section class="myfooter">
+		<!--Grid row-->
+		<div class="row">
+		<!--Grid column-->
+		<div class="col-lg-5 col-md-4 mb-4 mb-md-0 links">
+			<h5 class="text-uppercase">Links</h5>
+
+			<ul class="list-unstyled mb-0">
+			<li>
+				<a href="#!" class="text-white">Home</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">About Us</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">Products</a>
+			</li>
+			<li>
+				<a href="#!" class="text-white">Login</a>
+			</li>
+			</ul>
+		</div>
+		<!--Grid column-->
+		<div class="col-lg-7 col-md-8 mb-4 mb-md-0">
+			<div class="container p-4">
+				<!-- Section: Social media -->
+				<section class="mb-4">
+					<!-- Facebook -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-facebook-f"></i
+					></a>
+			
+					<!-- Twitter -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-twitter"></i
+					></a>
+			
+					<!-- Google -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-google"></i
+					></a>
+			
+					<!-- Instagram -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-instagram"></i
+					></a>
+			
+					<!-- Linkedin -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-linkedin-in"></i
+					></a>
+			
+					<!-- Github -->
+					<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+					><i class="fab fa-github"></i
+					></a>
+				</section>
+				<!-- Section: Social media -->
+			
+				<!-- Section: Form -->
+				<section class="">
+					<form action="">
+					<!--Grid row-->
+					<div >
+						<!--Grid column-->
+						
+						<p class="pt-2">
+							<strong>Sign up to our newsletter</strong>
+						</p>
+						
+						<!--Grid column-->
+			
+						<!--Grid column-->
+						<div class="col-md-5 col-12">
+						<!-- Email input -->
+						<div class="mb-4aa">
+							<input type="email" id="form5Example21" class="form-control" />
+							<label class="form-label" for="form5Example21">Email address</label>
+						</div>
+						</div>
+						<!-- Submit button -->
+						<button type="submit" class="btn btn-outline-light mb-4">
+							Subscribe
+						</button>
+						
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+					</form>
+				</section>
+				<!-- Section: Form -->
+			
+				<!-- Section: Text -->
+				<section class="mb-4">
+					<p style="position:relative;bottom:30px;">
+					  Thank you for  visiting our website !  Pleae checkout ur products and get the most exclusive and trending games at the best and most affordable prices !
+				   
+					</p>
+				</section>
+				<!-- Section: Text -->
+
+		</div>
+
+
+		
+		<!--Grid column-->
+		</div>
+		<!--Grid row-->
+	</section>
+	<!-- Section: Links -->
+	</div>
+	<!-- Grid container -->
+
+	<!-- Copyright -->
+	<div>
+	© 2023 Copyright:
+	<a class="text-white" href="#">GamesStation</a>
+	</div>
+	<!-- Copyright -->
+</footer>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</html>                                		                                		

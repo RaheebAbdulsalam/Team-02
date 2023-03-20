@@ -14,13 +14,16 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
-
+*{
+  border: 1px solid red;
+}
 .navbar {
     transition: all 0.4s;
 }
 
 .navbar .nav-link {
     color: black;
+    width:90px;
 }
 .navbar .nav-link:hover{
     color: white;
@@ -71,7 +74,7 @@
 }
  
 body {
-	background: black;
+	background: white;
 	font-family: "Open Sans", sans-serif;
 }
 h2 {
@@ -253,8 +256,8 @@ ol, ul {
     padding: 0;
 }
 .nav-item {
-    padding-left:10px;
-    padding-right: 5px;
+    padding-left:15px;
+    padding-right: 15px;
   }
 .form-control.placeholder-width {
     width: 430px;
@@ -384,7 +387,7 @@ ol, ul {
   }
   .searchbar{
     position:absolute;
-    left:1050px;
+    left:1000px;
     display:flex;
   }
   .custom-navbar2 .search-input {
@@ -481,9 +484,6 @@ ol, ul {
     padding: 30px;
     justify-content: center;
    }
-.row{
-	background: linear-gradient(to top, black 0%, purple 100%);
-}
 .mb-5{
 	position:relative;
 	bottom: 40px;
@@ -498,7 +498,7 @@ ol, ul {
 }
 #navbarNav{
 	position:relative;
-	padding-left:700px;
+	padding-left:420px;
 }
 </style>
 <script>
@@ -526,8 +526,7 @@ $(document).ready(function(){
         <nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
             <div class="container-fluid">
               <a class="navbar-brand" href="home.html">
-                <img src="" alt="" width="20" height="20" class="d-inline-block align-text-top">
-                GameStation 
+                <img src="logo.png" alt="" width="200" height="50" class="d-inline-block align-text-top">
               </a>
               
                 <!-- <form class="d-flex"> -->
@@ -571,10 +570,10 @@ $(document).ready(function(){
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                    <a class="nav-link active" style="width:170px;" aria-current="page" href="#"> Online Video games</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Video Games</a>
+                    <a class="nav-link" style="width:120px;" href="#">Video Games</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -612,7 +611,7 @@ $(document).ready(function(){
 	</div>
 </header>
 </body>
-<section class="h-100 gradient-custom">
+  <section class="h-100 gradient-custom" style="position:relative; bottom:30px;">
     <div class="container py-5">
       <div class="row d-flex justify-content-center my-4">
         <div class="col-md-8">
@@ -654,7 +653,7 @@ $(document).ready(function(){
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <!-- Quantity -->
                   <div class="d-flex mb-4" style="max-width: 300px">
-                    <button class="btn btn-primary px-3 me-2"
+                    <button class="btn btn-primary px-3 me-2" style="height:38px;"
                       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
                     </button>
@@ -664,7 +663,7 @@ $(document).ready(function(){
                       <label class="form-label" for="form1">Quantity</label>
                     </div>
   
-                    <button class="btn btn-primary px-3 ms-2"
+                    <button class="btn btn-primary px-3 ms-2" style="height:38px;"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
                     </button>
@@ -716,7 +715,7 @@ $(document).ready(function(){
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                   <!-- Quantity -->
                   <div class="d-flex mb-4" style="max-width: 300px">
-                    <button class="btn btn-primary px-3 me-2"
+                    <button class="btn btn-primary px-3 me-2" style="height:38px;"
                       onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                       <i class="fas fa-minus"></i>
                     </button>
@@ -726,7 +725,7 @@ $(document).ready(function(){
                       <label class="form-label" for="form1">Quantity</label>
                     </div>
   
-                    <button class="btn btn-primary px-3 ms-2"
+                    <button class="btn btn-primary px-3 ms-2" style="height:38px;"
                       onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                       <i class="fas fa-plus"></i>
                     </button>
@@ -808,7 +807,7 @@ $(document).ready(function(){
 	<!-- Grid container -->
 
 	<!-- Section: Links -->
-	<section class="myfooter">
+	<section class="myfooter" style="background-color: rgb(127, 4, 215);">
 		<!--Grid row-->
 		<div class="row">
 		<!--Grid column-->
