@@ -93,4 +93,11 @@ public class ProductService {
 
     public List<Product> search(String query) {return productRepository.findByNameContainingIgnoreCase(query);}
 
+    // Returns list of products with stock below the specified level
+    public List<Product> getLowStockProducts(Integer threshold) {
+        return productRepository.findByStockLevelLessThan(threshold);
+    }
+
+
+
 }
