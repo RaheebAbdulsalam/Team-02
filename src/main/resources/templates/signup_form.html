@@ -65,33 +65,89 @@
     </nav>
 
 
-    <div class="login">
-        <h1>Registration</h1>
-        <form th:action="@{/process_register}" th:object="${user}" method="post" onsubmit="return validateForm()">
-            <label for="firstName">First-Name:</label>
-            <input type="text" id="firstName" name="firstName" th:field="*{firstName}" required>
-            <label for="firstName">Last-Name:</label>
-            <input type="text" id="lastName" name="lastName" th:field="*{lastName}" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" th:field="*{email}" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" th:field="*{password}" required>
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirmPassword" required>
-            <input type="submit" value="Submit">
-        </form>
-        <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
-        <p id="error-message" style="color: red;"></p>
-        <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
-    </div>
+<!--    <div class="login">-->
+<!--        <h1>Registration</h1>-->
+<!--        <form th:action="@{/process_register}" th:object="${user}" method="post" onsubmit="return validateForm()">-->
+<!--            <label for="firstName">First-Name:</label>-->
+<!--            <input type="text" id="firstName" name="firstName" th:field="*{firstName}" required>-->
+<!--            <label for="firstName">Last-Name:</label>-->
+<!--            <input type="text" id="lastName" name="lastName" th:field="*{lastName}" required>-->
+<!--            <label for="email">Email:</label>-->
+<!--            <input type="email" id="email" name="email" th:field="*{email}" required>-->
+<!--            <label for="password">Password:</label>-->
+<!--            <input type="password" id="password" name="password" th:field="*{password}" required>-->
+<!--            <label for="confirm-password">Confirm Password:</label>-->
+<!--            <input type="password" id="confirm-password" name="confirmPassword" required>-->
+<!--            <input type="submit" value="Submit">-->
+<!--        </form>-->
+<!--        <p>Already have an account? <a th:href="@{/login}">Login here</a></p>-->
+<!--        <p id="error-message" style="color: red;"></p>-->
+<!--        <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>-->
+<!--    </div>-->
 
-    </br>
-    </br>
+<!--    </br>-->
+<!--    </br>-->
+    <div class="contact-section">
+
+        <div class="contact-whitebox">
+            <form class="contact100-form validate-form" th:action="@{/process_register}" th:object="${user}" method="post" onsubmit="return validateForm()">
+                    <span class="contact100-form-title">
+                        Register
+                    </span>
+                <!--Error Messgae----->
+                <p id="error-message" style="color: red;"></p>
+                <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}"></p>
+
+                <!-------FirstName-------->
+                                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <span class="label-input100">First name</span>
+                    <input class="input100" type="text" name="firstName" th:field="*{firstName}" placeholder="Please enter your First Name" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <!-------LastName-------->
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <span class="label-input100">Last name</span>
+                    <input class="input100" type="text" name="lastName" th:field="*{lastName}" placeholder="Please enter your Last Name" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <!-------Email-------->
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <span class="label-input100">Email Address</span>
+                    <input class="input100" type="email" name="email" th:field="*{email}" placeholder="Enter your email addess" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <!-------Password-------->
+                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="password" th:field="*{password}" placeholder="Please enter your password" required >
+                    <span class="focus-input100"></span>
+                </div>
+                <!-------Confirm Password-------->
+                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                    <span class="label-input100">Confirm Password</span>
+                    <input class="input100" type="password" id="confirm-password" name="confirmPassword" placeholder="Please confirm your password" required>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button class="contact100-form-btn" type="submit" value="Submit">
+                                <span>
+                                    Submit
+                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
-
 
         <!-- Section: Links -->
         <section class="myfooter">

@@ -7,22 +7,22 @@
         position: relative;
         top: 30px;
     }
-
 </style>
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet"
-          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-    <link rel="stylesgeet"
-          href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">-->
+    <!--    <link rel="stylesheet"-->
+    <!--          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"-->
+    <!--          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">-->
+    <!--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--    <link rel="stylesheet" type="text/css"-->
+    <!--          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">-->
+    <!--    <link rel="stylesgeet"-->
+    <!--          href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">-->
+    <!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 
     <!--------------------------------------------------------------------->
     <link rel="stylesheet" th:href="@{/css/home.css}"/>
@@ -189,7 +189,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                <br>
                                                 <div class="row">
                                                     <div class="col d-flex justify-content-end">
                                                         <button class="btn btn-primary" type="submit"
@@ -218,30 +218,28 @@
                 </div>
             </div>
 
-                    <!----------------Dark mode Button-------------------->
-                    <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
-                        <div class="card p-3">
-                            <div class="e-navlist e-navlist--active-bg">
-                                <a type="button" class="btn btn-primary" id="theme-toggle">Dark Theme <i
-                                        class="fas fa-moon"></i></a>
-                                <script>
-                                    const themeToggle = document.querySelector('#theme-toggle');
-                                    const body = document.querySelector('body');
+            <!----------------Dark mode Button-------------------->
+            <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+                <div class="card p-3">
+                    <div class="e-navlist e-navlist--active-bg">
+                        <a type="button" class="btn btn-primary" id="theme-toggle">Dark Theme <i
+                                class="fas fa-moon"></i></a>
+                        <script>
+                            const themeToggle = document.querySelector('#theme-toggle');
+                            const body = document.querySelector('body');
 
-                                    themeToggle.addEventListener('click', function () {
-                                        if (body.style.backgroundColor === 'white') {
-                                            body.style.backgroundColor = 'black';
-                                        } else {
-                                            body.style.backgroundColor = 'white';
-                                        }
-                                    });
-                                </script>
-                            </div>
-                        </div>
+                            themeToggle.addEventListener('click', function () {
+                                if (body.style.backgroundColor === 'white') {
+                                    body.style.backgroundColor = 'black';
+                                } else {
+                                    body.style.backgroundColor = 'white';
+                                }
+                            });
+                        </script>
                     </div>
-                    <!------------------------------------>
-
-
+                </div>
+            </div>
+            <!------------------------------------>
 
         </div>
     </div>
@@ -257,8 +255,6 @@
 
 <!---------------------------------------------------- Footer -------------------------------------------------------->
 <footer class="bg-dark text-center text-white footer1">
-    <!-- Grid container -->
-
 
     <!-- Section: Links -->
     <!--Grid row-->
@@ -380,8 +376,7 @@
 
 
 </footer>
-<!-- Footer -->
-</div>
+<!----------------------------------------- Footer -------------------------------------------------->
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
