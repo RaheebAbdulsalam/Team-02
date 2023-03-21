@@ -51,6 +51,12 @@
                     </a>
                 </li>
                 <li>
+                    <a th:href="@{/admin/sale}" href="#">
+                        <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                        <span class="title">Sales</span>
+                    </a>
+                </li>
+                <li>
                     <a th:href="@{/admin/messages}">
                         <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                         <span class="title">Messages</span>
@@ -176,7 +182,8 @@
                                     <li th:each="category : ${product.categories}" th:text="${category.name}"></li>
                                 </td>
                                 <td th:text="${product.name}"></td>
-                                <td th:text="${product.price}"></td>
+
+                                <td th:text="'&pound;' + ${product.price}"></td>
                                 <td style="color:red; font-weight:bold;" th:text="${product.stockLevel}"></td>
                                 <td>
                                     <img th:src="@{|${product.image}|}" width="100"/>

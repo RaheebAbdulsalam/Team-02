@@ -3,6 +3,7 @@ package com.gamestation.ecommerce.controller;
 import com.gamestation.ecommerce.model.*;
 import com.gamestation.ecommerce.security.CustomUserDetails;
 import com.gamestation.ecommerce.service.OrderService;
+import com.gamestation.ecommerce.service.SalesService;
 import com.gamestation.ecommerce.service.ShoppingCartService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,8 @@ public class ShoppingCartController {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private SalesService saleService;
 
     private BigDecimal totalPrice;
 
@@ -120,6 +123,16 @@ public class ShoppingCartController {
             orderItem.setOrder(order); // set the order ID
             orderItems.add(orderItem); // add the order item to the list
             orderItem.setStatus("NEW");
+
+            // Decrease stock count
+            cartItem.getProduct().setStockLevel(cartItem.getProduct().getStockLevel()-cartItem.getQuantity());
+
+            // Create a new sale record
+            Sale sale = new Sale();
+            sale.setProduct(cartItem.getProduct());
+            sale.setQuantity(cartItem.getQuantity());
+            sale.setAmount(cartItem.getProduct().getPrice().multiply(new BigDecimal(cartItem.getQuantity())));
+            saleService.createSale(sale);
         }
 
         order.setOrderItems(orderItems); // set the order items for the order
