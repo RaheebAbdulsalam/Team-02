@@ -1,59 +1,10 @@
-/********************************CONTACT US CSS**********************************************************/
-
-/** {*/
-/*    margin: 50;*/
-/*    padding: 50;*/
-/*    box-sizing: border-box*/
-/*}*/
-
-/*body,*/
-/*html {*/
-/*    height: 100%;*/
-/*    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"*/
-/*}*/
-
-/*a {*/
-/*    font-family: Poppins-Regular;*/
-/*    font-size: 14px;*/
-/*    line-height: 1.7;*/
-/*    color: rgb(55, 44, 44);*/
-/*    margin: 0;*/
-/*    transition: all .4s;*/
-/*    -webkit-transition: all .4s;*/
-/*    -o-transition: all .4s;*/
-/*    -moz-transition: all .4s*/
-/*}*/
-
-/*a:focus {*/
-/*    outline: none !important*/
-/*}*/
-
-/*a:hover {*/
-/*    text-decoration: none*/
-/*}*/
-
-/*h1,*/
-/*h2,*/
-/*h3,*/
-/*h4,*/
-/*h5,*/
-/*h6 {*/
-/*    margin: 0*/
-/*}*/
-
+/********************************LOGIN, SIGN-UP, AND CONTACT-US CSS**********************************************************/
 p {
     font-family: Poppins-Regular;
     font-size: 14px;
     line-height: 1.7;
-    /* color: #666; */
     margin: 0
 }
-
-/*ul,*/
-/*li {*/
-/*    margin: 0;*/
-/*    list-style-type: none*/
-/*}*/
 
 input {
     outline: none;
@@ -151,8 +102,7 @@ iframe {
 .container {
     max-width: 1200px
 }
-/* Contact info*/
-/* Contact info background*/
+
 .contact-section {
     width: 100%;
     min-height: 100vh;
@@ -165,7 +115,7 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: linear-gradient( rgb(106, 127, 157),aliceblue);
+    background: linear-gradient(rgb(106, 127, 157), aliceblue);
 }
 
 .contact-whitebox {
@@ -175,7 +125,6 @@ iframe {
     overflow: hidden;
     padding: 42px 55px 45px
 }
-
 
 .contact100-form-title {
     display: block;
@@ -249,11 +198,11 @@ textarea.input100 {
     padding-bottom: 13px
 }
 
-.input100:focus+.focus-input100::before {
+.input100:focus + .focus-input100::before {
     width: 100%
 }
 
-.has-val.input100+.focus-input100::before {
+.has-val.input100 + .focus-input100::before {
     width: 100%
 }
 
@@ -277,24 +226,6 @@ textarea.input100 {
     overflow: hidden;
     margin: 0 auto
 }
-
-/* .contact100-form-bgbtn {
-    position: absolute;
-    z-index: -1;
-    width: 300%;
-    height: 100%;
-    background: #ffffff;
-    background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    top: 0;
-    left: -100%;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    -moz-transition: all .4s;
-    transition: all .4s
-} */
 
 .contact100-form-bgbtn {
     position: absolute;
@@ -335,84 +266,67 @@ textarea.input100 {
     left: 0
 }
 
-.contact100-form-btn i {
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    -moz-transition: all .4s;
-    transition: all .4s
-}
-
-.contact100-form-btn:hover i {
-    -webkit-transform: translateX(10px);
-    -moz-transform: translateX(10px);
-    -ms-transform: translateX(10px);
-    -o-transform: translateX(10px);
-    transform: translateX(10px)
-}
-
-/******************************** End of contact us form CSS ****************************************************************/
-
-@media(max-width:200spx) {
+@media (max-width: 200 spx) {
     .wrap-contact100 {
         padding: 72px 15px 65px
     }
 }
 
-.validate-input {
-    position: relative
-}
+/*.validate-input {*/
+/*    position: relative*/
+/*}*/
 
-.alert-validate::before {
-    content: attr(data-validate);
-    position: absolute;
-    max-width: 70%;
-    background-color: #fff;
-    border: 1px solid #c80000;
-    border-radius: 2px;
-    padding: 4px 25px 4px 10px;
-    top: 58%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 2px;
-    pointer-events: none;
-    font-family: Poppins-Regular;
-    color: #c80000;
-    font-size: 13px;
-    line-height: 1.4;
-    text-align: left;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity .4s;
-    -o-transition: opacity .4s;
-    -moz-transition: opacity .4s;
-    transition: opacity .4s
-}
+/*.alert-validate::before {*/
+/*    content: attr(data-validate);*/
+/*    position: absolute;*/
+/*    max-width: 70%;*/
+/*    background-color: #fff;*/
+/*    border: 1px solid #c80000;*/
+/*    border-radius: 2px;*/
+/*    padding: 4px 25px 4px 10px;*/
+/*    top: 58%;*/
+/*    -webkit-transform: translateY(-50%);*/
+/*    -moz-transform: translateY(-50%);*/
+/*    -ms-transform: translateY(-50%);*/
+/*    -o-transform: translateY(-50%);*/
+/*    transform: translateY(-50%);*/
+/*    right: 2px;*/
+/*    pointer-events: none;*/
+/*    font-family: Poppins-Regular;*/
+/*    color: #c80000;*/
+/*    font-size: 13px;*/
+/*    line-height: 1.4;*/
+/*    text-align: left;*/
+/*    visibility: hidden;*/
+/*    opacity: 0;*/
+/*    -webkit-transition: opacity .4s;*/
+/*    -o-transition: opacity .4s;*/
+/*    -moz-transition: opacity .4s;*/
+/*    transition: opacity .4s*/
+/*}*/
 
-.alert-validate::after {
-    content: "\f06a";
-    font-family: FontAwesome;
-    display: block;
-    position: absolute;
-    color: #c80000;
-    font-size: 16px;
-    top: 58%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 8px
-}
+/*.alert-validate::after {*/
+/*    content: "\f06a";*/
+/*    font-family: FontAwesome;*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    color: #c80000;*/
+/*    font-size: 16px;*/
+/*    top: 58%;*/
+/*    -webkit-transform: translateY(-50%);*/
+/*    -moz-transform: translateY(-50%);*/
+/*    -ms-transform: translateY(-50%);*/
+/*    -o-transform: translateY(-50%);*/
+/*    transform: translateY(-50%);*/
+/*    right: 8px*/
+/*}*/
 
-.alert-validate:hover:before {
-    visibility: visible;
-    opacity: 1
-}
+/*.alert-validate:hover:before {*/
+/*    visibility: visible;*/
+/*    opacity: 1*/
+/*}*/
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
     .alert-validate::before {
         visibility: visible;
         opacity: 1
@@ -542,15 +456,8 @@ textarea.input100 {
     color: #333;
     line-height: 1.2
 }
+
 /* register page */
-
-/*form {*/
-/*    max-width: 500px;*/
-/*    margin: auto;*/
-/*    padding: 20px;*/
-/*    border-radius: 5px;*/
-/*}*/
-
 label {
     display: block;
     margin-bottom: 5px;
@@ -567,6 +474,7 @@ input[type="password"] {
     box-sizing: border-box;
     font-size: 16px;
 }
+
 /*input[type="submit"] {*/
 /*    background-color: purple;*/
 /*    position:relative;*/
@@ -585,28 +493,11 @@ input[type="password"] {
     color: red;
     margin-top: 5px;
 }
-label{
+
+label {
     text-align: center;
 }
 
-/* <script>
-$(function () {
-$(window).on('scroll', function () {
-    if ( $(window).scrollTop() > 10 ) {
-        $('.navbar').addClass('active');
-    } else {
-        $('.navbar').removeClass('active');
-    }
-});
-});
-$(document).ready(function(){
-$(".wish-icon i").click(function(){
-    $(this).toggleClass("fa-heart fa-heart-o");
-});
-});	
-</style> */
-/* Contact info*/
-/* Contact info background*/
 .register-section {
     width: 100%;
     min-height: 100vh;
@@ -619,7 +510,7 @@ $(".wish-icon i").click(function(){
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: linear-gradient( rgb(106, 127, 157),aliceblue);
+    background: linear-gradient(rgb(106, 127, 157), aliceblue);
 }
 
 .register-whitebox {
@@ -703,11 +594,11 @@ textarea.input100 {
     padding-bottom: 13px
 }
 
-.input100:focus+.focus-input100::before {
+.input100:focus + .focus-input100::before {
     width: 100%
 }
 
-.has-val.input100+.focus-input100::before {
+.has-val.input100 + .focus-input100::before {
     width: 100%
 }
 
@@ -731,24 +622,6 @@ textarea.input100 {
     overflow: hidden;
     margin: 0 auto
 }
-
-/* .contact100-form-bgbtn {
-    position: absolute;
-    z-index: -1;
-    width: 300%;
-    height: 100%;
-    background: #ffffff;
-    background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-    top: 0;
-    left: -100%;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    -moz-transition: all .4s;
-    transition: all .4s
-} */
 
 .r-contact100-form-bgbtn {
     position: absolute;
@@ -804,7 +677,13 @@ textarea.input100 {
     transform: translateX(10px)
 }
 
-/*success and error messages*/
+.input-wrap {
+    display: inline-block;
+    width: 40%;
+    margin-right: 7%;
+}
+
+/*************************Success and error messages************/
 .success {
     background-color: #d4edda;
     color: #155724;
@@ -812,11 +691,11 @@ textarea.input100 {
     padding: 1rem;
     margin-bottom: 1rem;
 }
+
 .error {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #b164de;
+    color: white;
     border: 1px solid #f5c6cb;
     padding: 1rem;
     margin-bottom: 1rem;
 }
-/* Login Page CSS */

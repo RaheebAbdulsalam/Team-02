@@ -7,7 +7,6 @@ import com.gamestation.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
@@ -92,15 +91,15 @@ public class AdminProductController {
         return new RedirectView("/admin/product");
     }
 
-    // method to search for products by name
-    @GetMapping("/search")
-    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam("query") String query) {
-        List<Product> products = productService.search(query);
-        if(products.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(products, HttpStatus.OK);
-    }
+//    // method to search for products by name
+//    @GetMapping("/search")
+//    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam("query") String query) {
+//        List<Product> products = productService.search(query);
+//        if(products.isEmpty()){
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(products, HttpStatus.OK);
+//    }
 
 
 }

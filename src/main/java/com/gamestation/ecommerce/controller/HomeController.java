@@ -184,5 +184,14 @@ public class HomeController {
         return mav;
     }
 
+    //Search for products
+    @GetMapping("/search")
+    public ModelAndView searchProducts(@RequestParam("q") String query) {
+        List<Product> products = productService.search(query);
+        ModelAndView mav = new ModelAndView("results");
+        mav.addObject("products", products);
+        return mav;
+    }
+
 
 }
