@@ -23,7 +23,7 @@ public class AdminHomeController {
     @GetMapping
     public ModelAndView getAdminHomePage() {
         ModelAndView mav = new ModelAndView("admin/index");
-        List<Product> products = productService.getLowStockProducts(151);
+        List<Product> products = productService.getLowStockProducts(15);
         if(products.isEmpty()){
             return new ModelAndView("admin/index");
         }

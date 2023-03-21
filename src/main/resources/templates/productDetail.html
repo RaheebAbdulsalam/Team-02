@@ -819,7 +819,8 @@
                                 <form id="add-to-cart-form" th:action="@{/shoppingcart}" method="post">
                                     <input type="hidden" name="productId" th:value="${product.id}">
                                     <input type="number" name="quantity" value="1" min="1" th:max="${product.stockLevel}">
-                                    <button type="submit" class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>
+                                    <button type="submit" class="btn btn-danger text-uppercase mr-2 px-4" th:if="${product.stockLevel > 0}">Add to cart</button>
+                                    <button type="button" class="btn btn-secondary text-uppercase mr-2 px-4" th:if="${product.stockLevel == 0}" disabled>This Item is out of stock</button>
                                 </form>
                                 <div id="message"></div>
                             </div>
