@@ -64,34 +64,36 @@
         </div>
     </nav>
 
-
-
-
     <div class="contact-section">
         <div class="contact-whitebox">
-            <form class="contact100-form validate-form"  id="contact-form" method="post" th:action="@{/submit-form}" th:object="${contact}">
+            <form class="contact100-form validate-form" id="contact-form" method="post" th:action="@{/submit-form}"
+                  th:object="${contact}">
                     <span class="contact100-form-title">
                         Contact Us
                     </span>
-                <div id="success-message"></div>
+->
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
                     <span class="label-input100">Your Name</span>
-                    <input class="input100" type="text" name="name" placeholder="Enter your name" th:field="*{name}" required>
+                    <input class="input100" type="text" name="name" placeholder="Enter your name" th:field="*{name}"
+                           required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <span class="label-input100">Email Address</span>
-                    <input class="input100" type="email" name="email" placeholder="Enter your email addess" th:field="*{email}" required>
+                    <input class="input100" type="email" name="email" placeholder="Enter your email addess"
+                           th:field="*{email}" required>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Valid Contact Number is required">
                     <span class="label-input100">Contact Number</span>
-                    <input class="input100" type="text" placeholder="Enter a Contact Number" ame="phone" th:field="*{phone}" required pattern="^\+44\s\d{4}\s\d{6}$">
+                    <input class="input100" type="text" placeholder="Enter a Contact Number" ame="phone"
+                           th:field="*{phone}" required pattern="^\+44\s\d{4}\s\d{6}$">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Message is required">
                     <span class="label-input100">Message</span>
-                    <textarea class="input100" name="message" placeholder="Your message here..."th:field="*{message}" required></textarea>
+                    <textarea class="input100" name="message" placeholder="Your message here..." th:field="*{message}"
+                              required></textarea>
                     <span class="focus-input100"></span>
                 </div>
                 <div class="container-contact100-form-btn">
@@ -243,22 +245,29 @@
 </html>
 
 <script>
-    $(document).ready(function () {
-        $('contact-form').submit(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                success: function (response) {
-                    $('#success-message').html('Thanks for contacting us! We will be in touch with you shortly.').addClass('success').fadeIn('slow');
-                    $('form')[0].reset();
-                },
-                error: function (xhr, status, error) {
-                    $('#success-message').html('Error sending message!').addClass('error').fadeIn('slow');
+    // Get the form element
+    const form = document.getElementById("contact-form");
+
+    // Add a listener for the submit event
+    form.addEventListener("submit", (event) => {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Make an AJAX request to submit the form
+        // Replace the URL with the actual URL of your form submission endpoint
+        fetch("/submit-form", {
+            method: "POST",
+            body: new FormData(form),
+        })
+            .then((response) => {
+                if (response.ok) {
+                    // Redirect to the success page
+                    window.location.href = "/successMessage";
                 }
+            })
+            .catch((error) => {
+                console.error(error);
             });
-        });
     });
 </script>
 
