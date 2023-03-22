@@ -43,7 +43,7 @@
                         <a class="nav-link" th:href="@{/contact}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -74,30 +74,20 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Video Games</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Accessories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Devices</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Consoles</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
                     </li>
                 </ul>
                 <form class="d-flex search-form">
@@ -203,7 +193,7 @@
                     <p class="card-text">Format: PlayStation 5 | Age Rating: PEGI-18 <br>
                         Stock status: In Stock <br>
                         Delivery: FREE UK Royal Mail 1st Class delivery on this item.</p>
-                    <a href="#" class="btn btn-primary">Buy Now</a>
+                    <a href="productDetail" class="btn btn-primary">Buy Now</a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>

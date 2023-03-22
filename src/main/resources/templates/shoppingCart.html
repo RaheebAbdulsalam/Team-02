@@ -1,59 +1,190 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
 <head>
-  <title>Shopping Cart</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+  <link rel="stylesheet" th:href="@{/css/home.css}"/>
+  <link rel="stylesheet" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 </head>
+
 <body>
-<h1>Shopping Cart</h1>
-<table id="cart-table">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Image</th>
-    <th>Quantity</th>
-    <th>Subtotal</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr th:each="cartItem : ${cartItems}">
-    <td th:text="${cartItem.product.name}"></td>
-    <td th:text="${cartItem.product.price}"></td>
-    <td>
-      <img th:src="@{${cartItem.product.image}}" height="50" alt="Product Image"/>
-    </td>
-    <td>
-      <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
-        <input type="hidden" name="_method" value="PUT" />
-        <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1" th:max="${cartItem.product.stockLevel}" />
-        <button type="submit">Update</button>
-      </form>
-    </td>
-    <td th:text="${cartItem.product.price * cartItem.quantity}"></td>
-    <td>
-      <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
-        <input type="hidden" name="_method" value="DELETE" />
-        <button type="submit">Remove</button>
-      </form>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="4"></td>
-    <td><strong>Total Price:</strong></td>
-    <td th:text="${totalPrice}"></td>
-  </tr>
-  </tbody>
-</table>
+
+<!-- First Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar1">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">
+      <img src="/Images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
+    </a>
+
+    <!-- <form class="d-flex"> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/about}">About Us</a>
+        </li>
+
+        <li class="nav-item" sec:authorize="isAnonymous()">
+          <a class="nav-link" th:href="@{/login}">Login/ Register</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/contact}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
+        </li>
+
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <a class="nav-link" th:href="@{/profile}"> <i class="fa fa-fw fa-user-circle"></i></a>
+        </li>
+
+        <li class="nav-item" sec:authorize="isAuthenticated()">
+          <form method="post" th:action="@{/logout}">
+            <input type="submit" class="btn btn-primary" value="Logout">
+          </form>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
 
 
-<form id="checkout-form" th:action="@{/shoppingcart/checkout}" method="post">
-  <button id="checkout-button" type="submit" name="checkout">Checkout</button>
-</form>
-<br>
-<div th:text="${param.message}"></div>
+
+<!-----------------Shopping Cart Code---------------------------->
+<section class="h-100 gradient-custom" style="position:relative; bottom:30px;" th:each="cartItem : ${cartItems}">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center my-4">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Cart - 2 items</h5>
+          </div>
+          <div class="card-body">
+            <!-- Single item -->
+            <div class="row">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <!-- Image -->
+                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                  <img th:src="${cartItem.product.image}"
+                       class="w-100" alt="Blue Jeans Jacket" />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                  </a>
+                </div>
+                <!-- Image -->
+              </div>
+
+
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0" >
+                <!-- Data -->
+                <p th:text="${cartItem.product.name}"><strong></strong></p>
+                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                        title="Remove item">
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
+                        title="Move to the wish list">
+                  <i class="fas fa-heart"></i>
+                </button>
+                <!-- Data -->
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <!-- Quantity -->
+                <div class="d-flex mb-4" style="max-width: 300px">
+                  <button class="btn btn-primary px-3 me-2" style="height:38px;"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                    <i class="fas fa-minus"></i>
+                  </button>
+
+                  <div class="form-outline">
+                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
+                    <label class="form-label" for="form1">Quantity</label>
+                  </div>
+
+                  <button class="btn btn-primary px-3 ms-2" style="height:38px;"
+                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <!-- Quantity -->
+
+                <!-- Price -->
+                <p class="text-start text-md-center" th:text="${cartItem.product.price}">
+                  <strong></strong>
+                </p>
+                <!-- Price -->
+              </div>
+            </div>
+            <!-- Single item -->
+
+
+
+
+
+
+
+
+            <h1>Shopping Cart</h1>
+            <table id="cart-table">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="cartItem : ${cartItems}">
+                <td th:text="${cartItem.product.name}"></td>
+                <td th:text="${cartItem.product.price}"></td>
+                <td>
+                  <img th:src="@{${cartItem.product.image}}" height="50" alt="Product Image"/>
+                </td>
+                <td>
+                  <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
+                    <input type="hidden" name="_method" value="PUT" />
+                    <input type="number" name="quantity" th:value="${cartItem.quantity}" min="1" th:max="${cartItem.product.stockLevel}" />
+                    <button type="submit">Update</button>
+                  </form>
+                </td>
+                <td th:text="${cartItem.product.price * cartItem.quantity}"></td>
+                <td>
+                  <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit">Remove</button>
+                  </form>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td><strong>Total Price:</strong></td>
+                <td th:text="${totalPrice}"></td>
+              </tr>
+              </tbody>
+            </table>
+
+
+            <form id="checkout-form" th:action="@{/shoppingcart/checkout}" method="post">
+              <button id="checkout-button" type="submit" name="checkout">Checkout</button>
+            </form>
+            <br>
+            <div th:text="${param.message}"></div>
 
 </body>
 </html>
-
