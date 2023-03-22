@@ -101,12 +101,13 @@
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 2px;
-    font-size: xx-large;
+    font-size: 40px;
     padding: 10px;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(to right, #090909,rgb(127, 4, 215), #fcbbea, #86c6b9, #0f4c81);
+    border: 3px solid rgb(149, 0, 198);
 
   }
   @media (max-width: 991px) {
@@ -250,7 +251,7 @@
   
   .aboutus{
     background-image: url('Images/About.png');
-    height: 400px;
+    height: 500px;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -294,7 +295,7 @@
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   }
    .value-details{
-    background-color: #c9e1f7;
+    background-color: #ffffff;
    }
    .value-details p{
    
