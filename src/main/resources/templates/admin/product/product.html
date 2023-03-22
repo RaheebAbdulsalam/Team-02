@@ -250,27 +250,6 @@
                                 item.addEventListener('mouseover', activeLink));
                         </script>
 
-<!--                        <script>-->
-<!--                            function sortProducts() {-->
-<!--                                var select = document.getElementById("sort-select");-->
-<!--                                var sortOrder = select.options[select.selectedIndex].value;-->
-<!--                                var productsTable = document.querySelector("table tbody");-->
-<!--                                var productsRows = productsTable.querySelectorAll("tr");-->
-<!--                                var productsArray = Array.prototype.slice.call(productsRows);-->
-<!--                                productsArray.sort(function(row1, row2) {-->
-<!--                                    var price1 = parseFloat(row1.querySelector("td:nth-child(4)").textContent.trim());-->
-<!--                                    var price2 = parseFloat(row2.querySelector("td:nth-child(4)").textContent.trim());-->
-<!--                                    if (sortOrder === "asc") {-->
-<!--                                        return price1 - price2;-->
-<!--                                    } else {-->
-<!--                                        return price2 - price1;-->
-<!--                                    }-->
-<!--                                });-->
-<!--                                productsArray.forEach(function(row) {-->
-<!--                                    productsTable.appendChild(row);-->
-<!--                                });-->
-<!--                            }-->
-<!--                        </script>-->
                         <script>
                             function sortProducts() {
                                 var select = document.getElementById("sort-select");

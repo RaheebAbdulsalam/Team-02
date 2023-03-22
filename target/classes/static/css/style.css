@@ -700,24 +700,7 @@ textarea.input100 {
     margin-bottom: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Succes MessagePage ********/
 #card {
     top: 110px;
     width: 320px;
@@ -735,12 +718,6 @@ textarea.input100 {
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
 }
-
-/*#checkmark {*/
-/*    font-weight: lighter;*/
-/*    fill: #fff;*/
-/*    margin: -3.5em auto auto 20px;*/
-/*}*/
 
 #status {
     font-weight: lighter;

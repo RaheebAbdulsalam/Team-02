@@ -71,7 +71,7 @@
                     <span class="contact100-form-title">
                         Contact Us
                     </span>
-->
+
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
                     <span class="label-input100">Your Name</span>
                     <input class="input100" type="text" name="name" placeholder="Enter your name" th:field="*{name}"
@@ -245,16 +245,9 @@
 </html>
 
 <script>
-    // Get the form element
     const form = document.getElementById("contact-form");
-
-    // Add a listener for the submit event
     form.addEventListener("submit", (event) => {
-        // Prevent the default form submission behavior
         event.preventDefault();
-
-        // Make an AJAX request to submit the form
-        // Replace the URL with the actual URL of your form submission endpoint
         fetch("/submit-form", {
             method: "POST",
             body: new FormData(form),

@@ -116,44 +116,94 @@
 </video>
 
 
-<section>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+<!--<section>-->
+<!--    <div class="container py-5">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">-->
 
-                <!--Product 1-->
-                <div class="card" th:each="product : ${products}">
-                    <div class="d-flex justify-content-between p-3">
+<!--                &lt;!&ndash;Product 1&ndash;&gt;-->
+<!--                <div class="card" th:each="product : ${products}">-->
+<!--                    <div class="d-flex justify-content-between p-3" >-->
+<!--                    </div>-->
+<!--                    <img th:src="@{|${product.image}|}" alt="game" width="70%" height="70%"/>-->
+<!--                    <div class="card-body">-->
+<!--                        <div class="d-flex justify-content-between">-->
+<!--                            <p class="small"><a href="#!" class="text-muted" th:each="category : ${product.categories}"-->
+<!--                                                th:text="${category.name}"></a></p>-->
+<!--                            <p class="small text-danger"><s>£70</s></p>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex justify-content-between mb-3">-->
+<!--                            <h5 class="mb-0" th:text="${product.name}"></h5>-->
+<!--                            <h5 class="text-dark mb-0" th:text="${product.price}"></h5>-->
+<!--                        </div>-->
+<!--                        <div class="d-flex justify-content-between mb-2">-->
+<!--                            <p class="text-muted mb-0">Available: <span class="fw-bold" th:text="${product.stockLevel}">6</span>-->
+<!--                            </p>-->
+<!--                            <div class="ms-auto text-warning">-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                                <i class="fa fa-star"></i>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="container py-5">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+
+
+            <div class="row p-2 bg-white border rounded" th:each="product : ${products}">
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" th:src="@{|${product.image}|}"></div>
+                <div class="col-md-6 mt-1">
+                    <h5 th:text="${product.name}"></h5>
+                    <div class="ms-auto text-warning">
+                        <i class="fa fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <img th:src="@{|${product.image}|}" alt="game" width="70%" height="70%"/>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <p class="small"><a href="#!" class="text-muted" th:each="category : ${product.categories}"
-                                                th:text="${category.name}"></a></p>
-                            <p class="small text-danger"><s>£70</s></p>
+                    <p class="text-justify text-truncate para mb-0" th:text="${product.description}"><br><br></p>
+                </div>
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1"th:text="${product.price}">£</h4>
+                    </div>
+                    <h6 class="text-success">Free shipping</h6>
+                    <div class="d-flex flex-column mt-4"><a class="btn btn-primary btn-sm" th:href="@{/product/{id}(id=${product.id})}">Details</a>
+
+                        <div class="cart mt-4 align-items-center">
+                            <form id="add-to-cart-form" th:action="@{/shoppingcart}" method="post">
+                                <div class="form-outline">
+                                <input type="hidden" name="productId" th:value="${product.id}">
+                                <input type="number" name="quantity" value="1" min="1">
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-sm me-1 mb-2"
+                                        data-mdb-toggle="tooltip">Add to cart</button>
+                            </form>
+                            <div id="message"></div>
                         </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0" th:text="${product.name}"></h5>
-                            <h5 class="text-dark mb-0" th:text="${product.price}"></h5>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <p class="text-muted mb-0">Available: <span class="fw-bold" th:text="${product.stockLevel}">6</span>
-                            </p>
-                            <div class="ms-auto text-warning">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
                             </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
-    </div>
-</section>
+</div>
 
 
 <!------------------------------------ Footer ------------------------------->
@@ -285,5 +335,25 @@
 
 
 <script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
+
+
+<!--JavaScript - Message for adding item to cart, or not being logged in-->
+<script>
+    const form = document.getElementById('add-to-cart-form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        fetch('/shoppingcart', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(message => {
+                const messageElement = document.getElementById('message');
+                messageElement.innerText = message;
+            })
+            .catch(error => console.error(error));
+    });
+</script>
 </body>
 </html>

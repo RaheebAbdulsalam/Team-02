@@ -442,6 +442,7 @@
     </div>
   </nav>
 </header>
+
 <div class="container-xl">
   <div class="row">
     <div class="col-md-12">
@@ -743,11 +744,20 @@
     </div>
   </div>
 </div>
+
+
 <div class="container mt-5 mb-5">
   <div class="d-flex justify-content-center row">
     <div class="col-md-10">
 
-
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select" onchange="sortProducts()">
+        <option value="">Select an option</option>
+        <option value="price_asc">Price (low to high)</option>
+        <option value="price_desc">Price (high to low)</option>
+        <option value="name_asc">Name (A to Z)</option>
+        <option value="name_desc">Name (Z to A)</option>
+      </select>
       <div class="row p-2 bg-white border rounded" th:each="product : ${products}">
         <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" th:src="@{|${product.image}|}"></div>
         <div class="col-md-6 mt-1">
@@ -840,5 +850,39 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function sortProducts() {
+      var select = document.getElementById("sort-select");
+      var sortOrder = select.options[select.selectedIndex].value;
+      var productsTable = document.querySelector("table tbody");
+      var productsRows = productsTable.querySelectorAll("tr");
+      var productsArray = Array.prototype.slice.call(productsRows);
+      productsArray.sort(function(row1, row2) {
+        if (sortOrder === "price_asc" || sortOrder === "price_desc") {
+          var price1 = parseFloat(row1.querySelector("td:nth-child(4)").textContent.trim());
+          var price2 = parseFloat(row2.querySelector("td:nth-child(4)").textContent.trim());
+          if (sortOrder === "price_asc") {
+            return price1 - price2;
+          } else {
+            return price2 - price1;
+          }
+        } else if (sortOrder === "name_asc" || sortOrder === "name_desc") {
+          var name1 = row1.querySelector("td:nth-child(3)").textContent.trim();
+          var name2 = row2.querySelector("td:nth-child(3)").textContent.trim();
+          if (sortOrder === "name_asc") {
+            return name1.localeCompare(name2);
+          } else {
+            return name2.localeCompare(name1);
+          }
+        } else {
+          return 0;
+        }
+      });
+      productsArray.forEach(function(row) {
+        productsTable.appendChild(row);
+      });
+    }
+  </script>
 </footer>
 </html>
