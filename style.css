@@ -294,11 +294,11 @@
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
   }
-   .value-details{
-    background-color: #ffffff;
-   }
+   /* .value-details{
+    background: linear-gradient(rgb(32, 30, 40),rgb(127, 4, 215));
+   } */
    .value-details p{
-   
+    
     align-items: center;
     justify-content: center;
     padding: 30px;
@@ -309,5 +309,9 @@
     font-size:x-large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+   }
+   .integrity-details{
+    /* background: linear-gradient(to bottom right,rgb(247, 247, 247),rgb(247, 247, 247),rgb(220, 120, 251),rgb(247, 247, 247)); */
+    background-image: radial-gradient(circle,rgb(255, 255, 255)50%,rgb(234, 190, 251),rgb(255, 255, 255));
    }
   
