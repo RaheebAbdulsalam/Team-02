@@ -1,11 +1,8 @@
 package ecommerce.com.admin;
 
 import com.gamestation.ecommerce.EcommerceApplication;
-import com.gamestation.ecommerce.exception.ResourceNotFoundException;
 import com.gamestation.ecommerce.model.Category;
 import com.gamestation.ecommerce.model.Product;
-import com.gamestation.ecommerce.repository.CategoryRepository;
-import com.gamestation.ecommerce.service.CategoryService;
 import com.gamestation.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +13,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@SpringBootTest(classes = EcommerceApplication.class)
 public class ProductTests {
 
     @Autowired
