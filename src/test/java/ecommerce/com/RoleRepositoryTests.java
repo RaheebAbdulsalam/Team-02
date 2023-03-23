@@ -1,33 +1,38 @@
-package LoginSystem.com;
+package ecommerce.com;
 
 
+import com.gamestation.ecommerce.EcommerceApplication;
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 import java.util.List;
 
-@DataJpaTest
-@AutoConfigureTestDatabase(replace= AutoConfigureTestDatabase.Replace.NONE)
-@Rollback(false)
+
+@SpringBootTest(classes = EcommerceApplication.class)
+@Transactional
 public class RoleRepositoryTests {
+
     @Autowired
-    RoleRepository RoleRepo;
+    RoleRepository roleRepo;
 
     @Test
     public void testCreateRoles() {
         Role user = new Role("USER");
         Role admin = new Role("ADMIN");
 
-        RoleRepo.saveAll(List.of(user, admin));
+        roleRepo.saveAll(List.of(user, admin));
 
-        List<Role> listRoles = RoleRepo.findAll();
+        List<Role> listRoles = roleRepo.findAll();
         assertThat(listRoles.size()).isEqualTo(2);
     }
 }

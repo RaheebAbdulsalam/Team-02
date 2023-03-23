@@ -1,8 +1,9 @@
-package LoginSystem.com;
+package ecommerce.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
+import com.gamestation.ecommerce.EcommerceApplication;
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.RoleRepository;
@@ -13,6 +14,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
 @DataJpaTest
