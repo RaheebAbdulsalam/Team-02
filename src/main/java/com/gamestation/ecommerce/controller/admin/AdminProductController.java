@@ -91,14 +91,15 @@ public class AdminProductController {
         return new RedirectView("/admin/product");
     }
 
-    // method to search for products by name
-    @GetMapping("/search")
-    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam("query") String query) {
-        List<Product> products = productService.search(query);
-        if(products.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(products, HttpStatus.OK);
-    }
+//    // method to search for products by name
+//    @GetMapping("/search")
+//    public ResponseEntity<List<Product>> searchProductsByName(@RequestParam("query") String query) {
+//        List<Product> products = productService.search(query);
+//        if(products.isEmpty()){
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(products, HttpStatus.OK);
+//    }
+
 
 }

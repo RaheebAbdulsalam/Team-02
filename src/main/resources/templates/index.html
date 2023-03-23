@@ -43,7 +43,7 @@
                         <a class="nav-link" th:href="@{/contact}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -100,11 +100,12 @@
                         <a class="nav-link" href="#">Consoles</a>
                     </li>
                 </ul>
-                <form class="d-flex search-form">
+                <form class="d-flex search-form" action="/search" method="get">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search"
-                           aria-label="Search">
+                           aria-label="Search" name="q">
                     <button class="btn btn-outline-success search-btn" type="submit">Search</button>
                 </form>
+
             </div>
         </div>
     </nav>
@@ -256,6 +257,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
