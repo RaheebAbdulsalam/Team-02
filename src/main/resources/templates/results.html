@@ -46,7 +46,7 @@
                 </li>
 
                 <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" th:href="@{/profile}"> <i class="fa fa-fw fa-user-circle"></i></a>
+                    <a class="nav-link" th:href="@{/profile}">  <i class="fa fa-fw fa-user-circle"></i></a>
                 </li>
 
                 <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -60,7 +60,6 @@
     </div>
 </nav>
 
-
 <!-- Second Navigation Bar includes Search -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
     <div class="container-fluid">
@@ -71,38 +70,27 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">Video games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Video Games</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Accessories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <a class="nav-link" th:href="@{/categoryproducts/2}">Gaming Consoles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Devices</a>
+                    <a class="nav-link" th:href="@{/categoryproducts/3}">Accessories</a>
+                </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Consoles</a>
+                    <a class="nav-link" th:href="@{/categoryproducts/4}">Merchandise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/categoryproducts/5}">In-Game Items</a>
                 </li>
             </ul>
-            <form class="d-flex search-form" action="/search" method="get">
+            <form class="d-flex search-form" th:action="@{/search}" method="get">
                 <input class="form-control me-2 search-input" type="search" placeholder="Search"
                        aria-label="Search" name="q">
                 <button class="btn btn-outline-success search-btn" type="submit">Search</button>
             </form>
-
         </div>
     </div>
 </nav>
@@ -207,8 +195,10 @@
 
 
 <!------------------------------------ Footer ------------------------------->
+<!-- Footer -->
 <footer class="bg-dark text-center text-white footer1">
     <!-- Grid container -->
+
     <!-- Section: Links -->
     <section class="myfooter">
         <!--Grid row-->
@@ -241,25 +231,15 @@
                         ><i class="fab fa-twitter"></i
                         ></a>
 
-                        <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-google"></i
-                        ></a>
+
 
                         <!-- Instagram -->
                         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                         ><i class="fab fa-instagram"></i
                         ></a>
 
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-linkedin-in"></i
-                        ></a>
 
-                        <!-- Github -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-github"></i
-                        ></a>
+
                     </section>
                     <!-- Section: Social media -->
 
@@ -321,6 +301,7 @@
     <!-- Section: Links -->
 
 
+
     <!-- Grid container -->
 
     <!-- Copyright -->
@@ -332,6 +313,11 @@
 </footer>
 <!-- Footer -->
 </div>
+
+
+<script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
+</body>
+</html>
 
 
 <script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
