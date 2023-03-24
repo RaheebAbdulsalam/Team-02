@@ -13,16 +13,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">-->
-    <!--    <link rel="stylesheet"-->
-    <!--          href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"-->
-    <!--          integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">-->
-    <!--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">-->
-    <!--    <link rel="stylesheet" type="text/css"-->
-    <!--          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">-->
-    <!--    <link rel="stylesgeet"-->
-    <!--          href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">-->
-    <!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <title>My Profile</title>
 
     <!--------------------------------------------------------------------->
     <link rel="stylesheet" th:href="@{/css/home.css}"/>
@@ -78,6 +69,12 @@
 
 
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <section class="profile-page">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -94,6 +91,9 @@
                                     <span>Admin Panel</span>
                                 </a>
                             </li>
+
+                            <li class="nav-item" sec:authorize="isAuthenticated()"><a class="nav-link px-2" th:href="@{/profile}" target="__blank"><i
+                                    class="fa fa-fw fa-user-circle"></i><span>My Profile</span></a></li>
 
                             <li class="nav-item"><a class="nav-link px-2" th:href="@{/profile/orders}" target="__blank"><i
                                     class="fa fa-fw fa-th mr-1"></i><span>My Orders</span></a></li>
@@ -204,17 +204,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!----------------Support Section------------------->
-                    <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
-                        <div class="card p-3">
-                            <div class="e-navlist e-navlist--active-bg">
-                                <h6 class="card-title font-weight-bold">Support</h6>
-                                <p class="card-text">Get fast, free help from our friendly assistants.</p>
-                                <a type="button" class="btn btn-primary" th:href="@{/contact}">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -238,6 +227,15 @@
                         </script>
                     </div>
                 </div>
+                <br>
+                <!----------------Support Section------------------->
+                    <div class="card p-3">
+                        <div class="e-navlist e-navlist--active-bg">
+                            <h6 class="card-title font-weight-bold">Support</h6>
+                            <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                            <a type="button" class="btn btn-primary" th:href="@{/contact}">Contact Us</a>
+                        </div>
+                    </div>
             </div>
             <!------------------------------------>
 
@@ -251,7 +249,11 @@
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!---------------------------------------------------- Footer -------------------------------------------------------->
 <footer class="bg-dark text-center text-white footer1">
