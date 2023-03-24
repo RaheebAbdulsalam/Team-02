@@ -61,6 +61,7 @@ public class HomeController {
         return mav;
     }
 
+    // Register the user
     @PostMapping("/process_register")
     public ModelAndView processRegister(@Valid User user, BindingResult result) {
         ModelAndView mav;
@@ -81,7 +82,6 @@ public class HomeController {
     }
 
     // returns login and profile pages
-
     @GetMapping("/login")
     public ModelAndView loginPage() {
         ModelAndView mav = new ModelAndView("login");
@@ -97,6 +97,7 @@ public class HomeController {
         return mav;
     }
 
+    // edit user profile
     @PostMapping("/edit-profile")
     public ModelAndView saveCurrentUser(@ModelAttribute("user") User user, Principal principal) {
         ModelAndView mav = new ModelAndView("user/Profilepage");

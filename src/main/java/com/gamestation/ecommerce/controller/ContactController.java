@@ -17,6 +17,7 @@ public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
 
+    // returns Contact us page
     @GetMapping("/contact")
     public ModelAndView viewContactPage() {
         ModelAndView modelAndView = new ModelAndView("contact");
@@ -24,13 +25,14 @@ public class ContactController {
         return modelAndView;
     }
 
+    // submit the contact form
     @PostMapping("/submit-form")
     public ModelAndView submitForm(@ModelAttribute Contact contact) {
         contactRepository.save(contact);
         return new ModelAndView("contact");
-        //return new ModelAndView("success"); // success page
     }
 
+    // returns success message page
     @GetMapping("/successMessage")
     public ModelAndView viewSuccessMessage(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("successMessage");

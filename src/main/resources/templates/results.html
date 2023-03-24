@@ -71,42 +71,34 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                    <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video
+                        games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Video Games</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Accessories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Devices</a>
+                    <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
+                </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Consoles</a>
+                    <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
                 </li>
             </ul>
+            <!--Search Bar -->
             <form class="d-flex search-form" action="/search" method="get">
                 <input class="form-control me-2 search-input" type="search" placeholder="Search"
                        aria-label="Search" name="q">
                 <button class="btn btn-outline-success search-btn" type="submit">Search</button>
             </form>
-
+            <!--  End of Search Tab -->
         </div>
     </div>
 </nav>
-<!--  End of Search Tab -->
+
 
 <!-- Game station Banner -->
 <video loop autoplay muted class="video">
@@ -115,54 +107,14 @@
     Your browser does not support the video tag.
 </video>
 
-
-<!--<section>-->
-<!--    <div class="container py-5">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">-->
-
-<!--                &lt;!&ndash;Product 1&ndash;&gt;-->
-<!--                <div class="card" th:each="product : ${products}">-->
-<!--                    <div class="d-flex justify-content-between p-3" >-->
-<!--                    </div>-->
-<!--                    <img th:src="@{|${product.image}|}" alt="game" width="70%" height="70%"/>-->
-<!--                    <div class="card-body">-->
-<!--                        <div class="d-flex justify-content-between">-->
-<!--                            <p class="small"><a href="#!" class="text-muted" th:each="category : ${product.categories}"-->
-<!--                                                th:text="${category.name}"></a></p>-->
-<!--                            <p class="small text-danger"><s>£70</s></p>-->
-<!--                        </div>-->
-<!--                        <div class="d-flex justify-content-between mb-3">-->
-<!--                            <h5 class="mb-0" th:text="${product.name}"></h5>-->
-<!--                            <h5 class="text-dark mb-0" th:text="${product.price}"></h5>-->
-<!--                        </div>-->
-<!--                        <div class="d-flex justify-content-between mb-2">-->
-<!--                            <p class="text-muted mb-0">Available: <span class="fw-bold" th:text="${product.stockLevel}">6</span>-->
-<!--                            </p>-->
-<!--                            <div class="ms-auto text-warning">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="container py-5">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--</section>-->
-
 <div class="container mt-5 mb-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10">
 
 
             <div class="row p-2 bg-white border rounded" th:each="product : ${products}">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" th:src="@{|${product.image}|}"></div>
+                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+                                                th:src="@{|${product.image}|}"></div>
                 <div class="col-md-6 mt-1">
                     <h5 th:text="${product.name}"></h5>
                     <div class="ms-auto text-warning">
@@ -176,33 +128,33 @@
                 </div>
                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                     <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1"th:text="${product.price}">£</h4>
+                        <h4 class="mr-1" th:text="${product.price}">£</h4>
                     </div>
                     <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><a class="btn btn-primary btn-sm" th:href="@{/product/{id}(id=${product.id})}">Details</a>
+                    <div class="d-flex flex-column mt-4"><a class="btn btn-primary btn-sm"
+                                                            th:href="@{/product/{id}(id=${product.id})}">Details</a>
 
                         <div class="cart mt-4 align-items-center">
                             <form id="add-to-cart-form" th:action="@{/shoppingcart}" method="post">
                                 <div class="form-outline">
-                                <input type="hidden" name="productId" th:value="${product.id}">
-                                <input type="number" name="quantity" value="1" min="1">
+                                    <input type="hidden" name="productId" th:value="${product.id}">
+                                    <input type="number" name="quantity" value="1" min="1">
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary btn-sm me-1 mb-2"
-                                        data-mdb-toggle="tooltip">Add to cart</button>
+                                        data-mdb-toggle="tooltip">Add to cart
+                                </button>
                             </form>
                             <div id="message"></div>
                         </div>
-                            </div>
-
-
                     </div>
+
                 </div>
             </div>
-
-
         </div>
+
     </div>
+</div>
 </div>
 
 
@@ -241,25 +193,12 @@
                         ><i class="fab fa-twitter"></i
                         ></a>
 
-                        <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-google"></i
-                        ></a>
-
                         <!-- Instagram -->
                         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                         ><i class="fab fa-instagram"></i
                         ></a>
 
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-linkedin-in"></i
-                        ></a>
 
-                        <!-- Github -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-github"></i
-                        ></a>
                     </section>
                     <!-- Section: Social media -->
 

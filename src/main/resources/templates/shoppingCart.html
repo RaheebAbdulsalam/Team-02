@@ -20,7 +20,6 @@
             <img src="/Images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
         </a>
 
-        <!-- <form class="d-flex"> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,15 +66,14 @@
         <div class="row d-flex justify-content-center my-4">
             <div class="col-md-8">
                 <div class="card mb-4">
+
                     <div class="card-header py-3">
                         <h5 class="mb-0">Shopping Cart</h5>
                     </div>
-                    <div class="card-body" th:each="cartItem : ${cartItems}">
 
-                        <!-- Single item -->
+                    <div class="card-body" th:each="cartItem : ${cartItems}">
                         <div class="row">
                             <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-
                                 <!-- Image -->
                                 <div class="bg-image hover-overlay hover-zoom ripple rounded"
                                      data-mdb-ripple-color="light">
@@ -85,12 +83,10 @@
                                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                     </a>
                                 </div>
-                                <!-- Image -->
 
                             </div>
 
                             <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                <!-- Data -->
                                 <p><strong th:text="${cartItem.product.name}"></strong></p>
 
                                 <!--Remove Button-->
@@ -102,12 +98,9 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-
-                                <!-- Data -->
                             </div>
 
                             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-
                                 <!-- Quantity -->
                                 <form th:action="@{/shoppingcart/__${cartItem.id}__}" method="post">
                                     <div class="d-flex mb-4" style="max-width: 300px">
@@ -141,14 +134,11 @@
                                             style="font-size: 24px;"></strong>
                                 </p>
 
-                                <!-- Price -->
-
                             </div>
                         </div>
                         <hr class="my-4"/>
                     </div>
                 </div>
-                <!--End of category products--------->
 
                 <!--Delivery Time--------->
                 <div class="card mb-4">
@@ -157,6 +147,7 @@
                         <p class="mb-0">3-5 working days</p>
                     </div>
                 </div>
+                <!--Accepted Payment method-->
                 <div class="card mb-4 mb-lg-0">
                     <div class="card-body">
                         <p><strong>We accept</strong></p>
@@ -218,10 +209,9 @@
     </div>
 </section>
 
-
+<!--Footer-->
 <footer class="bg-dark text-center text-white footer1" style="position:relative; top:150px;">
     <!-- Grid container -->
-
 
     <!-- Section: Links -->
     <section class="myfooter">
@@ -261,25 +251,11 @@
                         ><i class="fab fa-twitter"></i
                         ></a>
 
-                        <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-google"></i
-                        ></a>
-
                         <!-- Instagram -->
                         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                         ><i class="fab fa-instagram"></i
                         ></a>
 
-                        <!-- Linkedin -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-linkedin-in"></i
-                        ></a>
-
-                        <!-- Github -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-github"></i
-                        ></a>
                     </section>
                     <!-- Section: Social media -->
 

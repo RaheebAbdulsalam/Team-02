@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -62,10 +62,11 @@
         </div>
     </nav>
 
+    <!--Login form after successful signUp-->
     <div class="contact-section">
         <div class="contact-whitebox">
             <h3 style="color: #9b59b6;text-align:center;">You have signed up successfully!</h3>-->
-            <form class="contact100-form validate-form" th:action="@{/login}" method="post" >
+            <form class="contact100-form validate-form" th:action="@{/login}" method="post">
                     <span class="contact100-form-title">
                         Login
                     </span>
@@ -79,7 +80,8 @@
                 <!--Password input-->
                 <div class="wrap-input100 validate-input" data-validate="Valid password is required">
                     <span class="label-input100">Password</span>
-                    <input class="input100" type="password" name="password" placeholder="Please enter your password" required>
+                    <input class="input100" type="password" name="password" placeholder="Please enter your password"
+                           required>
                     <span class="focus-input100"></span>
                 </div>
 
@@ -101,9 +103,8 @@
     </div>
 
 
-
     <!----------------------------------- Footer -------------------------------->
-    <footer class="bg-dark text-center text-white footer1" >
+    <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
 
 
@@ -139,25 +140,11 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
-                            <!-- Google -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-google"></i
-                            ></a>
-
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
 
-                            <!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                            ></a>
-
-                            <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-github"></i
-                            ></a>
                         </section>
                         <!-- Section: Social media -->
 
@@ -178,7 +165,7 @@
                                     <div class="col-md-5 col-12">
                                         <!-- Email input -->
                                         <div class="form-outline form-white mb-4">
-                                            <input type="email" id="form5Example21" class="form-control" />
+                                            <input type="email" id="form5Example21" class="form-control"/>
                                             <label class="form-label" for="form5Example21">Email address</label>
                                         </div>
                                     </div>
@@ -201,14 +188,14 @@
                         <!-- Section: Text -->
                         <section class="mb-4">
                             <p>
-                                Thank you for  visiting our website !  Please checkout our products and get the most exclusive and trending games at the best and most affordable prices !
+                                Thank you for visiting our website ! Please checkout our products and get the most
+                                exclusive and trending games at the best and most affordable prices !
 
                             </p>
                         </section>
                         <!-- Section: Text -->
 
                     </div>
-
 
 
                     <!--Grid column-->
@@ -231,7 +218,6 @@
     </footer>
     <!-- Footer -->
 </div>
-
 
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

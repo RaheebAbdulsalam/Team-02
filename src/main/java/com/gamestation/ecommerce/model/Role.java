@@ -27,8 +27,6 @@ public class Role {
         this.id = id;
     }
 
-
-    // getters and setters
     public Integer getId() {
         return id;
     }

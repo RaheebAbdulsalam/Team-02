@@ -74,38 +74,27 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"> Online Video games</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Video Games</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Accessories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Devices</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Consoles</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
                     </li>
                 </ul>
+                <!--Search Bar-->
                 <form class="d-flex search-form" action="/search" method="get">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search"
                            aria-label="Search" name="q">
                     <button class="btn btn-outline-success search-btn" type="submit">Search</button>
                 </form>
-
             </div>
         </div>
     </nav>
@@ -156,33 +145,33 @@
     <div class="category_block">
         <ul class="categories">
             <li class="category">
-                <a href="#">
+                <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">
                     <img src="Images/VideoGame.jpeg" alt="">
                     Online Video games
                 </a>
 
             </li>
             <li class="category">
-                <a href="#">
+                <a class="nav-link" th:href="@{/categoryproducts/2}">
                     <img src="Images/download.jpeg" alt="">
                     Video Games
                 </a>
 
             </li>
             <li class="category">
-                <a href="#">
+                <a class="nav-link" th:href="@{/categoryproducts/5}">
                     <img src="Images/images.jpeg" alt="">
                     Accessories
                 </a>
             </li>
             <li class="category">
-                <a href="#">
+                <a class="nav-link" th:href="@{/categoryproducts/3}">
                     <img src="Images/OIP.jpeg" alt="">
                     Devices
                 </a>
             </li>
             <li class="category">
-                <a href="#">
+                <a class="nav-link" th:href="@{/categoryproducts/4}">
                     <img src="Images/consol.jpg" alt="">
                     Consoles
                 </a>
@@ -204,7 +193,7 @@
                     <p class="card-text">Format: PlayStation 5 | Age Rating: PEGI-18 <br>
                         Stock status: In Stock <br>
                         Delivery: FREE UK Royal Mail 1st Class delivery on this item.</p>
-                    <a href="#" class="btn btn-primary">Buy Now</a>
+                    <a href="productDetail" class="btn btn-primary">Buy Now</a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
@@ -257,8 +246,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
@@ -296,25 +283,15 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
-                            <!-- Google -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-google"></i
-                            ></a>
+
 
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
 
-                            <!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                            ></a>
 
-                            <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-github"></i
-                            ></a>
+
                         </section>
                         <!-- Section: Social media -->
 
@@ -376,16 +353,16 @@
         <!-- Section: Links -->
 
 
-<!-- Grid container -->
+        <!-- Grid container -->
 
-<!-- Copyright -->
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white" href="#">GameStation</a>
-</div>
-<!-- Copyright -->
-</footer>
-<!-- Footer -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">GameStation</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 </div>
 
 

@@ -19,6 +19,7 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepo;
 
+    // save user with default role which is USER
     public void saveWithDefaultRole(User user){
 
         BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
@@ -43,6 +44,7 @@ public class UserService {
         return roleRepo.findAll();
     }
 
+    // save user with encrypting password
     public void save(User user) {
         BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
         String encodedPassword= encoder.encode(user.getPassword());
@@ -51,6 +53,7 @@ public class UserService {
     }
 
 
+    //check if email exists
     public boolean emailExists(String email) {
         Optional<User> userOptional = Optional.ofNullable(userRepo.findByEmail(email));
         return userOptional.isPresent();

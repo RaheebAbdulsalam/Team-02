@@ -47,7 +47,7 @@
                         <a class="nav-link active" aria-current="page" th:href="@{/contact}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -64,6 +64,7 @@
         </div>
     </nav>
 
+    <!----------Contact form-------->
     <div class="contact-section">
         <div class="contact-whitebox">
             <form class="contact100-form validate-form" id="contact-form" method="post" th:action="@{/submit-form}"
@@ -149,25 +150,11 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
-                            <!-- Google -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-google"></i
-                            ></a>
-
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
 
-                            <!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                            ></a>
-
-                            <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-github"></i
-                            ></a>
                         </section>
                         <!-- Section: Social media -->
 
@@ -239,11 +226,11 @@
     </footer>
     <!-- Footer -->
 
-
 </div>
 </body>
 </html>
 
+<!-- Show Success message when message is sent successfully -->
 <script>
     const form = document.getElementById("contact-form");
     form.addEventListener("submit", (event) => {

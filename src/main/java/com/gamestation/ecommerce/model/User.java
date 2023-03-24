@@ -33,8 +33,6 @@ public class User {
     )
     private Set<Role> roles= new HashSet<>();
 
-
-    // getters and setters methods
     public Integer getId() {
         return id;
     }

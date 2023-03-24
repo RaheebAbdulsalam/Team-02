@@ -1,13 +1,16 @@
 package LoginSystem.com;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 import com.gamestation.ecommerce.model.Role;
 import com.gamestation.ecommerce.model.User;
 import com.gamestation.ecommerce.repository.RoleRepository;
 import com.gamestation.ecommerce.repository.UserRepository;
+import com.gamestation.ecommerce.service.UserService;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -20,14 +23,16 @@ import org.springframework.test.annotation.Rollback;
 @Rollback(false)
 public class UserRepositoryTests {
 
-    @Autowired
+
     private TestEntityManager entityManager;
 
-    @Autowired
+@Autowired
     private UserRepository userRepo;
 
     @Autowired
     private RoleRepository roleRepo;
+    @Autowired
+    private UserService userService;
 
     // test methods go below
     @Test
@@ -54,6 +59,8 @@ public class UserRepositoryTests {
         User savedUser = userRepo.save(user);
         assertThat(savedUser.getRoles().size()).isEqualTo(1);
     }
+
+
 
 
 
