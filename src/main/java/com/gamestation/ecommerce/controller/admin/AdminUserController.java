@@ -36,7 +36,7 @@ public class AdminUserController {
 
     @PostMapping("/save")
     public ModelAndView saveUser(User user) {
-        ModelAndView mav = new ModelAndView("redirect:/admin/user/user");
+        ModelAndView mav = new ModelAndView("redirect:/admin/user");
         service.save(user);
         return mav;
     }
