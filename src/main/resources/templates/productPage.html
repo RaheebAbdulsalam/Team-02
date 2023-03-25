@@ -5,12 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Product Page</title>
   <link rel="stylesheet" th:href="@{/css/home.css}"/>
   <link rel="stylesheet" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+=======
+  <title>HomePage</title>
+  <link rel="stylesheet" th:href="@{/css/home.css}"/>
+  <link rel="stylesheet" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 </head>
 
 <body>
@@ -23,6 +30,10 @@
         <img src="/Images/logo.png" alt="" width="200" height="70" class="d-inline-block align-text-top">
       </a>
 
+<<<<<<< HEAD
+=======
+      <!-- <form class="d-flex"> -->
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,7 +59,11 @@
           </li>
 
           <li class="nav-item" sec:authorize="isAuthenticated()">
+<<<<<<< HEAD
             <a class="nav-link" th:href="@{/profile}"> <i class="fa fa-fw fa-user-circle"></i></a>
+=======
+            <a class="nav-link" th:href="@{/profile}">  <i class="fa fa-fw fa-user-circle"></i></a>
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
           </li>
 
           <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -63,6 +78,11 @@
   </nav>
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
   <!-- Second Navigation Bar includes Search -->
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
     <div class="container-fluid">
@@ -73,12 +93,17 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" th:href="@{/categoryproducts/1}"> Online Video games</a>
+=======
+            <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a class="nav-link" th:href="@{/categoryproducts/3}">Accessories</a>
           </li>
           <li class="nav-item">
@@ -92,14 +117,41 @@
         <form class="d-flex search-form" action="/search" method="get">
           <input class="form-control me-2 search-input" type="search" placeholder="Search"
                  aria-label="Search" name="q">
+=======
+            <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
+          </li>
+        </ul>
+        <form class="d-flex search-form">
+          <input class="form-control me-2 search-input" type="search" placeholder="Search"
+                 aria-label="Search">
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
           <button class="btn btn-outline-success search-btn" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
+<<<<<<< HEAD
+=======
+  <!--  End of Search Tab -->
+
+  <!-- Game station Banner -->
+  <video loop autoplay muted class="video">
+    <source src="Videos/GameStationWebsite2.mp4" type="video/mp4">
+    <!-- <source src="movie.ogg" type="video/ogg"> -->
+    Your browser does not support the video tag.
+  </video>
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 
   <!--  End of Search bar -->
 
+<<<<<<< HEAD
   <!-- Game station Banner -->
   <video loop autoplay muted class="video">
     <source th:src="@{/Videos/GameStationWebsite2.mp4}" type="video/mp4">
@@ -167,6 +219,56 @@
   <footer class="bg-dark text-center text-white footer1">
     <!-- Grid container -->
 
+=======
+  <!-- products display design and layout, including details -->
+  <section>
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4" th:each="product : ${products}">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+            <img th:src="@{|${product.image}|}" class="card-img-top" alt="Product" />
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title" th:text="${product.name}"></h5>
+                <p class="small text-danger"><s>£109</s></p>
+                </div>
+              <div class="d-flex justify-content-between mb-3">
+                <p class="text-dark mb-0" th:text="${product.description}"></p>
+                <h5 class="text-dark mb-0" th:text="'£' +${product.price}"></h5>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <div class="text-warning">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <div>
+                   <a class="btn btn-primary btn-sm" th:href="@{/product/{id}(id=${product.id})}" style="background-color:rgb(25, 102, 217); color: white;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <footer class="bg-dark text-center text-white footer1">
+    <!-- Grid container -->
+
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
     <!-- Section: Links -->
     <section class="myfooter">
       <!--Grid row-->
@@ -200,6 +302,10 @@
               ></a>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
               <!-- Instagram -->
               <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
               ><i class="fab fa-instagram"></i
@@ -281,6 +387,7 @@
 
 
 <script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
+<<<<<<< HEAD
 
 <!-- A function to sort product based on the selected option-->
 <script>
@@ -331,3 +438,7 @@
 </html>
 
 
+=======
+</body>
+</html>
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1

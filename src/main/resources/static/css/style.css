@@ -262,6 +262,7 @@ textarea.input100 {
     line-height: 1.2
 }
 
+<<<<<<< HEAD
 .wrap-contact100-form-btn:hover .contact100-form-bgbtn {
     left: 0
 }
@@ -331,6 +332,15 @@ textarea.input100 {
         visibility: visible;
         opacity: 1
     }
+=======
+/*contact us page*/
+.contact {
+    background-color: black;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 }
 
 .select2-container {

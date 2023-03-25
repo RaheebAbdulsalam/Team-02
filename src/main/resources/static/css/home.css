@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 .nav-item {
     padding-left:10px;
     padding-right: 5px;
@@ -50,6 +55,11 @@
 
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 
 .categories img{
     display: inline-block;
@@ -219,7 +229,11 @@
 /* About us page styling */
 
 .aboutus{
+<<<<<<< HEAD
     background-image: url('../images/About.png');
+=======
+    background-image: url('Images/About.png');
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
     height: 500px;
     width: 100%;
     background-repeat: no-repeat;
@@ -266,6 +280,7 @@
     text-align: justify;
     font-size:x-large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+<<<<<<< HEAD
 
 }
 
@@ -281,6 +296,23 @@
 
 }
 
+=======
+
+}
+.integrity-details{
+    background-image: radial-gradient(circle,rgb(255, 255, 255)50%,rgb(234, 190, 251),rgb(255, 255, 255));
+}
+
+
+/* products-card layout*/
+.card-img-top {
+    height: 400px;
+    width: 100%;/* set the height to your desired value */
+    object-fit: cover; /* preserve the aspect ratio and fill the container */
+
+}
+
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 .container .card {
     background-color: white;
 }
@@ -290,7 +322,10 @@
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
