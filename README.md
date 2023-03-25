@@ -22,7 +22,7 @@ The functionality of the Game Station website is designed with the user in mind.
     <tr>
       <td>RAHEEB ABDUSALAM</td>
       <td>210119617</td>
-      <td>Back-end developer & Code Manager and Designer</td>
+      <td>Back-end developer & Code Manager</td>
     </tr>
     <tr>
       <td>IBRAHEEM KHAN</td>
@@ -57,7 +57,7 @@ The functionality of the Game Station website is designed with the user in mind.
      <tr>
       <td>GURVIR BRAR</td>
       <td>210113442</td>
-      <td>Front end developer & Mental health champion </td>
+      <td>Front end developer</td>
     </tr>
   </tbody>
 </table>
