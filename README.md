@@ -18,7 +18,7 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 
 1. Open the command prompt or terminal on your computer, and navigate to the directory where you want to clone the repository.This can be done by typing "cd" followed by the path of the directory you want to navigate to. For example, if you want to navigate to the "Documents" folder, type "cd Documents" and press Enter.
 2. Copy the URL of the repository you want to clone from GitHub. You can find the URL on the repository's page by clicking the green "Code" button as shown below.
-<img src="https://user-images.githubusercontent.com/99501966/227722548-40403c6d-6c34-4cb5-97c5-250f4077a5b8.png" width:200  style="max-width=%100">
+<img src="https://user-images.githubusercontent.com/99501966/227722813-fdd25877-672f-45cf-88d2-742e8ec699d4.png" width:150  style="max-width=%100">
 4. In the command prompt or terminal, enter the following command: git clone <repository URL>. 
 5. Replace <repository URL> with the URL of the repository you want to clone. 
 6. Press enter to run the command. Git will begin cloning the repository to your local machine.
@@ -28,7 +28,9 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 1. Open IntelliJ IDEA and select "file" -> "open" ->. 
 2. Navigate to the directory where the Spring Boot project is located, select it and click ok.
 3. Once the project is loaded, navigate to the main class of your Spring Boot application.
+  <img src="https://user-images.githubusercontent.com/99501966/227722979-7ab819e5-56a1-4c91-b2e6-daf39a13cc6a.png" width:150  style="max-width=%100">
 4. Right-click on the main class and select "Run <main class name>".
+  <img src="https://user-images.githubusercontent.com/99501966/227723088-d8236407-ea3e-4a9d-a205-1349456bd87c.png" width:150  style="max-width=%100">
 5. If prompted, select the correct Run Configuration or create a new one, and IntelliJ IDEA will build the application and start it.
 
 <h3> Access the application: </h3>
