@@ -23,7 +23,7 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 4. Replace <repository URL> with the URL of the repository you want to clone. 
 5. Press enter to run the command. Git will begin cloning the repository to your local machine.
  
-<h3 style-"text-decoration: underline;"> Run the application:</h3>
+<h3 style-"text-decoration: underline"> Run the application:</h3>
   
 1. Open IntelliJ IDEA and select "file" -> "open" ->. 
 2. Navigate to the directory where the Spring Boot project is located, select it and click ok.
