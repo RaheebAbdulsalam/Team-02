@@ -11,7 +11,9 @@ The functionality of the Game Station website is designed with the user in mind.
 
 <h2>Setup Games Station E-Commerce System</h2>
 The following project will work on Eclipse and IntelliJ IDE. Though it is recommended to use IntelliJ Ultimate or the Community Edition of IntelliJ.
+
 - To get Eclipse IDE for Enterprise Java and Web Developers: https://www.eclipse.org/downloads/packages/
+
 - To get IntelliJ goto: https://www.jetbrains.com/idea/
 
 <h3> Clone the repository:</h3>
