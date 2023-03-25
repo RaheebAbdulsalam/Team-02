@@ -29,7 +29,7 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 2. Navigate to the directory where the Spring Boot project is located, select it and click ok.
 3. Once the project is loaded, navigate to the main class of your Spring Boot application.   <img src="https://user-images.githubusercontent.com/99501966/227722979-7ab819e5-56a1-4c91-b2e6-daf39a13cc6a.png" width:100  style="max-width=%100">
 4. Right-click on the main class, select the correct Run Configuration, and IntelliJ IDEA will build the application and start it.
- <img src="https://user-images.githubusercontent.com/99501966/227723088-d8236407-ea3e-4a9d-a205-1349456bd87c.png" width:100  style="max-width=%100">
+ <img src="https://user-images.githubusercontent.com/99501966/227724099-4ba24ca6-920c-41ad-b15d-f61c64178a21.png" width:100  style="max-width=%100">
 
 <h3> Access the application: </h3>
 
