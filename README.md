@@ -14,7 +14,7 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 
 - To get Eclipse IDE for Enterprise Java and Web Developers: https://www.eclipse.org/downloads/packages/
 
-- To get IntelliJ goto: https://www.jetbrains.com/idea/
+- To get IntelliJ go to: https://www.jetbrains.com/idea/
 
 <h3> Clone the repository:</h3>
 
