@@ -15,40 +15,49 @@ The functionality of the Game Station website is designed with the user in mind.
     <tr>
       <th>Name</th>
       <th>ID Number</th>
+      <th>Roles</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>RAHEEB ABDUSALAM</td>
       <td>210119617</td>
+      <td>Back-end developer & Code Manager and Designer</td>
     </tr>
     <tr>
       <td>IBRAHEEM KHAN</td>
       <td>200154725 </td>
+       <td>Back-end developer & Team leader </td>
     </tr>
     <tr>
       <td>ALABAS ALATIKI </td>
       <td>200127774</td>
+       <td>Back-end developer & Mental health champion</td>
     </tr>
     <tr>
       <td>MIKHAIL MIRZA</td>
       <td>190163329</td>
+      <td>Front end developer & Scrum master </td>
     </tr>
     <tr>
       <td>BOLUWATIFE OLUSINA</td>
       <td>220036388</td>
+       <td>Front end developer & Project manager </td>
     </tr>
     <tr>
       <td>RAIHAAN ARSHAD </td>
       <td>190070142 </td>
+      <td>Back-end developer & Designer</td>
     </tr>
      <tr>
       <td>ALISHA WALTERS </td>
       <td>210178500 </td>
+      <td>Front end developer & Designer  </td>
     </tr>
      <tr>
       <td>GURVIR BRAR</td>
       <td>210113442</td>
+      <td>Front end developer & Mental health champion </td>
     </tr>
   </tbody>
 </table>
