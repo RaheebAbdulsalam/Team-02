@@ -9,6 +9,32 @@ design. Using these colours on the website helps establish a robust and easily r
 
 The functionality of the Game Station website is designed with the user in mind. The website is easy to navigate, with clear categories and subcategories that allow customers to quickly find the products they are looking for. The website aims to become a one-stop shop for all gaming related needs, catering to the needs of gamers of different ages and preferences with a commitment to quality, reliability, and customer satisfaction.
 
+<h2>Setup Games Station E-Commerce System</h2>
+The following project will work on Eclipse and IntelliJ IDE. Though it is recommended to use IntelliJ Ultimate or the Community Edition of IntelliJ.
+- To get Eclipse IDE for Enterprise Java and Web Developers: https://www.eclipse.org/downloads/packages/
+- To get IntelliJ goto: https://www.jetbrains.com/idea/
+
+<h3> Clone the repository:</h3>
+
+1. Open the command prompt or terminal on your computer, and navigate to the directory where you want to clone the repository.This can be done by typing "cd" followed by the path of the directory you want to navigate to. For example, if you want to navigate to the "Documents" folder, type "cd Documents" and press Enter.
+2. Copy the URL of the repository you want to clone from GitHub. You can find the URL on the repository's page by clicking the green "Code" button as shown below.
+<img src="https://user-images.githubusercontent.com/99501966/227722548-40403c6d-6c34-4cb5-97c5-250f4077a5b8.png" width:200  style="max-width=%100">
+4. In the command prompt or terminal, enter the following command: git clone <repository URL>. 
+5. Replace <repository URL> with the URL of the repository you want to clone. 
+6. Press enter to run the command. Git will begin cloning the repository to your local machine.
+ 
+<h3> Run the application:</h3>
+  
+1. Open IntelliJ IDEA and select "file" -> "open" ->. 
+2. Navigate to the directory where the Spring Boot project is located, select it and click ok.
+3. Once the project is loaded, navigate to the main class of your Spring Boot application.
+4. Right-click on the main class and select "Run <main class name>".
+5. If prompted, select the correct Run Configuration or create a new one, and IntelliJ IDEA will build the application and start it.
+
+<h3> Access the application: </h3>
+
+Once the application is running, open a web browser and navigate to http://localhost:8080. This should take you to the home page of the Spring Boot application.
+
 <h2>Team Members</h2>
 <table>
   <thead>
@@ -37,12 +63,12 @@ The functionality of the Game Station website is designed with the user in mind.
     <tr>
       <td>MIKHAIL MIRZA</td>
       <td>190163329</td>
-      <td>Front end developer & Scrum master </td>
+      <td>Front-end developer & Scrum master </td>
     </tr>
     <tr>
       <td>BOLUWATIFE OLUSINA</td>
       <td>220036388</td>
-       <td>Front end developer & Project manager </td>
+       <td>Front-end developer & Project manager </td>
     </tr>
     <tr>
       <td>RAIHAAN ARSHAD </td>
@@ -52,12 +78,12 @@ The functionality of the Game Station website is designed with the user in mind.
      <tr>
       <td>ALISHA WALTERS </td>
       <td>210178500 </td>
-      <td>Front end developer & Designer  </td>
+      <td>Front-end developer & Designer  </td>
     </tr>
      <tr>
       <td>GURVIR BRAR</td>
       <td>210113442</td>
-      <td>Front end developer</td>
+      <td>Front-end developer</td>
     </tr>
   </tbody>
 </table>
