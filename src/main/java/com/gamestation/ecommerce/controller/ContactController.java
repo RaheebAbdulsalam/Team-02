@@ -12,12 +12,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 
+/**
+ * RESTful web service controller for managing contact messages.
+ */
 @RestController
 public class ContactController {
     @Autowired
     private ContactRepository contactRepository;
 
-    // returns Contact us page
+
+    /**
+     * This method returns the view for the Contact us page.
+     * @return A ModelAndView object containing the contact view and a new Contact object.
+     */
     @GetMapping("/contact")
     public ModelAndView viewContactPage() {
         ModelAndView modelAndView = new ModelAndView("contact");
@@ -25,14 +32,24 @@ public class ContactController {
         return modelAndView;
     }
 
-    // submit the contact form
+    /**
+     * This method handles the submission of the contact form and saves the data to the database.
+     * @param contact A Contact object containing the form data.
+     * @return A ModelAndView object containing the contact view.
+     */
     @PostMapping("/submit-form")
     public ModelAndView submitForm(@ModelAttribute Contact contact) {
         contactRepository.save(contact);
         return new ModelAndView("contact");
+        //return new ModelAndView("success"); // success page
     }
 
-    // returns success message page
+    /**
+     * This method returns the view for the success message page.
+     * @param model A Model object for holding the model data.
+     * @param principal A Principal object representing the currently authenticated user.
+     * @return A ModelAndView object containing the success message view.
+     */
     @GetMapping("/successMessage")
     public ModelAndView viewSuccessMessage(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("successMessage");

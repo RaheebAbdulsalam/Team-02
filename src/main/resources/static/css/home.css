@@ -51,8 +51,6 @@
 }
 
 
-
-
 .categories img{
     display: inline-block;
     list-style-type: none;
@@ -125,6 +123,7 @@
     background-color: #000000;
 
 }
+
 .custom-navbar1{
     background-color: #000000;
     background: linear-gradient(black, rgb(127, 4, 215));
@@ -187,6 +186,7 @@
     color: aliceblue;
 
 }
+
 .card.h-100 .card-body a{
     background-color: black;
     color:  rgb(25, 102, 217);
@@ -219,7 +219,7 @@
 /* About us page styling */
 
 .aboutus{
-    background-image: url('Images/About.png');
+    background-image: url('../images/About.png');
     height: 500px;
     width: 100%;
     background-repeat: no-repeat;
@@ -268,10 +268,10 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
+
 .integrity-details{
     background-image: radial-gradient(circle,rgb(255, 255, 255)50%,rgb(234, 190, 251),rgb(255, 255, 255));
 }
-
 
 /* products-card layout*/
 .card-img-top {
@@ -287,3 +287,10 @@
 .card-title {
     color: black;
 }
+
+
+
+
+
+
+

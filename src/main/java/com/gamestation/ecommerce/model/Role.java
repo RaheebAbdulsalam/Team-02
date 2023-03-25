@@ -2,6 +2,10 @@ package com.gamestation.ecommerce.model;
 
 import jakarta.persistence.*;
 
+/**
+ * The Entity class represents a user role such as ADMIN and USER.
+ * It is mapped to the "roles" table in the database.
+ */
 @Entity
 @Table(name = "roles")
 public class Role {
@@ -27,6 +31,8 @@ public class Role {
         this.id = id;
     }
 
+
+    // getters and setters
     public Integer getId() {
         return id;
     }

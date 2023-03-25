@@ -63,12 +63,15 @@ public class AdminProductController {
         mav.addObject("allCategories", categoryService.getAllCategories());
         return mav;
     }
+
+    // creates a product and returns to product page
     @PostMapping
     public RedirectView createProduct(@ModelAttribute("product") Product product) {
         productService.createProduct(product);
         return new RedirectView("/admin/product");
     }
 
+    // returns a ModelAndView of the update product page
     @GetMapping("/edit/{id}")
     public ModelAndView getUpdateProductPage(@PathVariable("id") Integer id) {
         ModelAndView mav = new ModelAndView("admin/product/editProduct");
@@ -78,6 +81,7 @@ public class AdminProductController {
         return mav;
     }
 
+    // method for updating a product
     @PostMapping("/edit/{id}")
     public RedirectView updateProduct(@PathVariable("id") Integer id, @ModelAttribute Product product) {
         Product updatedProduct = productService.updateProduct(id, product);

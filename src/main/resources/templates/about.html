@@ -68,24 +68,23 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">Video games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/2}">Gaming Consoles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/3}">Accessories</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/4}">Merchandise</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/5}">In-Game Items</a>
                     </li>
                 </ul>
-                <!--Search Bar-->
-                <form class="d-flex search-form" action="/search" method="get">
+                <form class="d-flex search-form" th:action="@{/search}" method="get">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search"
                            aria-label="Search" name="q">
                     <button class="btn btn-outline-success search-btn" type="submit">Search</button>
@@ -98,16 +97,11 @@
     <!-- About us  definition , history, vision -->
     <div class="aboutus">
         <div class="story">
-            <p><span class="styled-word">At Game Station,</span> we strive for the best in the products and services we
-                offer. <br>
-                <span class="styled-word">Our Company</span> started with a group of innovative students whose common
-                goal is to provide the most exclusive games at the most affordable prices. <br>
-                <span class="styled-word">Our Values</span> which include Integrity, Innovation, Diversity and
-                inclusion, customer centricity and being the standard of excellence. <br>
-                <span class="styled-word">Our Mission</span> is to create the most valuable community of gamers who use
-                the most exclusive products. <br>
-                We are passionate about gaming. We love what we do, and we do what we love. We are all working together
-                to create the best experience possible for our gamers.
+            <p><span class="styled-word">At Game Station,</span> we strive for the best in the products and services we offer. <br>
+                <span class="styled-word">Our Company</span> started with a group of innovative students whose common goal is to provide the most exclusive games at the most affordable prices.  <br>
+                <span class="styled-word">Our Values</span> which include Integrity, Innovation, Diversity and inclusion, customer centricity and being the standard of excellence. <br>
+                <span class="styled-word">Our Mission</span> is to create the most valuable community of gamers who use the most exclusive products. <br>
+                We are passionate about gaming. We love what we do, and we do what we love. We are all working together to create the best experience possible for our gamers.
 
             </p>
 
@@ -154,6 +148,11 @@
             </ul>
         </div>
     </div>
+    <video loop autoplay muted class="video aboutvideo">
+        <source src="Videos/car_vid.mp4" type="video/mp4">
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+    </video>
     <div class="value-details">
         <div class="integrity-details" id="integrity">
             <div class="category_block_header">
@@ -342,13 +341,10 @@
                     <a class="text-white" href="#">GameStation</a>
                 </div>
                 <!-- Copyright -->
-
+            </div>
         </section>
         <!-- Section: Links -->
-</div>
-
 <!-- Grid container -->
-
 
 </footer>
 <!-- Footer -->

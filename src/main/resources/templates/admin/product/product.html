@@ -50,6 +50,12 @@
                 </a>
             </li>
             <li>
+                <a th:href="@{/admin/sale}" href="#">
+                    <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                    <span class="title">Sales</span>
+                </a>
+            </li>
+            <li>
                 <a th:href="@{/admin/messages}">
                     <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                     <span class="title">Messages</span>
@@ -113,8 +119,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Cancelled Orders</div>
-                        <a th:href="@{
-                        /admin/order?status=cancelled}"></a>
+                        <a th:href="@{/admin/order?status=cancelled}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="stop-circle-outline"></ion-icon>
@@ -159,6 +164,11 @@
                         </form>
                         <!--------------------------------------------------------->
 
+                        <!--                        <label for="sort-select">Sort by price:</label>-->
+                        <!--                        <select id="sort-select" onchange="sortProducts()">-->
+                        <!--                            <option value="asc">Low to high</option>-->
+                        <!--                            <option value="desc">High to low</option>-->
+                        <!--                        </select>-->
                         <br>
                         <label for="sort-select">Sort by:</label>
                         <select id="sort-select" onchange="sortProducts()">

@@ -6,6 +6,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+/**
+ * The Entity class represents a category in the system.
+ * It is mapped to the "category" table in the database.
+ */
 @Entity
 @Table(name = "category")
 public class Category {

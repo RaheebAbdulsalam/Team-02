@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Entity class represents an order in the system.
+ * It is mapped to the "orders" table in the database.
+ */
 @Entity
 @Table(name = "orders")
 public class Order {

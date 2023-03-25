@@ -16,20 +16,39 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
+/**
+ * This class represents the service layer for Category entity, providing CRUD operations.
+ */
 @Service
 public class CategoryService {
 
     @Autowired
     private CategoryRepository categoryRepository;
 
+    /**
+     * Retrieves a list of all categories from the database.
+     * @return A list of Category objects.
+     */
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();
     }
 
+    /**
+     * Retrieves a Category object from the database by its ID.
+     * @param id The ID of the category to retrieve.
+     * @return The Category object with the given ID.
+     * @throws ResourceNotFoundException If no category with the given ID is found.
+     */
     public Category getCategoryById(Integer id) {
         return categoryRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Category not found with id: " + id));
     }
 
+    /**
+     * Creates a new category in the database.
+     * @param category The Category object to be created.
+     * @return The newly created Category object.
+     * @throws RuntimeException If the image file associated with the category cannot be stored.
+     */
     public Category createCategory(Category category) {
         MultipartFile imageFile = category.getImageFile();
         if(imageFile!= null && !imageFile.isEmpty()) {
@@ -54,6 +73,14 @@ public class CategoryService {
         return categoryRepository.save(category);
     }
 
+    /**
+     * Updates an existing category in the database.
+     * @param id The ID of the category to be updated.
+     * @param categoryDetails The Category object containing the updated data.
+     * @return The updated Category object.
+     * @throws ResourceNotFoundException If no category with the given ID is found.
+     * @throws RuntimeException If the new image file associated with the category cannot be stored.
+     */
     public Category updateCategory(Integer id, Category categoryDetails) {
         Category category = getCategoryById(id);
         category.setName(categoryDetails.getName());
@@ -82,6 +109,10 @@ public class CategoryService {
         return categoryRepository.save(category);
     }
 
+    /**
+     * Deletes a category from the database by its ID.
+     * @param id The ID of the category to be deleted.
+     */
     public void deleteCategory(Integer id) {
         categoryRepository.deleteById(id);
     }

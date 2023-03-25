@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
     <meta charset="UTF-8">
@@ -62,11 +62,10 @@
         </div>
     </nav>
 
-    <!--Login form after successful signUp-->
     <div class="contact-section">
         <div class="contact-whitebox">
             <h3 style="color: #9b59b6;text-align:center;">You have signed up successfully!</h3>-->
-            <form class="contact100-form validate-form" th:action="@{/login}" method="post">
+            <form class="contact100-form validate-form" th:action="@{/login}" method="post" >
                     <span class="contact100-form-title">
                         Login
                     </span>
@@ -80,8 +79,7 @@
                 <!--Password input-->
                 <div class="wrap-input100 validate-input" data-validate="Valid password is required">
                     <span class="label-input100">Password</span>
-                    <input class="input100" type="password" name="password" placeholder="Please enter your password"
-                           required>
+                    <input class="input100" type="password" name="password" placeholder="Please enter your password" required>
                     <span class="focus-input100"></span>
                 </div>
 
@@ -103,10 +101,11 @@
     </div>
 
 
+
     <!----------------------------------- Footer -------------------------------->
+    <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
-
 
         <!-- Section: Links -->
         <section class="myfooter">
@@ -140,10 +139,14 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
+
+
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
+
+
 
                         </section>
                         <!-- Section: Social media -->
@@ -188,7 +191,7 @@
                         <!-- Section: Text -->
                         <section class="mb-4">
                             <p>
-                                Thank you for visiting our website ! Please checkout our products and get the most
+                                Thank you for visiting our website ! Please check out our products and get the most
                                 exclusive and trending games at the best and most affordable prices !
 
                             </p>
@@ -201,25 +204,25 @@
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © 2023 Copyright:
-                    <a class="text-white" href="#">GameStation</a>
-                </div>
-                <!-- Copyright -->
             </div>
         </section>
         <!-- Section: Links -->
 
 
+
         <!-- Grid container -->
 
-
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">GameStation</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
 </div>
 
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
 </body>
 </html>

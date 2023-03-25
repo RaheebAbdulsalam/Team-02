@@ -51,6 +51,12 @@
                     </a>
                 </li>
                 <li>
+                    <a th:href="@{/admin/sale}" href="#">
+                        <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                        <span class="title">Sales</span>
+                    </a>
+                </li>
+                <li>
                     <a th:href="@{/admin/messages}">
                         <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                         <span class="title">Messages</span>
@@ -147,21 +153,58 @@
         <br>
         <br>
 
-
-
         <div class="cardbox" style="height: 1000px; padding-left: 50px;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h1>Welcome to the GameStation Admin Panel</h1>
+                        <h1 style="text-decoration: underline;">Welcome to the GameStation Admin Panel</h1>
+                        <br>
+                        <h2>Inventory Alerts</h2>
+                        <br>
+                        <p style="color:red;">The following products are below a recommended stock level. Please replenish them.</p>
+                        <br>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Categories</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock Level</th>
+                                <th>Image</th>
+                                <th>Replenish</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="product : ${products}">
+                                <td th:text="${product.id}"></td>
+                                <td>
+                                    <li th:each="category : ${product.categories}" th:text="${category.name}"></li>
+                                </td>
+                                <td th:text="${product.name}"></td>
+
+                                <td th:text="'&pound;' + ${product.price}"></td>
+                                <td style="color:red; font-weight:bold;" th:text="${product.stockLevel}"></td>
+                                <td>
+                                    <img th:src="@{|${product.image}|}" width="100"/>
+                                </td>
+                                <td>
+                                    <form th:action="@{/admin/{productId}/replenish(productId=${product.id})}" method="post">
+                                        <input type="hidden" name="_method" value="PUT"/>
+                                        <input type="hidden" name="productId" th:value="${product.id}"/>
+                                        <button type="submit" style= "cursor:pointer" class="btn btn-success">Replenish</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
+    </div>
     <script type="module"
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

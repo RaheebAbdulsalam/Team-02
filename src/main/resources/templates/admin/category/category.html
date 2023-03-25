@@ -45,8 +45,14 @@
             </li>
             <li>
                 <a th:href="@{/admin/product}" href="#">
-                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
-                    <span class="title">Products</span>
+                <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                <span class="title">Products</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/sale}" href="#">
+                    <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                    <span class="title">Sales</span>
                 </a>
             </li>
             <li>
@@ -154,7 +160,7 @@
                         <br>
                         <div>
                             <a th:href="@{/admin/category/create}" href="#" id="lines"
-                               class="btn btn-dark">Add Category</a>
+                        class="btn btn-dark">Add Category</a>
                         </div>
                         <br>
 
@@ -166,8 +172,8 @@
                                 <th>Description</th>
                                 <th>Image</th>
                                 <th>Edit</th>
-                                <th>Show</th>
                                 <th>Delete</th>
+                                <th>Show</th>
                             </tr>
                             </thead>
                             <tbody>

@@ -54,7 +54,7 @@
                         <a class="nav-link active" aria-current="page" th:href="@{/contact}">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -96,7 +96,6 @@
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
 
-
         <!-- Section: Links -->
         <section class="myfooter">
             <!--Grid row-->
@@ -129,10 +128,14 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
+
+
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
+
+
 
                         </section>
                         <!-- Section: Social media -->
@@ -190,24 +193,25 @@
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © 2023 Copyright:
-                    <a class="text-white" href="#">GameStation</a>
-                </div>
-                <!-- Copyright -->
             </div>
         </section>
         <!-- Section: Links -->
 
+
+
         <!-- Grid container -->
 
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">GameStation</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
-
 </div>
-</body>
-</html>
+
+
+<script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
 </body>
 </html>
