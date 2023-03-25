@@ -8,6 +8,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The Entity class represents a product.
+ * It is mapped to the "product" table in the database.
+ */
 @Entity
 @Table(name = "product")
 public class Product {

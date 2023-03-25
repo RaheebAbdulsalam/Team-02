@@ -4,7 +4,10 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/**
+ * The Entity class represents a user.
+ * It is mapped to the "users" table in the database.
+ */
 @Entity
 @Table(name = "users")
 public class User {

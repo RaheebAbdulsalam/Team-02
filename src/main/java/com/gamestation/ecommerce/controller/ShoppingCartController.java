@@ -3,6 +3,7 @@ package com.gamestation.ecommerce.controller;
 import com.gamestation.ecommerce.model.*;
 import com.gamestation.ecommerce.security.CustomUserDetails;
 import com.gamestation.ecommerce.service.OrderService;
+import com.gamestation.ecommerce.service.SalesService;
 import com.gamestation.ecommerce.service.ShoppingCartService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,14 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * The ShoppingCartController class handles HTTP requests related to the shopping cart feature of the application.
+ * It is annotated with @RestController to indicate that it is a controller class and @RequestMapping to map
+ * requests with "/shoppingcart" to this controller.
+ *
+ */
+
 @RestController
 @RequestMapping("/shoppingcart")
 public class ShoppingCartController {
@@ -27,9 +36,17 @@ public class ShoppingCartController {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private SalesService saleService;
 
     private BigDecimal totalPrice;
 
+    /**
+     * This method returns the user's shopping cart page after calculating the total price of all items in the cart.
+     * It only allows access to authenticated users.
+     * @param authentication the current user's authentication details
+     * @return a ModelAndView object containing the view name, cart items, and total price
+     */
     @GetMapping
     public ModelAndView getShoppingCart(Authentication authentication) {
         // Users must log in to access cart - return to login page
@@ -53,6 +70,14 @@ public class ShoppingCartController {
         return modelAndView;
     }
 
+    /**
+     * This method adds a product to the user's cart and returns a ResponseEntity object with a success message.
+     * It only allows access to authenticated users.
+     * @param productId the id of the product being added to the cart
+     * @param quantity the quantity of the product being added to the cart
+     * @param authentication the current user's authentication details
+     * @return a ResponseEntity object with a success message
+     */
     @PostMapping
     public ResponseEntity<String> addToCart(@RequestParam("productId") Integer productId, @RequestParam("quantity") Integer quantity, Authentication authentication) {
         // Users must log in to add to cart - return to login page
@@ -65,6 +90,15 @@ public class ShoppingCartController {
         return ResponseEntity.ok("Item added successfully to cart.");
     }
 
+    /**
+     * This method updates the quantity of a product in the user's cart and returns a ResponseEntity object with a success message.
+     * It only allows access to authenticated users.
+     * @param itemId the id of the item being updated
+     * @param quantity the new quantity of the item
+     * @param authentication the current user's authentication details
+     * @param response the HttpServletResponse object for redirecting to the cart page
+     * @return a ResponseEntity object with a success message and redirect location
+     */
     @PutMapping("/{itemId}")
     public ResponseEntity<?> updateCartItemQuantity(@PathVariable Integer itemId, @RequestParam("quantity") Integer quantity, Authentication authentication, HttpServletResponse response) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -73,6 +107,12 @@ public class ShoppingCartController {
         return ResponseEntity.status(HttpStatus.FOUND).build();
     }
 
+    /**
+     * This method removes a product from the user's cart and returns a ResponseEntity object with a success message.
+     * It only allows access to authenticated users.
+     * @param itemId the id of the item being removed
+     * @param authentication the current user's authentication details
+     */
     @DeleteMapping("/{itemId}")
     public ResponseEntity<?> removeCartItem(@PathVariable Integer itemId, Authentication authentication, HttpServletResponse response) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -81,6 +121,17 @@ public class ShoppingCartController {
         return ResponseEntity.status(HttpStatus.FOUND).build();
     }
 
+    /**
+     * Handles the checkout process when the user submits the order.
+     * If the user is not logged in, they will be redirected to the login page.
+     * If the shopping cart is empty, the user will be redirected to the shopping cart page.
+     * Calculates the total price of the items in the shopping cart and creates a new order.
+     * Decreases the stock count of the purchased items and creates a new sale record for each item.
+     * Removes all items from the shopping cart after a successful checkout.
+     * @param authentication represents the current authentication status of the user.
+     * @param redirectAttributes attributes used for redirecting the user.
+     * @return A RedirectView to the shopping cart page after a successful checkout.
+     */
     @PostMapping("/checkout")
     public RedirectView checkout(Authentication authentication, RedirectAttributes redirectAttributes) {
         // Users must log in to checkout - return to login page
@@ -120,6 +171,16 @@ public class ShoppingCartController {
             orderItem.setOrder(order); // set the order ID
             orderItems.add(orderItem); // add the order item to the list
             orderItem.setStatus("NEW");
+
+            // Decrease stock count
+            cartItem.getProduct().setStockLevel(cartItem.getProduct().getStockLevel()-cartItem.getQuantity());
+
+            // Create a new sale record
+            Sale sale = new Sale();
+            sale.setProduct(cartItem.getProduct());
+            sale.setQuantity(cartItem.getQuantity());
+            sale.setAmount(cartItem.getProduct().getPrice().multiply(new BigDecimal(cartItem.getQuantity())));
+            saleService.createSale(sale);
         }
 
         order.setOrderItems(orderItems); // set the order items for the order

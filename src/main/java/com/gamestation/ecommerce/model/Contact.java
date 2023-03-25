@@ -2,6 +2,10 @@ package com.gamestation.ecommerce.model;
 
 import jakarta.persistence.*;
 
+/**
+ * The Entity class represents a contact us message in the system.
+ * It is mapped to the "messages" table in the database.
+ */
 @Entity
 @Table(name = "messages")
 public class Contact {

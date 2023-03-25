@@ -50,6 +50,12 @@
                 </a>
             </li>
             <li>
+                <a th:href="@{/admin/sale}" href="#">
+                    <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                    <span class="title">Sales</span>
+                </a>
+            </li>
+            <li>
                 <a th:href="@{/admin/messages}">
                     <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
                     <span class="title">Messages</span>
@@ -113,8 +119,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">Cancelled Orders</div>
-                        <a th:href="@{
-                        /admin/order?status=cancelled}"></a>
+                        <a th:href="@{/admin/order?status=cancelled}"></a>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="stop-circle-outline"></ion-icon>
@@ -157,8 +162,22 @@
                             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="query">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
-
                         <!--------------------------------------------------------->
+
+                        <!--                        <label for="sort-select">Sort by price:</label>-->
+                        <!--                        <select id="sort-select" onchange="sortProducts()">-->
+                        <!--                            <option value="asc">Low to high</option>-->
+                        <!--                            <option value="desc">High to low</option>-->
+                        <!--                        </select>-->
+                        <br>
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select" onchange="sortProducts()">
+                            <option value="">Select an option</option>
+                            <option value="price_asc">Price (low to high)</option>
+                            <option value="price_desc">Price (high to low)</option>
+                            <option value="name_asc">Name (A to Z)</option>
+                            <option value="name_desc">Name (Z to A)</option>
+                        </select>
 
                         <br>
                         <div>
@@ -234,6 +253,40 @@
 
                             list.forEach((item) =>
                                 item.addEventListener('mouseover', activeLink));
+                        </script>
+
+                        <script>
+                            function sortProducts() {
+                                var select = document.getElementById("sort-select");
+                                var sortOrder = select.options[select.selectedIndex].value;
+                                var productsTable = document.querySelector("table tbody");
+                                var productsRows = productsTable.querySelectorAll("tr");
+                                var productsArray = Array.prototype.slice.call(productsRows);
+                                productsArray.sort(function(row1, row2) {
+                                    if (sortOrder === "price_asc" || sortOrder === "price_desc") {
+                                        var price1 = parseFloat(row1.querySelector("td:nth-child(4)").textContent.trim());
+                                        var price2 = parseFloat(row2.querySelector("td:nth-child(4)").textContent.trim());
+                                        if (sortOrder === "price_asc") {
+                                            return price1 - price2;
+                                        } else {
+                                            return price2 - price1;
+                                        }
+                                    } else if (sortOrder === "name_asc" || sortOrder === "name_desc") {
+                                        var name1 = row1.querySelector("td:nth-child(3)").textContent.trim();
+                                        var name2 = row2.querySelector("td:nth-child(3)").textContent.trim();
+                                        if (sortOrder === "name_asc") {
+                                            return name1.localeCompare(name2);
+                                        } else {
+                                            return name2.localeCompare(name1);
+                                        }
+                                    } else {
+                                        return 0;
+                                    }
+                                });
+                                productsArray.forEach(function(row) {
+                                    productsTable.appendChild(row);
+                                });
+                            }
                         </script>
                     </div>
                 </div>

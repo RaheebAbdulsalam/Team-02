@@ -27,7 +27,7 @@ public class AdminContactController {
     @DeleteMapping("/{id}")
     public RedirectView deleteMessages(@PathVariable("id") Long id) {
         contactService.deleteMessage(id);
-        return new RedirectView("/admin/message/messages");
+        return new RedirectView("/admin/messages");
     }
 
     // method for displaying a message by id

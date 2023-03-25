@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+    <title>GameStation</title>
     <link rel="stylesheet" th:href="@{/css/home.css}"/>
     <link rel="stylesheet" th:href="@{/node_modules/bootstrap/dist/css/bootstrap.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
@@ -61,9 +61,6 @@
         </div>
     </nav>
 
-
-
-
     <!-- Second Navigation Bar includes Search -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
         <div class="container-fluid">
@@ -74,25 +71,25 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">Video games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/2}">Gaming Consoles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/3}">Accessories</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/4}">Merchandise</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
+                        <a class="nav-link" th:href="@{/categoryproducts/5}">In-Game Items</a>
                     </li>
                 </ul>
-                <form class="d-flex search-form">
+                <form class="d-flex search-form" th:action="@{/search}" method="get">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search"
-                           aria-label="Search">
+                           aria-label="Search" name="q">
                     <button class="btn btn-outline-success search-btn" type="submit">Search</button>
                 </form>
             </div>
@@ -147,33 +144,33 @@
             <li class="category">
                 <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">
                     <img src="Images/VideoGame.jpeg" alt="">
-                    Online Video games
+                    Video games
                 </a>
 
             </li>
             <li class="category">
                 <a class="nav-link" th:href="@{/categoryproducts/2}">
-                    <img src="Images/download.jpeg" alt="">
-                    Video Games
+                    <img src="Images/consol.jpg" alt="">
+                    Gaming Consoles
                 </a>
 
             </li>
             <li class="category">
-                <a class="nav-link" th:href="@{/categoryproducts/5}">
+                <a class="nav-link" th:href="@{/categoryproducts/3}">
                     <img src="Images/images.jpeg" alt="">
                     Accessories
                 </a>
             </li>
             <li class="category">
-                <a class="nav-link" th:href="@{/categoryproducts/3}">
-                    <img src="Images/OIP.jpeg" alt="">
-                    Devices
+                <a class="nav-link" th:href="@{/categoryproducts/4}">
+                    <img src="Images/merchandise.png" alt="">
+                    Merchandise
                 </a>
             </li>
             <li class="category">
-                <a class="nav-link" th:href="@{/categoryproducts/4}">
-                    <img src="Images/consol.jpg" alt="">
-                    Consoles
+                <a class="nav-link" th:href="@{/categoryproducts/5}">
+                    <img src="Images/download.jpeg" alt="">
+                    In-Game Items
                 </a>
             </li>
         </ul>
@@ -246,10 +243,11 @@
             </div>
         </div>
     </div>
+
+
     <!-- Footer -->
     <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
-
 
         <!-- Section: Links -->
         <section class="myfooter">
@@ -283,25 +281,15 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
-                            <!-- Google -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-google"></i
-                            ></a>
+
 
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
 
-                            <!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                            ></a>
 
-                            <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-github"></i
-                            ></a>
+
                         </section>
                         <!-- Section: Social media -->
 
@@ -361,6 +349,7 @@
             </div>
         </section>
         <!-- Section: Links -->
+
 
 
 <!-- Grid container -->

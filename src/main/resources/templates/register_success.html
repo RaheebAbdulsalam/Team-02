@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fas fa-shopping-cart"></i></i></a>
+                        <a class="nav-link" th:href="@{/shoppingcart}"><i class="fas fa-shopping-cart"></i></i></a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
@@ -62,34 +62,50 @@
         </div>
     </nav>
 
-    <div class="login">
-        <h3 style="color: #9b59b6;text-align:center;">You have signed up successfully!</h3>
-        <h1>Login</h1>
-        <form th:action="@{/login}" method="post">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <div>
-                <input type="checkbox" id="remember-me" name="remember-me"/>
-                <label for="remember-me">Remember me</label>
-            </div>
-            <input type="submit" value="Login">
-            <!-- Error message displayed if login fails -->
-            <p th:if="${param.error}" class="error">Invalid username or password.</p>
-        </form>
-        <p>Don't have an account? <a th:href="@{/register}">Sign up</a></p>
+    <div class="contact-section">
+        <div class="contact-whitebox">
+            <h3 style="color: #9b59b6;text-align:center;">You have signed up successfully!</h3>-->
+            <form class="contact100-form validate-form" th:action="@{/login}" method="post" >
+                    <span class="contact100-form-title">
+                        Login
+                    </span>
+                <p th:if="${param.error}" class="error">Invalid username or password.</p>
+                <!--Email input-->
+                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                    <span class="label-input100">Username</span>
+                    <input class="input100" type="email" name="email" placeholder="Please enter your email" required>
+                    <span class="focus-input100"></span>
+                </div>
+                <!--Password input-->
+                <div class="wrap-input100 validate-input" data-validate="Valid password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="password" placeholder="Please enter your password" required>
+                    <span class="focus-input100"></span>
+                </div>
 
+                <div class="container-contact100-form-btn">
+                    <div class="wrap-contact100-form-btn">
+                        <div class="contact100-form-bgbtn"></div>
+                        <button class="contact100-form-btn" type="submit" value="Login">
+                                <span>
+                                    Submit
+                                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <p style="color: white">Don't have an account? <a th:href="@{/register}">Sign up</a></p>
+        </div>
     </div>
 
 
-    </br>
-    </br>
 
+    <!----------------------------------- Footer -------------------------------->
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white footer1" >
+    <footer class="bg-dark text-center text-white footer1">
         <!-- Grid container -->
-
 
         <!-- Section: Links -->
         <section class="myfooter">
@@ -123,25 +139,15 @@
                             ><i class="fab fa-twitter"></i
                             ></a>
 
-                            <!-- Google -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-google"></i
-                            ></a>
+
 
                             <!-- Instagram -->
                             <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
                             ><i class="fab fa-instagram"></i
                             ></a>
 
-                            <!-- Linkedin -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-linkedin-in"></i
-                            ></a>
 
-                            <!-- Github -->
-                            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                            ><i class="fab fa-github"></i
-                            ></a>
+
                         </section>
                         <!-- Section: Social media -->
 
@@ -162,7 +168,7 @@
                                     <div class="col-md-5 col-12">
                                         <!-- Email input -->
                                         <div class="form-outline form-white mb-4">
-                                            <input type="email" id="form5Example21" class="form-control" />
+                                            <input type="email" id="form5Example21" class="form-control"/>
                                             <label class="form-label" for="form5Example21">Email address</label>
                                         </div>
                                     </div>
@@ -185,7 +191,8 @@
                         <!-- Section: Text -->
                         <section class="mb-4">
                             <p>
-                                Thank you for  visiting our website !  Please checkout our products and get the most exclusive and trending games at the best and most affordable prices !
+                                Thank you for visiting our website ! Please check out our products and get the most
+                                exclusive and trending games at the best and most affordable prices !
 
                             </p>
                         </section>
@@ -194,30 +201,28 @@
                     </div>
 
 
-
                     <!--Grid column-->
                 </div>
                 <!--Grid row-->
-                <!-- Copyright -->
-                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    © 2023 Copyright:
-                    <a class="text-white" href="#">GameStation</a>
-                </div>
-                <!-- Copyright -->
             </div>
         </section>
         <!-- Section: Links -->
 
 
+
         <!-- Grid container -->
 
-
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">GameStation</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
 </div>
 
 
-
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script type="text/javascript" th:src="@{/node_modules/bootstrap/dist/js/bootstrap.bundle.js}"></script>
 </body>
 </html>

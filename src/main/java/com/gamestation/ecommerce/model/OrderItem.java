@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
+/**
+ * The Entity class represents an order item within an order.
+ * It is mapped to the "order_items" table in the database.
+ */
 @Entity
 @Table(name = "order_items")
 public class OrderItem {
