@@ -16,6 +16,7 @@ public class AdminUserController {
     @Autowired
     private UserService service;
 
+    // Returns page of users
     @GetMapping
     public ModelAndView getAdminUsersPage() {
         ModelAndView mav = new ModelAndView("admin/user/user");
@@ -24,6 +25,7 @@ public class AdminUserController {
         return mav;
     }
 
+    // returns edit user page
     @GetMapping("/edit/{id}")
     public ModelAndView editUser(@PathVariable("id") Integer id) {
         ModelAndView mav = new ModelAndView("admin/user/user_form");
@@ -34,6 +36,7 @@ public class AdminUserController {
         return mav;
     }
 
+    // saves user
     @PostMapping("/save")
     public ModelAndView saveUser(User user) {
         ModelAndView mav = new ModelAndView("redirect:/admin/user");

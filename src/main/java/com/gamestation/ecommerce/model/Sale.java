@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
+/**
+ * The Entity class represents sale data.
+ * It is mapped to the "sales" table in the database.
+ */
 @Entity
 @Table(name = "Sales")
 public class Sale {

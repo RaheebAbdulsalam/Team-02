@@ -3,6 +3,10 @@ package com.gamestation.ecommerce.model;
 
 import jakarta.persistence.*;
 
+/**
+ * The Entity class represents a user's shopping cart.
+ * It is mapped to the "shopping_carts" table in the database.
+ */
 @Entity
 @Table(name = "shopping_carts")
 public class ShoppingCart {

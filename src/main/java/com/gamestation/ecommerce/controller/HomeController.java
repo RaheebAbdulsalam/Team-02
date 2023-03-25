@@ -21,6 +21,9 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
+/**
+ * Rest controller for handling home page and registration related requests.
+ */
 @RestController
 @RequestMapping("/")
 public class HomeController {
@@ -38,22 +41,34 @@ public class HomeController {
     @Autowired
     private OrderService orderService;
 
-    /* Code to return pages */
-    // Returns home page
+    /**
+     * Returns home page.
+     * @param model Model object
+     * @param principal Principal object
+     * @return ModelAndView object of the home page
+     */
     @GetMapping()
     public ModelAndView viewHomePage(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("index");
         return mav;
     }
 
-    // Returns about us page
+    /**
+     * Returns about us page.
+     * @param model Model object
+     * @param principal Principal object
+     * @return ModelAndView object of the about us page
+     */
     @GetMapping("/about")
     public ModelAndView viewAbout(Model model, Principal principal) {
         ModelAndView mav = new ModelAndView("about");
         return mav;
     }
 
-    // returns register pages
+    /**
+     * Returns registration page.
+     * @return ModelAndView object of the registration page
+     */
     @GetMapping("/register")
     public ModelAndView showRegistrationForm() {
         ModelAndView mav = new ModelAndView("signup_form");
@@ -61,6 +76,12 @@ public class HomeController {
         return mav;
     }
 
+    /**
+     * Returns page for registering the user.
+     * @param user User object
+     * @param result BindingResult object
+     * @return ModelAndView of the success page or the registration page with error message
+     */
     @PostMapping("/process_register")
     public ModelAndView processRegister(@Valid User user, BindingResult result) {
         ModelAndView mav;
@@ -80,14 +101,24 @@ public class HomeController {
         return mav;
     }
 
-    // returns login and profile pages
 
+    /**
+     * Returns the login page.
+     *
+     * @return ModelAndView representing the login page
+     */
     @GetMapping("/login")
     public ModelAndView loginPage() {
         ModelAndView mav = new ModelAndView("login");
         return mav;
     }
 
+    /**
+     * Returns the profile page for the currently logged in user.
+     *
+     * @param principal the principal object representing the currently logged in user
+     * @return ModelAndView representing the profile page
+     */
     @GetMapping("/profile")
     public ModelAndView editCurrentUser(Principal principal) {
         ModelAndView mav = new ModelAndView("user/Profilepage");
@@ -97,6 +128,13 @@ public class HomeController {
         return mav;
     }
 
+    /**
+     * Handles POST requests for editing the user's profile.
+     *
+     * @param user      the User object containing the edited user information
+     * @param principal the principal object representing the currently logged in user
+     * @return ModelAndView representing the updated profile page
+     */
     @PostMapping("/edit-profile")
     public ModelAndView saveCurrentUser(@ModelAttribute("user") User user, Principal principal) {
         ModelAndView mav = new ModelAndView("user/Profilepage");
@@ -108,7 +146,12 @@ public class HomeController {
         return mav;
     }
 
-    // returns user order page
+    /**
+     * Returns the orders page for the currently logged in user.
+     *
+     * @param principal the principal object representing the currently logged in user
+     * @return ModelAndView representing the user orders page
+     */
     @GetMapping("/profile/orders")
     public ModelAndView showOrders(Principal principal) {
         ModelAndView mav = new ModelAndView("user/userOrders");
@@ -119,7 +162,14 @@ public class HomeController {
         return mav;
     }
 
-    // cancels orders
+    /**
+     * This method cancels an order based on the provided order ID and updates its status
+     * @param orderId An integer representing the ID of the order to be cancelled
+     * @param status A string representing the status to be updated to
+     * @param response An HttpServletResponse object to redirect to the orders page
+     * @return A ResponseEntity object that returns the updated order with a HTTP status code
+     * @throws IOException if there is an I/O error while redirecting the response
+     */
     @PutMapping("/profile/orders/{order_id}")
     public ResponseEntity<Order> cancelOrder(@PathVariable ("order_id") Integer orderId, @RequestParam String status, HttpServletResponse response) throws IOException {
         Order order = orderService.getOrderById(orderId);
@@ -132,7 +182,11 @@ public class HomeController {
         return null;
     }
 
-    // view further order details
+    /**
+     * This method displays further details of an order based on the provided order ID
+     * @param orderId An integer representing the ID of the order
+     * @return A ModelAndView object that displays the order details
+     */
     @GetMapping("/profile/orders/orderdetail/{orderId}")
     public ModelAndView showOrderPage(@PathVariable Integer orderId) {
         ModelAndView mav = new ModelAndView("user/userOrderDetails");
@@ -141,7 +195,16 @@ public class HomeController {
         return mav;
     }
 
-    // cancel individual items
+    /**
+
+     * This method cancels an individual item in an order based on the provided order ID and item ID, and updates its status
+     * @param orderId An integer representing the ID of the order containing the item to be cancelled
+     * @param itemId An integer representing the ID of the item to be cancelled
+     * @param status A string representing the status to be updated to
+     * @param response An HttpServletResponse object to redirect to the order details page
+     * @return A ResponseEntity object that returns the updated order item with a HTTP status code
+     * @throws IOException if there is an I/O error while redirecting the response
+     */
     @PutMapping("/profile/orders/orderdetail/{orderId}/{itemId}")
     public ResponseEntity<?> cancelItem(@PathVariable Integer orderId, @PathVariable Integer itemId, @RequestParam String status, HttpServletResponse response) throws IOException {
         Order order = orderService.getOrderById(orderId);
@@ -165,8 +228,11 @@ public class HomeController {
         return null;
     }
 
-    /* Code to load categories and products onto homepage */
-    // 1-5 for now
+    /**
+     * This method loads categories and products onto homepage
+     * @param id An integer representing the ID of the category
+     * @return A ModelAndView object that displays the product page with the category and its products
+     */
     @GetMapping("/categoryproducts/{id}")
     public ModelAndView getCategoryPage(@PathVariable("id") Integer id) {
         Category category = categoryService.getCategoryById(id);
@@ -176,6 +242,11 @@ public class HomeController {
         return mav;
     }
 
+    /**
+     * This method gets the product page based on the provided product ID
+     * @param id An integer representing the ID of the product
+     * @return A ModelAndView object that displays the product details
+     */
     @GetMapping("/product/{id}")
     public ModelAndView getProductPage(@PathVariable("id") Integer id) {
         Product product = productService.getProductById(id);
@@ -184,7 +255,11 @@ public class HomeController {
         return mav;
     }
 
-    //Search for products
+    /**
+     * This method searches for products based on the provided query string
+     * @param query A string representing the search query
+     * @return A ModelAndView object that displays the search results page with the matching products
+     */
     @GetMapping("/search")
     public ModelAndView searchProducts(@RequestParam("q") String query) {
         List<Product> products = productService.search(query);
