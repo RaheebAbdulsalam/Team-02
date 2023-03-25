@@ -19,7 +19,7 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 1. Open the command prompt or terminal on your computer, and navigate to the directory where you want to clone the repository.This can be done by typing "cd" followed by the path of the directory you want to navigate to. For example, if you want to navigate to the "Documents" folder, type "cd Documents" and press Enter.
 2. Copy the URL of the repository you want to clone from GitHub. You can find the URL on the repository's page by clicking the green "Code" button as shown below.
 <img src="https://user-images.githubusercontent.com/99501966/227722813-fdd25877-672f-45cf-88d2-742e8ec699d4.png" width:100  style="max-width=%100">
-3. In the command prompt or terminal, enter the following command: git clone <repository URL>, and replace <repository URL> with the URL of the repository you want to clone. Press enter to run the command, and Git will begin cloning the repository to your local machine.
+3. In the command prompt or terminal, enter the following command: git clone repository URL, and replace <repository URL> with the URL of the repository you want to clone. Press enter to run the command, and Git will begin cloning the repository to your local machine.
  
 <h3> Run the application:</h3>
   
