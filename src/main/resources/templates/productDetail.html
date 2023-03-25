@@ -71,21 +71,10 @@
                     </li>
                 </ul>
             </div>
-<<<<<<< HEAD
-=======
-
-        </div>
-    </nav>
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 
         </div>
     </nav>
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
     <!-- Second Navigation Bar includes Search -->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar2">
         <div class="container-fluid">
@@ -96,7 +85,6 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}">Video games</a>
                     </li>
                     <li class="nav-item">
@@ -116,32 +104,11 @@
                 <form class="d-flex search-form" th:action="@{/search}" method="get">
                     <input class="form-control me-2 search-input" type="search" placeholder="Search"
                            aria-label="Search" name="q">
-=======
-                        <a class="nav-link active" aria-current="page" th:href="@{/categoryproducts/1}"> Online Video games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/2}">Video Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/5}">Accessories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/3}">Devices</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/categoryproducts/4}">Consoles</a>
-                    </li>
-                </ul>
-                <form class="d-flex search-form">
-                    <input class="form-control me-2 search-input" type="search" placeholder="Search"
-                           aria-label="Search">
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
                     <button class="btn btn-outline-success search-btn" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-<<<<<<< HEAD
     <!--  End of Search Tab -->
 
     <!-- product details layout -->
@@ -181,58 +148,18 @@
                                 </form>
                                 <div id="message"></div>
                             </div>
-=======
-
-<!-- product details layout -->
-
-	</div>
-    <div class="container mt-5 mb-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-10">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="images p-3">
-                                <div class="text-center p-4"> <img id="main-image" th:src="@{|${product.image}|}" width="250" /> </div>
-                                <div class="thumbnail text-center"> <img onclick="change_image(this)" th:src="@{|${product.image}|}" width="70"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="product p-4">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center" onclick="goBack()"> <i class="fa fa-long-arrow-left"></i> <span class="ml-1">Back</span> </div> <i class="fa fa-shopping-cart text-muted"></i>
-                                </div>
-                                <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand" th:text="${product.categories.get(0).name}"></span>
-                                    <h5 class="text-uppercase" th:text="${product.name}"></h5>
-                                    <div class="price d-flex flex-row align-items-center"> <span class= "act-price"  th:text="'£'+ ${product.price}"style="color: rebeccapurple; font-weight: bold">$</span>
-                                    </div>
-                                </div>
-                                <p class="about" th:text="${product.description}"></p>
-                                <div class="cart mt-4 align-items-center">
-                                    <form id="add-to-cart-form" th:action="@{/shoppingcart}" method="post">
-                                        <input type="hidden" name="productId" th:value="${product.id}">
-                                        <input type="number" name="quantity" value="1" min="1">
-                                        <button type="submit" class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>
-                                    </form>
-                                    <div id="message"></div>
-                                </div>
-                            </div>
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </div>
 
 <br>
 <br>
 <br>
 
-=======
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
 </body>
 <footer class="bg-dark text-center text-white footer1" >
     <!-- Grid container -->
@@ -365,11 +292,7 @@
             })
             .catch(error => console.error(error));
     });
-<<<<<<< HEAD
     <!--JavaScript - go back button for the productDetails page-->
-=======
-<!--JavaScript - go back button for the productDetails page-->
->>>>>>> 5e8ce2ac5b9d89a63fa1cd1d344bae0a4b1c50e1
     function goBack() {
         window.history.back();
     }
