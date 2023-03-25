@@ -16,12 +16,24 @@ The following project will work on Eclipse and IntelliJ IDE. Though it is recomm
 
 - To get IntelliJ go to: https://www.jetbrains.com/idea/
 
+You will also need to download an open-source software package that provides a local web server environment for testing and developing web applications, such as XXAMP which contains tools and utilities, such as phpMyAdmin (for managing databases).
+
+- To get XXAMP go to: https://www.apachefriends.org/download.html
+
+
 <h3> Clone the repository:</h3>
 
 1. Open the command prompt or terminal on your computer, and navigate to the directory where you want to clone the repository.This can be done by typing "cd" followed by the path of the directory you want to navigate to. For example, if you want to navigate to the "Documents" folder, type "cd Documents" and press Enter.
 2. Copy the URL of the repository you want to clone from GitHub. You can find the URL on the repository's page by clicking the green "Code" button as shown below.
   <img src="https://user-images.githubusercontent.com/99501966/227723986-6238e6b5-5290-45e1-8af8-d5560733172f.png" width:100  style="max-width=%100">
 3. In the command prompt or terminal, enter the following command: git clone (repository URL), replace (repository URL) with the URL of the repository you have copied, and press enter to run the command, and Git will begin cloning the repository to your local machine.
+
+<h3> Database Configration:</h3>
+1. Once you downloaded XXAMP you need to launch it and start the Apache and MySQL servers: In the XAMPP Control Panel, click on the "Start" button next to "Apache" and "MySQL" to start the web server and database server <img src="https://user-images.githubusercontent.com/99501966/227725750-9f4ab1e5-45f2-42e0-8e76-79b9b6488611.png" width:100 style="max-width=%100">
+2. Open a web browser and navigate to http://localhost/phpmyadmin/. This will open the phpMyAdmin interface for managing MySQL databases.
+3. To create a new database, click on the "New" button in the left-hand sidebar to create a new database. Enter a name for the database and select create.
+4. Configure the database connection properties in the application.properties as shown below <img src="https://user-images.githubusercontent.com/99501966/227725612-61d34841-8d06-420b-9481-5aabd6c24768.png" width:100 style="max-width=%100">
+5. You can replace gamestation, myusername, and mypassword with the actual values for your database.
  
 <h3> Run the application:</h3>
   
