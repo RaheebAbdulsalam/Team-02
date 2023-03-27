@@ -31,8 +31,11 @@ You will also need to download an open-source software package that provides a l
 <h3> Database Configration:</h3>
 1. Once you downloaded XXAMP you need to launch it and start the Apache and MySQL servers: In the XAMPP Control Panel, click on the "Start" button next to "Apache" and "MySQL" to start the web server and database server <img src="https://user-images.githubusercontent.com/99501966/227725750-9f4ab1e5-45f2-42e0-8e76-79b9b6488611.png" width:100 style="max-width=%100">
 2. Open a web browser and navigate to http://localhost/phpmyadmin/. This will open the phpMyAdmin interface for managing MySQL databases.
+
 3. To create a new database, click on the "New" button in the left-hand sidebar to create a new database. Enter a name for the database and select create.
+
 4. Configure the database connection properties in the application.properties as shown below <img src="https://user-images.githubusercontent.com/99501966/227725612-61d34841-8d06-420b-9481-5aabd6c24768.png" width:100 style="max-width=%100">
+
 5. You can replace gamestation, myusername, and mypassword with the actual values for your database.
  
 <h3> Run the application:</h3>
